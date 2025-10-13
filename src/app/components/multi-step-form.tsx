@@ -169,7 +169,7 @@ export default function MultiStepForm() {
                   />
                 </div>
                 <div>
-                  <label className="text-white text-sm mb-2 block">Tu telefono</label>
+                  <label className="text-white text-sm mb-2 block">Cod. de área + Tu teléfono</label>
                   <Input
                     type="telefono"
                     placeholder="Telefono"
