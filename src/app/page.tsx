@@ -75,7 +75,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-white p-8 flex justify-between md:min-w-[273px] flex-col gap-8 rounded-xl border border-[#0066ff]/20">
-                <p className="text-[#030413]">"Mi experiencia con tu servicio fue 10/10. Sinceramente desde el primer día que comenzamos a trabajar vi mucho profesionalismo, compromiso y dedicación.”</p>
+                <p className="text-[#030413]">“Mi experiencia con tu servicio fue 10/10. Sinceramente desde el primer día que comenzamos a trabajar vi mucho profesionalismo, compromiso y dedicación.”</p>
                 <div className="flex gap-2 items-center">
                   <img src="/images/tomas-costa-lucas.png" alt="Funnel para coach fitness online" />
                   <div>
@@ -151,7 +151,7 @@ export default function Home() {
         <div className="relative flex md:flex-row flex-col gap-8 md:items-end max-w-[800px] mx-auto">
           <img className="w-full md:max-w-[330px]" src="/images/tomas-costa-testimonial-2.png" />
           <div className="text-white py-6">
-            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#] text-[48px] italic me-2">&quot;</span>Subi El Precio Cag*n</h3>
+            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#] text-[48px] me-2">“</span>Subi El Precio Cag*n</h3>
             <p>
               Tomi querido, te queria agradecer por todo el laburo que hiciste con la web. Se nota que pusiste compromiso, siempre respondiste, estuviste presente y cumpliste con todo en tiempo y forma.
               <br /><br />
