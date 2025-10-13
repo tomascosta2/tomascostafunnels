@@ -151,7 +151,7 @@ export default function Home() {
         <div className="relative flex md:flex-row flex-col gap-8 md:items-end max-w-[800px] mx-auto">
           <img className="w-full md:max-w-[330px]" src="/images/tomas-costa-testimonial-2.png" />
           <div className="text-white py-6">
-            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#]">"</span>Subi El Precio Cag*n</h3>
+            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#] text-[48px] italic me-2">&quot;</span>Subi El Precio Cag*n</h3>
             <p>
               Tomi querido, te queria agradecer por todo el laburo que hiciste con la web. Se nota que pusiste compromiso, siempre respondiste, estuviste presente y cumpliste con todo en tiempo y forma.
               <br /><br />
