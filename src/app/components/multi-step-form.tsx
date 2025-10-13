@@ -125,7 +125,7 @@ export default function MultiStepForm() {
 
   return (
     <div className="w-full max-w-[500px] mx-auto border-white/20 relative overflow-clip border p-[6px] rounded-[24px]">
-      <div className="size-[900px] absolute -top-[250px] left-[calc(50%-450px)] rounded-full bg-[#0066ff] blur-[100px]"></div>
+      {/* <div className="size-[900px] absolute -top-[250px] left-[calc(50%-450px)] rounded-full bg-[#0066ff] blur-[100px]"></div> */}
       {/* Form Card */}
       <div className="bg-[#0B1D42] rounded-[16px] overflow-clip relative">
         {/* Progress Bar */}
