@@ -10,13 +10,26 @@ type Faq = {
 
 // Data (you can also pass this as a prop)
 const faqs: Faq[] = [
-	{
-		pregunta:
-			"¿Pregunta?",
-		respuesta:
-			"Respuesta",
-	},
+  {
+    pregunta:
+      "¿Y si no tengo idea de diseño, embudos ni tecnología?",
+    respuesta:
+      "No te preocupes: nosotros nos encargamos de todo. Desde el análisis estratégico hasta el diseño y la automatización. Vos no tenés que saber de diseño, marketing ni programación — solo contános tu visión, nosotros la convertimos en embudo funcional.",
+  },
+  {
+    pregunta:
+      "¿Cómo sé que me va a dar resultados y no será plata tirada?",
+    respuesta:
+      "Porque trabajamos con base en datos: lanzamos, medimos, optimizamos (CRO) durante dos meses para mejorar continuamente. Además, ya tenemos casos de éxito con más de 50 coaches, nutricionistas y psicólogos que validan nuestra metodología.",
+  },
+  {
+    pregunta:
+      "¿Cuánto tiempo tarda y cuánto debo invertir para que funcione?",
+    respuesta:
+      "El proceso completo lleva desde el análisis hasta la optimización continua; en general trabajamos por fases con entregables claros. En cuanto a inversión, personalizamos según tu necesidad, pero te mostramos una propuesta con costos transparentes desde el inicio para que sepas lo que vas a recibir y cuándo.",
+  },
 ];
+
 
 export default function Faqs() {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -44,7 +57,7 @@ export default function Faqs() {
 						>
 							<button
 								type="button"
-								className="faq-question cursor-pointer w-full text-left font-semibold text-[18px] md:text-[20px] text-white flex justify-between items-center"
+								className="faq-question cursor-pointer w-full text-left font-semibold text-[18px] text-white flex justify-between items-center"
 							>
 								<span className="pe-8">{item.pregunta}</span>
 								<div className="rounded-[10px] w-[35px] h-[35px] bg-[#0085FF]/30 min-w-[35px] flex items-center justify-center">
@@ -68,7 +81,7 @@ export default function Faqs() {
 								className={`faq-answer normal-case overflow-hidden duration-500 transition-all ${isOpen ? "max-h-[2000px]" : "max-h-0"
 									}`}
 							>
-								<p className="text-white/80 text-[18px] pt-[10px]">
+								<p className="text-white/80 text-[16px] leading-[150%] pt-[10px]">
 									{item.respuesta}
 								</p>
 							</div>
