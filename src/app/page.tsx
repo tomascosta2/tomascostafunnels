@@ -21,8 +21,8 @@ export default function Home() {
               <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
               <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicologos online confian en nosotros</p>
             </div>
-            <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[28px] md:text-[48px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
-            <p className="text-white text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-8">
+            <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[27px] md:text-[48px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
+            <p className="text-white text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-6">
               Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos
             </p>
             <Button />
