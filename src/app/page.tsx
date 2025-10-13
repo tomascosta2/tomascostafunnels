@@ -151,7 +151,7 @@ export default function Home() {
         <div className="relative flex md:flex-row flex-col gap-8 md:items-end max-w-[800px] mx-auto">
           <img className="w-full md:max-w-[330px]" src="/images/tomas-costa-testimonial-2.png" />
           <div className="text-white py-6">
-            <h3 className="font-bold traking-[-1%] text-[32px] mb-4">“Subi El Precio Cag*n</h3>
+            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#]">"</span>Subi El Precio Cag*n</h3>
             <p>
               Tomi querido, te queria agradecer por todo el laburo que hiciste con la web. Se nota que pusiste compromiso, siempre respondiste, estuviste presente y cumpliste con todo en tiempo y forma.
               <br /><br />
@@ -175,11 +175,26 @@ export default function Home() {
           <Faqs />
         </div>
       </section>
-      <section className="pt-[60px] pb-[80px]" id="contact">
+      <section className="pt-[60px] pb-[80px] px-4" id="contact">
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
             Da el Siguiente Paso con un Embudo de Ventas a Medida
           </h2>
-          <MultiStepForm />
+          <div className="mt-8">
+            <MultiStepForm />
+          </div>
+      </section>
+      <section className="py-8">
+        <img className="mx-auto mb-2" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
+        <p className="text-center text-white/60 text-[14px]">
+          tomas@tomascostafunnels.com
+          <br />
+          Mendoza, Argentina
+          <br />
+          +542616841853
+        </p>
+        <p className="text-white/60 text-center mt-4 text-[14px]">
+          © Tomás Costa 2025. Todos derechos reservados.
+        </p>
       </section>
     </div>
   );
