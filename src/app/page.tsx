@@ -25,7 +25,7 @@ export default function Home() {
             <p className="text-white text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
               Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos.
             </p>
-            <Button />
+            <Button text="Quiero Mi Embudo" />
           </div>
         </section>
       </div>
@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Button />
+            <Button text="Analizá Mi Web" />
           </div>
         </section>
         <section className="pt-[80px] pb-[100px] px-4">
@@ -141,7 +141,7 @@ export default function Home() {
                 </li>
               </ol>
             </div>
-            <Button />
+            <Button text="Quiero Una Web Para Escalar" />
           </div>
         </section>
       </div>
