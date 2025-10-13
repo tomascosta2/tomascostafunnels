@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 
 interface FormData {
   nombre: string
+  telefono: string
   correo: string
   instagram: string
   esProfesionalSalud: string
@@ -26,6 +27,7 @@ export default function MultiStepForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     nombre: "",
+    telefono: "",
     correo: "",
     instagram: "",
     esProfesionalSalud: "",
@@ -61,7 +63,7 @@ export default function MultiStepForm() {
 
     try {
       // Replace with your Make webhook URL
-      const webhookUrl = "YOUR_MAKE_WEBHOOK_URL_HERE"
+      const webhookUrl = "https://hook.us2.make.com/6x87i3dqt339j40cdxttqmmdx2gqnfu7"
 
       const response = await fetch(webhookUrl, {
         method: "POST",
@@ -76,6 +78,7 @@ export default function MultiStepForm() {
         // Reset form
         setFormData({
           nombre: "",
+          telefono: "",
           correo: "",
           instagram: "",
           esProfesionalSalud: "",
@@ -162,6 +165,16 @@ export default function MultiStepForm() {
                     placeholder="Nombre"
                     value={formData.nombre}
                     onChange={(e) => updateFormData("nombre", e.target.value)}
+                    className="bg-white text-black border-0 h-12"
+                  />
+                </div>
+                <div>
+                  <label className="text-white text-sm mb-2 block">Tu telefono</label>
+                  <Input
+                    type="telefono"
+                    placeholder="Telefono"
+                    value={formData.telefono}
+                    onChange={(e) => updateFormData("telefono", e.target.value)}
                     className="bg-white text-black border-0 h-12"
                   />
                 </div>
@@ -389,7 +402,7 @@ export default function MultiStepForm() {
           {currentStep === 8 && (
             <div className="space-y-6">
               <h2 className="text-white text-2xl font-bold mb-2">
-                8* Que crees que te esta faltando o esta faltando en tu embudo de ventas?
+                8* Que crees que te esta faltando o esta fallando en tu embudo de ventas?
               </h2>
               <p className="text-white/60 text-sm mb-8">
                 Ej. Mi página se ha quedado anticuada, no tengo una estrategia que me genere leads calificados, siento
