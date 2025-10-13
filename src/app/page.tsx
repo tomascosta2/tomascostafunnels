@@ -19,11 +19,11 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-6 md:mb-8">
               <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
-              <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicologos online confian en nosotros</p>
+              <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicólogos online confian en nosotros</p>
             </div>
             <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[27px] md:text-[48px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
             <p className="text-white text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos
+              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos.
             </p>
             <Button />
           </div>
@@ -42,10 +42,10 @@ export default function Home() {
         <section className="py-[80px] px-4 relative overflow-clip">
           <div className="max-w-[1200px] mx-auto relative z-50">
             <h2 className="text-white mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
-              ¿Que opinan nuestros clientes?
+              ¿Qué opinan nuestros clientes?
             </h2>
             <p className="text-white text-center pb-8 leading-[150%] max-w-[500px] mx-auto mt-4">
-              Estamos orgullos de haber trabajado con coaches y profesionales top de la industria como
+              Estamos orgullosos de haber trabajado con coaches y profesionales top de la industria como
             </p>
             <div className="flex flex-wrap md:flex-nowrap gap-4">
               <div className="bg-white p-8 flex justify-between md:min-w-[273px] flex-col gap-8 rounded-xl border border-[#0066ff]/20">
@@ -110,14 +110,14 @@ export default function Home() {
               Un Proceso Pensado para Darte un Servicio de Calidad
             </h2>
             <p className="text-white text-center pb-8 leading-[150%] max-w-[500px] mx-auto mt-4">
-              Como Coach Fitness, Nutricionista o Psicologo probablemente sepas que sin procesos es difícil lograr buenos resultados, por eso llevamos años perfeccionando el nuestro.
+              Como Coach Fitness, Nutricionista o , probablemente sepas que sin procesos es difícil lograr buenos resultados, por eso llevamos años perfeccionando el nuestro.
             </p>
             <div className="max-w-[700px] mx-auto">
               <ol className="relative border-s border-gray-700">
                 <li className="mb-10 ms-4 group">
                   <div className="absolute w-3 h-3 group-hover:bg-[#0066ff] transition-all rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
                   <time className="mb-1 text-sm font-normal leading-none group-hover:text-[#0066ff] text-gray-500">Primer Paso</time>
-                  <h3 className="text-lg font-semibold text-white">Analisis de tu avatar y el camino que debe recorrer para pasar de no conocerte a comprarte</h3>
+                  <h3 className="text-lg font-semibold text-white">Análisis de tu avatar y el camino que debe recorrer para pasar de no conocerte a comprarte</h3>
                   <p className="mb-4 text-base font-normal text-gray-500">Entendemos con precisión quién es tu cliente ideal y qué lo motiva a tomar acción. Este análisis nos permite diseñar un embudo que hable directamente a sus dolores y deseos, haciendo que tus mensajes generen conexión y confianza desde el primer contacto. Así logramos que cada visita tenga más chances de convertirse en una venta real.</p>
                 </li>
                 <li className="mb-10 ms-4 group">
@@ -151,9 +151,9 @@ export default function Home() {
         <div className="relative flex md:flex-row flex-col gap-8 md:items-end max-w-[800px] mx-auto">
           <img className="md:block hidden w-full md:max-w-[330px]" src="/images/tomas-costa-testimonial-2.png" />
           <div className="text-white py-6">
-            <h3 className="font-bold traking-[-1%] text-[32px] mb-4"><span className="text-[#] text-[48px] me-2">“</span>Subi El Precio Cag*n</h3>
-            <p>
-              Tomi querido, te queria agradecer por todo el laburo que hiciste con la web. Se nota que pusiste compromiso, siempre respondiste, estuviste presente y cumpliste con todo en tiempo y forma.
+            <h3 className="font-bold text-[32px] mb-4"><span className="text-[#] text-[48px] me-2">“</span>Subí El Precio Cag*n</h3>
+            <p className="leading-[150%]">
+              Tomi querido, te quería agradecer por todo el laburo que hiciste con la web. Se nota que pusiste compromiso, siempre respondiste, estuviste presente y cumpliste con todo en tiempo y forma.
               <br /><br />
               Me encantó cómo quedó y representa exactamente lo que quería transmitir. Mil gracias! Feliz con el resultado. Y...”
             </p>
@@ -193,7 +193,7 @@ export default function Home() {
           <br />
           Mendoza, Argentina
           <br />
-          +542616841853
+          +54 261 684 1853
         </p>
         <p className="text-white/60 text-center mt-4 text-[14px]">
           © Tomás Costa 2025. Todos derechos reservados.
