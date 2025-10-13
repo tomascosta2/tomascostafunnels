@@ -177,7 +177,7 @@ export default function Home() {
       </section>
       <section className="pt-[60px] pb-[80px] px-4" id="contact">
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
-            Da el Siguiente Paso con un Embudo de Ventas a Medida
+            Da el Siguiente Paso con tu Nuevo Embudo de Ventas a Medida
           </h2>
           <div className="mt-8">
             <MultiStepForm />
