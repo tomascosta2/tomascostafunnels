@@ -172,7 +172,7 @@ export default function MultiStepForm() {
                   <label className="text-white text-sm mb-2 block">Cod. de área + Tu teléfono</label>
                   <Input
                     type="telefono"
-                    placeholder="Telefono"
+                    placeholder="Cod. área + Telefono"
                     value={formData.telefono}
                     onChange={(e) => updateFormData("telefono", e.target.value)}
                     className="bg-white text-black border-0 h-12"
