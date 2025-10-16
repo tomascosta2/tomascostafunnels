@@ -8,7 +8,7 @@ export default function Button({ text }: { text: string }) {
         </p>
       </a>
       <div className="flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Cupos limitados
+        5 de 5 estrellas
       </div>
     </div>
   )
