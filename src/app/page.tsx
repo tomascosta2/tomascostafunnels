@@ -133,9 +133,16 @@ export default function Home() {
                   <p className="text-base font-normal text-gray-500">Transformamos la estrategia en una experiencia visual que convence. Diseñamos páginas modernas, rápidas y centradas en resultados, optimizadas para captar leads o generar ventas. Cada sección está pensada para destacar tu valor diferencial y guiar al visitante hacia la acción que más te importa.</p>
                 </li>
 
-                <li className="ms-4 group">
+                <li className="mb-10 ms-4 group">
                   <div className="absolute w-3 h-3 group-hover:bg-[#0066ff] rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
                   <time className="mb-1 text-sm font-normal leading-none group-hover:text-[#0066ff] text-gray-500">Cuarto Paso</time>
+                  <h3 className="text-lg font-semibold text-white">Setter con IA y Secuencia de email marketing</h3>
+                  <p className="text-base font-normal text-gray-500">Responder siempre las mismas dudas no es tiempo bien aprovechado, por eso te instalamos un setter con IA que maneje conversaciones y agende llamadas, y además creamos una secuencia de correos automatizada para que nutras en automático a cada lead que entra en tu embudo.</p>
+                </li>
+
+                <li className="ms-4 group">
+                  <div className="absolute w-3 h-3 group-hover:bg-[#0066ff] rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
+                  <time className="mb-1 text-sm font-normal leading-none group-hover:text-[#0066ff] text-gray-500">Quinto Paso</time>
                   <h3 className="text-lg font-semibold text-white">2 meses de CRO (Optimización)</h3>
                   <p className="text-base font-normal text-gray-500">No se trata solo de lanzar, sino de mejorar constantemente. Durante dos meses medimos el comportamiento real de tus visitantes, identificamos qué partes del embudo funcionan mejor y optimizamos todo para aumentar tus conversiones. Así aseguramos que tu inversión en tráfico rinda cada vez más y tu embudo se vuelva más rentable con el tiempo.</p>
                 </li>
