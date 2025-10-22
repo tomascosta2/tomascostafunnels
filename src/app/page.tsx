@@ -102,7 +102,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Button text="Analizá Mi Web" />
+            <Button text="Quiero Mi Funnel" />
           </div>
         </section>
         {/* <section className="pt-[80px] pb-[100px] px-4">
