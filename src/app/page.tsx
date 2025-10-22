@@ -54,7 +54,7 @@ export default function Home() {
             <p className="text-white text-center pb-8 leading-[150%] max-w-[500px] mx-auto mt-4">
               Estamos orgullosos de haber trabajado con coaches y profesionales top de la industria como
             </p>
-            <div className="flex flex-wrap md:flex-nowrap gap-4">
+            <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
               <div className="bg-white p-8 flex justify-between md:min-w-[273px] flex-col gap-8 rounded-xl border border-[#0066ff]/20">
                 <p className="text-[#030413]/90">“El salto de calidad que tuve en el diseño y calidad de mi Landing Page con Tomi fue increíble.”</p>
                 <div className="flex gap-2 items-center">
