@@ -22,11 +22,14 @@ export default function Home() {
               <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicólogos online confian en nosotros</p>
             </div>
             <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
-            <div className="bg-[#0066ff] text-white max-w-[700px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
-              <p className="py-2">Activa el audio y mira el video completo</p>
+            <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
+              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
+            </p>
+            <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
+              <p className="py-1">Activa el audio y mira el video completo</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip aspect-video mx-auto"><iframe id="panda-d41d80e1-9e99-4ace-b952-c9da75d2519c" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=d41d80e1-9e99-4ace-b952-c9da75d2519c" className="w-full h-full" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe></div>
             </div>
-            <p className="text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
+            <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
               Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
             </p>
             <Button text="Quiero Mi Embudo" />
