@@ -327,7 +327,7 @@ export default function MultiStepForm() {
             <div className="space-y-6">
               <h2 className="text-white text-2xl font-bold mb-6">6* Quien hizo tu página web actual?</h2>
               <div className="space-y-3">
-                {["Yo mismo", "Una agencia / freelancer", "Un amigo / familiar", "Alguien de mi equipo"].map(
+                {["No tengo", "Una agencia / freelancer", "Yo / Un amigo / familiar", "Alguien de mi equipo"].map(
                   (option) => (
                     <button
                       key={option}
