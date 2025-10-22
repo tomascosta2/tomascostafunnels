@@ -15,27 +15,28 @@ export default function Home() {
         <section className="pt-[40px] relative z-50 px-4">
           <img className="mx-auto" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
         </section>
-        <section className="pt-[80px] pb-[100px] z-50 relative px-4">
+        <section className="pt-[40px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-6 md:mb-8">
+            <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-4 md:mb-8">
               <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
               <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicólogos online confian en nosotros</p>
             </div>
-            <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[27px] md:text-[48px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
-            <p className="text-white text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
+            <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
+            <div className="border-4 border-[#0066ff] aspect-video max-w-[700px] mx-auto mt-4"><iframe className="w-full h-full" src="https://www.loom.com/embed/a443b5c5a288430ba1b88d0e310e04da?sid=88e194ef-36fa-4b86-82d0-c579520fbb46"></iframe></div>
+            <p className="text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
               Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos.
             </p>
             <Button text="Quiero Mi Embudo" />
           </div>
         </section>
       </div>
-      <section className="bg-[#1B1B1B] py-12 md:py-6 px-4">
+      {/* <section className="bg-[#1B1B1B] py-12 md:py-6 px-4">
         <ul className="max-w-[720px] mx-auto text-[16px] text-white font-medium flex md:flex-row flex-col justify-between gap-8 md:gap-16">
           <li className="text-center flex flex-col gap-1 md:w-[180px]"><span className="text-[42px] leading-[100%] font-bold text-white">50+</span> <span className="text-white/80 leading-[120%]">casos de éxito</span></li>
           <li className="text-center flex flex-col gap-1 md:w-[180px]"><span className="text-[42px] leading-[100%] font-bold text-white">4+</span> <span className="text-white/80 leading-[120%]">años creando embudos</span></li>
           <li className="text-center flex flex-col gap-1 md:w-[180px]"><span className="text-[42px] leading-[100%] font-bold text-white">100k+</span> <span className="text-white/80 leading-[120%]">dólares vendidos desde nuestros funnels</span></li>
         </ul>
-      </section>
+      </section> */}
       <div className="relative overflow-clip">
         <div className="absolute w-[50px] h-full top-0 left-0 blur-[150px] bg-[#0066ff]/40"></div>
         <div className="absolute w-[50px] h-full top-0 right-0 blur-[150px] bg-[#0066ff]/40"></div>
@@ -104,7 +105,7 @@ export default function Home() {
             <Button text="Analizá Mi Web" />
           </div>
         </section>
-        <section className="pt-[80px] pb-[100px] px-4">
+        {/* <section className="pt-[80px] pb-[100px] px-4">
           <div className="max-w-[1100px] mx-auto">
             <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
               Un Proceso Pensado para Darte un Servicio de Calidad
@@ -150,7 +151,7 @@ export default function Home() {
             </div>
             <Button text="Quiero Una Web Para Escalar" />
           </div>
-        </section>
+        </section> */}
       </div>
       <section className="py-[60px] md:py-[100px] px-4 relative">
         <div className="absolute top-0 left-0 bg-[url('/images/bg-2.webp')] bg-cover w-full h-full opacity-70 md:bg-center bg-[-400px]">
