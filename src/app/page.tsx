@@ -12,19 +12,22 @@ export default function Home() {
         {/* <div className="size-[600px] rounded-full bg-[#2C80FF]/40 blur-[200px] absolute -bottom-[205px] left-[calc(50%-300px)]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute -top-[205px] -right-[205px]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute top-[205px] right-[calc(50%-205px)]"></div> */}
-        <section className="pt-[40px] relative z-50 px-4">
+        <section className="pt-[32px] relative z-50 px-4">
           <img className="mx-auto" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
         </section>
-        <section className="pt-[40px] pb-[100px] z-50 relative px-4">
+        <section className="pt-[32px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-4 md:mb-8">
+            <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-4 md:mb-6">
               <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
               <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness, Nutricionistas y psicólogos online confian en nosotros</p>
             </div>
-            <h1 className="text-white text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[120%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
-            <div className="border-4 border-[#0066ff] aspect-video max-w-[700px] mx-auto mt-4"><iframe id="panda-d41d80e1-9e99-4ace-b952-c9da75d2519c" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=d41d80e1-9e99-4ace-b952-c9da75d2519c" className="w-full h-full" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe></div>
+            <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">Conseguí Leads Calificados, Automatizá Procesos y Sumá Autoridad con un Embudo de Ventas Hecho a Medida</h1>
+            <div className="bg-[#0066ff] text-white max-w-[700px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
+              <p className="py-2">Activa el audio y mira el video completo</p>
+              <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip aspect-video mx-auto"><iframe id="panda-d41d80e1-9e99-4ace-b952-c9da75d2519c" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=d41d80e1-9e99-4ace-b952-c9da75d2519c" className="w-full h-full" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe></div>
+            </div>
             <p className="text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas, hacemos todo por vos.
+              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
             </p>
             <Button text="Quiero Mi Embudo" />
           </div>
