@@ -29,12 +29,15 @@ export default function Home() {
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Activa el audio y mira el video completo</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
-                <iframe id="panda-636f6d70-7708-49b0-b7e2-7fe437824055" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-7708-49b0-b7e2-7fe437824055" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" className="w-full h-full aspect-video"></iframe>
-                <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-7708-49b0-b7e2-7fe437824055',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-7708-49b0-b7e2-7fe437824055', defaultStyle: true});});`}</Script>
+                <iframe id="panda-636f6d70-867a-4d89-94f4-490366e1b5e0" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-867a-4d89-94f4-490366e1b5e0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
+                <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-867a-4d89-94f4-490366e1b5e0',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-867a-4d89-94f4-490366e1b5e0', defaultStyle: true});});`}</Script>
+                
+                {/* <iframe id="panda-636f6d70-7708-49b0-b7e2-7fe437824055" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-7708-49b0-b7e2-7fe437824055" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" className="w-full h-full aspect-video"></iframe>
+                <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-7708-49b0-b7e2-7fe437824055',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-7708-49b0-b7e2-7fe437824055', defaultStyle: true});});`}</Script> */}
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
+              SiError: Missing "key" prop for element in iterator  react/jsx-keyn saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
             </p>
             <Button text="Quiero Mi Embudo" />
           </div>
