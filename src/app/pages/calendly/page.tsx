@@ -105,7 +105,10 @@ export default function Calendly() {
 				} else {
 					console.warn('[Calendly] Falta email o phone normalizado; no se envía CAPI.');
 				}
+
 			}
+			
+			window.location.href = '/pages/thankyou';
 		};
 
 		window.addEventListener('message', handleCalendlyEvent);
