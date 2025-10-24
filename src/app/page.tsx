@@ -37,7 +37,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              SiError: Missing "key" prop for element in iterator  react/jsx-keyn saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
+              Sin saber de diseño, marketing ni programación y sin lidiar con freelancers o agencias genericas.
             </p>
             <Button text="Quiero Mi Embudo" />
           </div>
