@@ -29,7 +29,7 @@ export default function Home() {
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Activa el audio y mira el video completo</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip aspect-video mx-auto">
-                <iframe id="panda-636f6d70-7708-49b0-b7e2-7fe437824055" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-7708-49b0-b7e2-7fe437824055" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" width="720" height="360"></iframe>
+                <iframe id="panda-636f6d70-7708-49b0-b7e2-7fe437824055" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-7708-49b0-b7e2-7fe437824055" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" className="w-full h-full"></iframe>
                 <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-7708-49b0-b7e2-7fe437824055',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-7708-49b0-b7e2-7fe437824055', defaultStyle: true});});`}</Script>
               </div>
             </div>
