@@ -37,7 +37,7 @@ export async function POST(req: Request) {
             },
           },
         ],
-        test_event_code: 'TEST44443'
+        //test_event_code: 'TEST44443'
       }),
     }
   );
