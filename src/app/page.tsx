@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "./components/button";
 import Faqs from "./components/faqs";
 import MultiStepForm from "./components/multi-step-form"
+import Script from "next/script";
 
 export default function Home() {
   return (
