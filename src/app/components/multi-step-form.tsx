@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
@@ -39,9 +39,15 @@ export default function MultiStepForm() {
     queFalta: "",
     comoAyudar: "",
   })
+  const [test, setTest] = useState("");
 
   const totalSteps = 9
   const progress = (currentStep / totalSteps) * 100
+
+  useEffect(() => {
+    const test = localStorage.getItem('test') || "";
+    setTest(test);
+  }, [])
 
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
@@ -71,13 +77,19 @@ export default function MultiStepForm() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
+
+    const payload = {
+      ...formData,
+      test
+    }
+
     try {
       // 1) Enviar a Make (tu webhook actual)
       const webhookUrl = "https://hook.us2.make.com/6x87i3dqt339j40cdxttqmmdx2gqnfu7"
       const makeRes = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       })
 
       if (!makeRes.ok) {
@@ -117,7 +129,7 @@ export default function MultiStepForm() {
       })
       setCurrentStep(1)
 
-      
+
     } catch (error) {
       console.error("Error:", error)
       alert("Error al enviar el formulario. Por favor intenta de nuevo.")
@@ -128,26 +140,37 @@ export default function MultiStepForm() {
 
   const canProceed = () => {
     switch (currentStep) {
-      case 1:
-        return formData.nombre.trim() !== "" && formData.correo.trim() !== ""
+      case 1: {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^\+?\d{7,15}$/;
+
+        const emailValido = emailRegex.test(formData.correo.trim());
+        const telefonoValido = phoneRegex.test(formData.telefono.trim());
+
+        return (
+          formData.nombre.trim() !== "" &&
+          emailValido &&
+          telefonoValido
+        );
+      }
       case 2:
-        return formData.instagram.trim() !== ""
+        return formData.instagram.trim() !== "";
       case 3:
-        return formData.rol !== ""
+        return formData.rol !== "";
       case 4:
-        return formData.facturacion !== ""
+        return formData.facturacion !== "";
       case 5:
-        return formData.tiempoNegocio !== ""
+        return formData.tiempoNegocio !== "";
       case 6:
-        return formData.quienHizoPagina !== ""
+        return formData.quienHizoPagina !== "";
       case 7:
-        return formData.quienGestionaMarketing !== ""
+        return formData.quienGestionaMarketing !== "";
       case 8:
-        return formData.queFalta.trim() !== ""
+        return formData.queFalta.trim() !== "";
       case 9:
-        return formData.comoAyudar.trim() !== ""
+        return formData.comoAyudar.trim() !== "";
       default:
-        return false
+        return false;
     }
   }
 
@@ -208,6 +231,13 @@ export default function MultiStepForm() {
                     />
                   </div>
                 </div>
+
+                {!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.correo.trim()) && formData.correo && (
+                  <p className="text-red-400 text-sm mt-2">Correo inválido</p>
+                )}
+                {!/^\+?\d{7,15}$/.test(formData.telefono.trim()) && formData.telefono && (
+                  <p className="text-red-400 text-sm mt-2">Teléfono inválido (usa formato +549261XXXXXXX)</p>
+                )}
               </div>
             )}
 

@@ -138,7 +138,7 @@ export default function Calendly() {
 			<section className="pt-8 pb-[80px] text-white">
 				<div className="max-w-[1200px] mx-auto px-4">
 					<h1 className="text-[24px] md:text-[32px] font-bold leading-[120%] max-w-[800px] mb-8 mx-auto text-center">
-						Agenda una llamada de 45 minutos para hablar sobre tu embudo de ventas
+						Agenda una llamada de 30 minutos para hablar sobre tu embudo de ventas
 					</h1>
 
 					<div className="grid md:grid-cols-2 gap-8">
