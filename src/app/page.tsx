@@ -187,7 +187,7 @@ export default function Home() {
           </div>
         </section> */}
       </div>
-      <section className="py-[60px] md:py-[100px] px-4 relative">
+      {/* <section className="py-[60px] md:py-[100px] px-4 relative">
         <div className="absolute top-0 left-0 bg-[url('/images/bg-2.webp')] bg-cover w-full h-full opacity-70 md:bg-center bg-[-400px]">
         </div>
         <div className="relative flex md:flex-row flex-col gap-8 md:items-end max-w-[800px] mx-auto">
@@ -211,7 +211,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="py-[100px]">
         <div>
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
