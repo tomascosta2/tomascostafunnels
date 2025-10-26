@@ -8,7 +8,7 @@ export default function Button({ text }: { text: string }) {
         </p>
       </a>
       <div className="italic font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Cupos limitados - No pierdas la oportunidad
+        No pierdas la oportunidad
       </div>
     </div>
   )
