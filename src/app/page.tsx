@@ -35,12 +35,12 @@ export default function Home() {
               <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness online e Infoproductores confian en nosotros</p>
             </div>
             {variant === 'A' && (
-              <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
                 Imagínate tener entre 20 y 60 Llamadas Calificadas Extra Todos los Meses, Sin depender de tu Contenido Orgánico
               </h1>
             )}
             {variant === 'B' && (
-              <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
                 Escalá tu Negocio con un Sistema que te Trae Entre 20 y 60 Llamadas Calificadas Extra al Mes en Piloto Automático
               </h1>
             )}
