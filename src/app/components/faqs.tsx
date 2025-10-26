@@ -20,7 +20,7 @@ const faqs: Faq[] = [
     pregunta:
       "¿Cómo sé que me va a dar resultados y no será plata tirada?",
     respuesta:
-      "Porque trabajamos con base en datos: lanzamos, medimos, optimizamos (CRO) durante dos meses para mejorar continuamente. Además, ya tenemos casos de éxito con más de 50 coaches e infoproductores que validan nuestra metodología.",
+      "Porque trabajamos con base en datos: lanzamos, medimos, optimizamos (CRO) para mejorar continuamente y formar una relación a largo plazo con vos y tu negocio. Además, ya tenemos casos de éxito con más de 50 coaches e infoproductores que validan nuestra metodología.",
   },
   {
     pregunta:
