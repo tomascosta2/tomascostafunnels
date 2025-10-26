@@ -60,7 +60,7 @@ export default function Home() {
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
               Y sin saber de diseño, marketing ni programación ni lidiar con freelancers o agencias genericas.
             </p>
-            <Button text="Quiero Mi Embudo" />
+            <Button text="¡Quiero Mi Embudo!" />
           </div>
         </section>
       </div>
@@ -136,7 +136,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Button text="Quiero Mi Funnel" />
+            <Button text="¡Quiero Mi Funnel!" />
           </div>
         </section>
         {/* <section className="pt-[80px] pb-[100px] px-4">
