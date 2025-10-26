@@ -36,12 +36,12 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Imagínate tener entre 20 y 60 llamadas calificadas extra todos los meses sin depender de tu contenido orgánico
+                Imagínate tener entre 20 y 60 Llamadas Calificadas Extra Todos los Meses, Sin depender de tu Contenido Orgánico
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[600px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Imagínate tener entre 20 y 60 llamadas calificadas extra todos los meses sin depender de tu contenido orgánico
+                Escalá tu Negocio con un Sistema que te Trae Entre 20 y 60 Llamadas Calificadas Extra al Mes en Piloto Automático
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
@@ -84,7 +84,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
               <div className="bg-white p-8 flex justify-between md:min-w-[273px] flex-col gap-8 rounded-xl border border-[#0066ff]/20">
-                <p className="text-[#030413]/90">“El salto de calidad que tuve en el diseño y calidad de mi Landing Page con Tomi fue increíble.”</p>
+                <p className="text-[#030413]/90">“El salto de calidad que tuve en el diseño y calidad de mi Landing Page con Tomi fue increíble. Subí una historia y cerré 3 ventas de 4 llamadas que se agendaron en automático.”</p>
                 <div className="flex gap-2 items-center">
                   <img src="/images/tomas-costa-mati.png" alt="Funnel para coach fitness online" />
                   <div>
