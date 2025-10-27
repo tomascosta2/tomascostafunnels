@@ -48,7 +48,7 @@ export default function Home() {
               Sin depender de que tan bien le va a tus reels, historias ni posteos
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
-              <p className="py-1">Activa el audio y mira el video completo</p>
+              <p className="py-1">Clic para ver como funciona</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
                 <iframe className="aspect-video w-full" id="panda-636f6d70-867a-4d89-94f4-490366e1b5e0" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-867a-4d89-94f4-490366e1b5e0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
                 <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-867a-4d89-94f4-490366e1b5e0',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-867a-4d89-94f4-490366e1b5e0', defaultStyle: true});});`}</Script>
@@ -230,13 +230,6 @@ export default function Home() {
       </section>
       <section className="py-8">
         <img className="mx-auto mb-2" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
-        <p className="text-center text-white/60 text-[14px]">
-          tomas@tomascostafunnels.com
-          <br />
-          Mendoza, Argentina
-          <br />
-          +54 261 684 1853
-        </p>
         <p className="text-white/60 text-center mt-4 text-[14px]">
           © Tomás Costa 2025. Todos derechos reservados.
         </p>
