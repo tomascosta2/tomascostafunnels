@@ -41,11 +41,11 @@ export default function Home() {
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Escalá tu Negocio con un Embudo que te Trae Entre 20 y 60 Llamadas Calificadas Extra al Mes en Piloto Automático
+                Conseguí de 20 a 60 Llamadas de Venta Calificadas Extra Todos los Meses En Automatico, Con un Embudo VSL A Medida
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tus reels, historias ni posteos
+              Sin depender de que tan bien le va a tu contenido, todo con trafico frio que llevamos de no conocerte a estar listo para comprarte.
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tus reels, historias ni posteos
+              Sin depender de que tan bien le va a tu contenido, todo con trafico frio que llevamos de no conocerte a estar listo para comprarte.
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
