@@ -36,7 +36,7 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te generamos de 20 a 60 Llamadas Calificadas Extra Todos los Meses En Automatico, Con un Embudo VSL A Medida
+                Conseguí de 20 a 60 Llamadas de Venta Calificadas Extra Todos los Meses En Automatico, Con un Embudo VSL A Medida
               </h1>
             )}
             {variant === 'B' && (
