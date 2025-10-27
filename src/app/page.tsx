@@ -41,7 +41,7 @@ export default function Home() {
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Conseguí de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos VSL
+                Conseguí de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos de Ventas
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
