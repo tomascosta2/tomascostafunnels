@@ -36,16 +36,16 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Conseguí de 20 a 60 Llamadas de Venta Calificadas Extra Todos los Meses En Automatico, Con un Embudo VSL A Medida
+                Conseguí de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Y En Automatico, Con nuestros Embudos VSL
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Conseguí de 20 a 60 Llamadas de Venta Calificadas Extra Todos los Meses En Automatico, Con un Embudo VSL A Medida
+                Conseguí de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Y En Automatico, Con nuestros Embudos VSL
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, todo con trafico frio que llevamos de no conocerte a estar listo para comprarte.
+              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos de no conocerte a estar listo para comprarte.
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, todo con trafico frio que llevamos de no conocerte a estar listo para comprarte.
+              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos de no conocerte a estar listo para comprarte.
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
           <li className="text-center flex flex-col gap-1 md:w-[180px]"><span className="text-[42px] leading-[100%] font-bold text-white">100k+</span> <span className="text-white/80 leading-[120%]">dólares vendidos desde nuestros funnels</span></li>
         </ul>
       </section> */}
-      <div className="relative overflow-clip">
+      {/* <div className="relative overflow-clip">
         <div className="absolute w-[50px] h-full top-0 left-0 blur-[150px] bg-[#0066ff]/40"></div>
         <div className="absolute w-[50px] h-full top-0 right-0 blur-[150px] bg-[#0066ff]/40"></div>
         <section className="py-[80px] px-4 relative overflow-clip">
@@ -139,7 +139,7 @@ export default function Home() {
             <Button text="¡Quiero Mi Funnel!" />
           </div>
         </section>
-        {/* <section className="pt-[80px] pb-[100px] px-4">
+        <section className="pt-[80px] pb-[100px] px-4">
           <div className="max-w-[1100px] mx-auto">
             <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
               Un Proceso Pensado para Darte un Servicio de Calidad
@@ -185,8 +185,8 @@ export default function Home() {
             </div>
             <Button text="Quiero Una Web Para Escalar" />
           </div>
-        </section> */}
-      </div>
+        </section>
+      </div> */}
       {/* <section className="py-[60px] md:py-[100px] px-4 relative">
         <div className="absolute top-0 left-0 bg-[url('/images/bg-2.webp')] bg-cover w-full h-full opacity-70 md:bg-center bg-[-400px]">
         </div>
@@ -221,8 +221,8 @@ export default function Home() {
         </div>
       </section> */}
       <section className="pt-[60px] pb-[80px] px-4" id="contact">
-          <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
-            Da el Siguiente Paso con tu Nuevo Embudo de Ventas a Medida
+          <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
+            Llena el formulario de aplicación, agenda tu consulta, y olvídate de la horrible sensación de no saber cuando va a llegar tu próximo cliente
           </h2>
           <div className="mt-8">
             <MultiStepForm />

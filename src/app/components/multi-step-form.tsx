@@ -182,7 +182,7 @@ export default function MultiStepForm() {
             </button>
           )}
 
-          <img className="mx-auto mb-8" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
+          {/* <img className="mx-auto mb-8" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" /> */}
 
           <div className="min-h-[300px]">
             {/* Paso 1 */}
