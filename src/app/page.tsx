@@ -220,7 +220,7 @@ export default function Home() {
           <Faqs />
         </div>
       </section> */}
-      <section className="pt-[60px] pb-[80px] px-4" id="contact">
+      <section className="pt-[40px] pb-[80px] px-4" id="contact">
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
             Llena el formulario de aplicación, agenda tu consulta, y olvídate de la horrible sensación de no saber cuando va a llegar tu próximo cliente
           </h2>
