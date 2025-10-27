@@ -20,8 +20,8 @@ export default function Home() {
   return (
     <div className="relative overflow-clip">
       <div className="relative overflow-clip">
-        <div className="absolute bg-[url('/images/bg.webp')] bg-cover w-full h-full opacity-70 md:bg-center bg-[-400px]">
-        </div>
+        {/* <div className="absolute bg-[url('/images/bg.webp')] bg-cover w-full h-full opacity-70 md:bg-center bg-[-400px]"> */}
+        {/* </div> */}
         {/* <div className="size-[600px] rounded-full bg-[#2C80FF]/40 blur-[200px] absolute -bottom-[205px] left-[calc(50%-300px)]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute -top-[205px] -right-[205px]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute top-[205px] right-[calc(50%-205px)]"></div> */}
