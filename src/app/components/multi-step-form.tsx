@@ -19,8 +19,6 @@ interface FormData {
   tiempoNegocio: string
   quienHizoPagina: string
   quienGestionaMarketing: string
-  queFalta: string
-  comoAyudar: string
 }
 
 export default function MultiStepForm() {
@@ -36,8 +34,6 @@ export default function MultiStepForm() {
     tiempoNegocio: "",
     quienHizoPagina: "",
     quienGestionaMarketing: "",
-    queFalta: "",
-    comoAyudar: "",
   })
   const [test, setTest] = useState("");
 
@@ -124,8 +120,6 @@ export default function MultiStepForm() {
         tiempoNegocio: "",
         quienHizoPagina: "",
         quienGestionaMarketing: "",
-        queFalta: "",
-        comoAyudar: "",
       })
       setCurrentStep(1)
 
@@ -165,10 +159,6 @@ export default function MultiStepForm() {
         return formData.quienHizoPagina !== "";
       case 7:
         return formData.quienGestionaMarketing !== "";
-      case 8:
-        return formData.queFalta.trim() !== "";
-      case 9:
-        return formData.comoAyudar.trim() !== "";
       default:
         return false;
     }
@@ -444,40 +434,6 @@ export default function MultiStepForm() {
                     </button>
                   ))}
                 </div>
-              </div>
-            )}
-
-            {/* Paso 8: Qué falta */}
-            {currentStep === 8 && (
-              <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-2">
-                  8* ¿Qué crees que te está faltando o fallando en tu embudo de ventas?
-                </h2>
-                <p className="text-white/60 text-sm mb-8">
-                  Ej. Página anticuada, sin estrategia de leads calificados, falta de asesoramiento en X...
-                </p>
-                <Textarea
-                  placeholder="Escribí acá tu respuesta"
-                  value={formData.queFalta}
-                  onChange={(e) => updateFormData("queFalta", e.target.value)}
-                  className="bg-white text-black border-0 min-h-[120px] resize-none"
-                />
-              </div>
-            )}
-
-            {/* Paso 9: Cómo ayudar */}
-            {currentStep === 9 && (
-              <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-2">9* ¿Cómo crees que te puedo ayudar?</h2>
-                <p className="text-white/60 text-sm mb-8">
-                  Ej. Quiero una landing de calidad, estrategias evergreen, VSL bien pensado y automatizar procesos.
-                </p>
-                <Textarea
-                  placeholder="Escribí acá tu respuesta"
-                  value={formData.comoAyudar}
-                  onChange={(e) => updateFormData("comoAyudar", e.target.value)}
-                  className="bg-white text-black border-0 min-h-[120px] resize-none"
-                />
               </div>
             )}
           </div>
