@@ -212,14 +212,14 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-      <section className="py-[100px]">
+      {/* <section className="py-[100px]">
         <div>
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
             Preguntas Frecuentes
           </h2>
           <Faqs />
         </div>
-      </section>
+      </section> */}
       <section className="pt-[60px] pb-[80px] px-4" id="contact">
           <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[140%] md:leading-[120%] text-[32px] md:text-[42px] tracking-[-1%] font-bold">
             Da el Siguiente Paso con tu Nuevo Embudo de Ventas a Medida
