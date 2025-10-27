@@ -37,7 +37,7 @@ export default function MultiStepForm() {
   })
   const [test, setTest] = useState("");
 
-  const totalSteps = 9
+  const totalSteps = 7
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
