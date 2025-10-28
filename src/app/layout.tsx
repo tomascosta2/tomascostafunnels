@@ -18,6 +18,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preload" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/css/styles.css" as="style" />
+        <link rel="prerender" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=f635ec3a-cc62-4129-9edd-70bb35ebbf23" />
+        <link rel="preload" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/js/hls.js" as="script" />
+        <link rel="preload" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js" as="script" />
+        <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-5c2adb98-6a4/f635ec3a-cc62-4129-9edd-70bb35ebbf23.json" as="fetch" />
+        <link rel="preload" href="https://config.tv.pandavideo.com.br/vz-5c2adb98-6a4/config.json" as="fetch" />
+        <link rel="preload" href="https://b-vz-5c2adb98-6a4.tv.pandavideo.com.br/f635ec3a-cc62-4129-9edd-70bb35ebbf23/playlist.m3u8" as="fetch" />
+        <link rel="dns-prefetch" href="https://b-vz-5c2adb98-6a4.tv.pandavideo.com.br" />
+        <link rel="dns-prefetch" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br" />
+        <link rel="dns-prefetch" href="https://vz-5c2adb98-6a4.b-cdn.net"></link>
+
         <Script
           id="meta-pixel"
         >
