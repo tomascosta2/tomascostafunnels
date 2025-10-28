@@ -54,7 +54,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos de no conocerte a estar listo para comprarte.
+              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos en automático de no conocerte a estar listos para comprarte.
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
