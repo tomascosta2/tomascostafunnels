@@ -32,11 +32,11 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-4 md:mb-6">
               <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
-              <p className="text-white w-[225px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness online e Infoproductores confian en nosotros</p>
+              <p className="text-white w-[196px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches fitness online e Infoproductores confian en nosotros</p>
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos VSL
+                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos de Venta
               </h1>
             )}
             {variant === 'B' && (
@@ -50,11 +50,8 @@ export default function Home() {
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
-                <iframe className="aspect-video w-full" id="panda-636f6d70-867a-4d89-94f4-490366e1b5e0" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-867a-4d89-94f4-490366e1b5e0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
-                <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-867a-4d89-94f4-490366e1b5e0',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-867a-4d89-94f4-490366e1b5e0', defaultStyle: true});});`}</Script>
-                
-                {/* <iframe id="panda-636f6d70-7708-49b0-b7e2-7fe437824055" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=636f6d70-7708-49b0-b7e2-7fe437824055" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" className="w-full h-full aspect-video"></iframe>
-                <Script id="panda-video-player" strategy="afterInteractive">{`if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('panda-636f6d70-7708-49b0-b7e2-7fe437824055',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-5c2adb98-6a4', video_id: '636f6d70-7708-49b0-b7e2-7fe437824055', defaultStyle: true});});`}</Script> */}
+                <iframe className="aspect-video w-full wistia_embed" src="https://fast.wistia.net/embed/iframe/3yrwt0zzbk?web_component=true&seo=true&videoFoam=false" title="202510271659 (1) Video" allow="autoplay; fullscreen" scrolling="no" name="wistia_embed"></iframe>
+                <script src="https://fast.wistia.net/player.js" async></script>
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
