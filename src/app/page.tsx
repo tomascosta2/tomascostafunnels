@@ -36,12 +36,12 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos de Venta
+                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte con nuestros Embudos de Venta
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Genera de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte Con nuestros Embudos de Trafico Frio
+                Genera de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte con nuestros Embudos VSL
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
@@ -50,8 +50,7 @@ export default function Home() {
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
-                <iframe className="aspect-video w-full wistia_embed" src="https://fast.wistia.net/embed/iframe/3yrwt0zzbk?web_component=true&seo=true&videoFoam=false" title="202510271659 (1) Video" allow="autoplay; fullscreen" scrolling="no" name="wistia_embed"></iframe>
-                <script src="https://fast.wistia.net/player.js" async></script>
+                <iframe className="w-full aspect-video" id="panda-f635ec3a-cc62-4129-9edd-70bb35ebbf23" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=f635ec3a-cc62-4129-9edd-70bb35ebbf23" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
