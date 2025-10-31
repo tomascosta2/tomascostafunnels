@@ -35,17 +35,17 @@ export default function Home() {
               <p className="text-white w-[160px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches Fitness Online e Infoproductores B2C Confian en Nosotros</p>
             </div>
             {variant === 'A' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte con nuestros Embudos de Venta
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[20px] md:text-[32px] tracking-[-1%] font-bold">
+                Te entregamos 20 a 60 llamadas listas para comprar cada mes, para tu programa de +US$800, con nuestro sistema de embudos específico para coaches e infoproductores
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te Generamos de 20 a 60 Llamadas Todos los Meses con Personas Listas para Comprarte con nuestros Embudos VSL
+                Te entregamos 20 a 60 llamadas listas para comprar cada mes, para tu programa de +US$800, en menos de dos meses
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos de no conocerte a estar listo para comprarte.
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
@@ -54,7 +54,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, todo con tráfico frío que llevamos en automático de no conocerte a estar listos para comprarte.
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
