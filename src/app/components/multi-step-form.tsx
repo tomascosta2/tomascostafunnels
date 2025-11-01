@@ -41,10 +41,13 @@ export default function MultiStepForm() {
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
-    const test = localStorage.getItem('test') || "";
-    setTest(test);
+    try {
+      const saved = localStorage.getItem("test") ?? ""
+      setTest(saved)
+    } catch { }
   }, [])
 
+  console.log('TEST', test)
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
