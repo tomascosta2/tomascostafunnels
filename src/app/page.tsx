@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem("test", variant)
-  }, [])
+  }, [variant])
 
   console.log(variant)
 
