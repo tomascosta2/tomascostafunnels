@@ -35,13 +35,13 @@ export default function Home() {
               <p className="text-white w-[160px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches Fitness Online e Infoproductores B2C Confian en Nosotros</p>
             </div>
             {variant === 'A' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[20px] md:text-[32px] tracking-[-1%] font-bold">
-                Te entregamos 20 a 60 llamadas listas para comprar cada mes, para tu programa de +US$800, con nuestro sistema de embudos específico para coaches e infoproductores
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
+                Generá de 20 a 60 llamadas calificadas cada mes en automatico, para tu programa de US$500 a US$1.500
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Te entregamos 20 a 60 llamadas listas para comprar cada mes, para tu programa de +US$800, en menos de dos meses
+                Generá de 20 a 60 llamadas listas para comprarte cada mes en automatico, para tu programa de US$500 a US$1.500
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
