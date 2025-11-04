@@ -60,12 +60,12 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá de 20 a 60 llamadas calificadas cada mes en automatico, con un embudo evergreen que atrae interesados 24/7 y de forma estable
+                Generá de 20 a 60 Llamadas Calificadas cada Mes en Automatico, con un Embudo Evergreen que Atrae Interesados 24/7 y de forma Estable
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá de 20 a 60 llamadas calificadas cada mes en automatico, con un embudo evergreen que atrae interesados 24/7 y de forma estable
+                Te Generamos de 20 a 60 Llamadas Calificadas cada Mes en Automatico, con un Embudo Evergreen que Atrae Interesados 24/7 y de forma Estable
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
