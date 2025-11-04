@@ -251,6 +251,7 @@ export default function Home() {
             SCREENSHOT_TESTIMONIALS_REG.map((testimonial) => {
               return (
                 <img
+                  key={testimonial.captura}
                   className="w-full min-h-[50px] rounded-lg"
                   src={`/images/${testimonial.captura}`}
                   alt="Captura con cambio || resultados"
