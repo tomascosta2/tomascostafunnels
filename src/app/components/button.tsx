@@ -8,7 +8,7 @@ export default function Button({ text }: { text: string }) {
         </p>
       </a>
       <div className="italic font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Garantizado por contrato
+        3 de 12 cupos disponibles
       </div>
     </div>
   )

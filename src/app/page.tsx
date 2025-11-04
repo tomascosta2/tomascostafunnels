@@ -17,6 +17,30 @@ export default function Home() {
 
   console.log(variant)
 
+  const SCREENSHOT_TESTIMONIALS_REG = [
+    {
+      captura: "call-funnels-cliente-1.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-2.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-3.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-5.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-6.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-7.jpg",
+    },
+    {
+      captura: "call-funnels-cliente-8.jpg",
+    },
+  ];
+
   return (
     <div className="relative overflow-clip">
       <div className="relative overflow-clip">
@@ -25,23 +49,23 @@ export default function Home() {
         {/* <div className="size-[600px] rounded-full bg-[#2C80FF]/40 blur-[200px] absolute -bottom-[205px] left-[calc(50%-300px)]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute -top-[205px] -right-[205px]"></div> */}
         {/* <div className="size-[413px] rounded-full bg-[#2C80FF]/70 blur-[150px] absolute top-[205px] right-[calc(50%-205px)]"></div> */}
-        <section className="pt-[32px] relative z-50 px-4">
+        {/* <section className="pt-[32px] relative z-50 px-4">
           <img className="mx-auto" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
-        </section>
+        </section> */}
         <section className="pt-[32px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <div className="flex gap-2 md:w-auto md:gap-4 mx-auto justify-center items-center mb-4 md:mb-6">
-              <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" />
-              <p className="text-white w-[160px] md:w-[262px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%]">+50 Coaches Fitness Online e Infoproductores B2C Confian en Nosotros</p>
+            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10">
+              {/* <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" /> */}
+              <p className="text-white w-full md:w-[290px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[100%] text-center">¿Cansado de que las ventas de tu asesoria dependan de algo que no controlas?</p>
             </div>
             {variant === 'A' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá de 20 a 60 llamadas calificadas cada mes en automatico, para tu programa de US$500 a US$1.500
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
+                Generá de 20 a 60 llamadas calificadas cada mes en automatico, con un embudo evergreen que atrae interesados 24/7 y de forma estable
               </h1>
             )}
             {variant === 'B' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[27px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá de 20 a 60 llamadas listas para comprarte cada mes en automatico, para tu programa de US$500 a US$1.500
+              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
+                Generá de 20 a 60 llamadas calificadas cada mes en automatico, con un embudo evergreen que atrae interesados 24/7 y de forma estable
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
@@ -216,13 +240,33 @@ export default function Home() {
           <Faqs />
         </div>
       </section> */}
-      <section className="pt-[40px] pb-[80px] px-4" id="contact">
-          <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
-            Llená el formulario de aplicación, agenda tu consulta, y olvídate de la horrible sensación de no saber cuando va a llegar tu próximo cliente
-          </h2>
-          <div className="mt-8">
-            <MultiStepForm />
-          </div>
+      <section className="px-4">
+        <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
+          Orgullosos de trabajar con profesionales y personas de calidad
+        </h2>
+        <div
+          className="mt-8 max-w-[900px] mx-auto grid md:grid-cols-2 gap-8"
+        >
+          {
+            SCREENSHOT_TESTIMONIALS_REG.map((testimonial) => {
+              return (
+                <img
+                  className="w-full min-h-[50px] rounded-lg"
+                  src={`/images/${testimonial.captura}`}
+                  alt="Captura con cambio || resultados"
+                />
+              );
+            })
+          }
+        </div>
+      </section>
+      <section className="pt-[100px] pb-[80px] px-4" id="contact">
+        <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
+          Llena el formulario de aplicación, agenda tu consulta, y déjanos construirte un embudo que te aporte estabilidad, predictibilidad y, por lo tanto, escalabilidad
+        </h2>
+        <div className="mt-8">
+          <MultiStepForm />
+        </div>
       </section>
       <section className="py-8">
         <img className="mx-auto mb-2" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
