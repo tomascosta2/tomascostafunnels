@@ -91,6 +91,14 @@ export default function MultiStepForm() {
         body: JSON.stringify(payload),
       })
 
+      if (isQualified) {
+        fetch('/api/track/lead', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        })
+      }
+
       if (!makeRes.ok) {
         console.log("Error al enviar el formulario. Por favor intenta de nuevo.")
         return

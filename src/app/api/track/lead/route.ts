@@ -6,12 +6,12 @@ export async function POST(req: Request) {
 
   console.log("Data", data);
 
-  if (!data.email || !data.phone) {
+  if (!data.correo || !data.telefono) {
     return NextResponse.json({ success: false, error: "Faltan email o phone" }, { status: 400 });
   }
 
-  const hashEmail = await hashSHA256(data.email);
-  const hashPhone = await hashSHA256(data.phone);
+  const hashEmail = await hashSHA256(data.correo);
+  const hashPhone = await hashSHA256(data.telefono);
 
   // Enviamos todos los Leads
   await fetch(
