@@ -56,20 +56,20 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10">
               {/* <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" /> */}
-              <p className="text-white w-full md:w-[290px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[120%] text-center">¿Cansado de que las ventas de tu asesoria dependan de algo que no controlas?</p>
+              <p className="text-white w-full md:w-[290px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[120%] text-center">Ya Estas en +10k/Mes ¿Ahora Que?</p>
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá de 20 a 60 Llamadas Calificadas cada Mes en Automatico, con un Embudo Evergreen que Atrae Interesados 24/7 y de forma Estable
+                +40 Llamadas Calificadas, Directo a tus Closers O Trabajamos Gratis hasta Conseguirlo
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-                Te Generamos de 20 a 60 Llamadas Calificadas cada Mes en Automatico, con un Embudo Evergreen que Atrae Interesados 24/7 y de forma Estable
+                +40 Llamadas Calificadas, Directo a tus Closers O Trabajamos Gratis hasta Conseguirlo
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente y pongas tu negocio rumbo a las 6 cifras
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
@@ -77,8 +77,8 @@ export default function Home() {
                 <iframe className="w-full aspect-video" id="panda-5e8fc316-158f-4d2b-9bbb-7f6f32bb906d" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=5e8fc316-158f-4d2b-9bbb-7f6f32bb906d" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
               </div>
             </div>
-            <p className="block md:hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
+            <p className="block md:hidden text-white md:text-[16px] text-[12px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente y pongas tu negocio rumbo a las 6 cifras
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
