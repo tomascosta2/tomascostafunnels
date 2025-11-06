@@ -56,7 +56,7 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10">
               {/* <img className="h-[32px] w-auto" src="/images/tomascosta-clients.png" alt="Tomás Costa Clientes" /> */}
-              <p className="text-white w-full md:w-[290px] font-medium text-[12px] md:text-[14px] max-w-[300px] capitalize leading-[120%] text-center">Ya Estas en +10k/Mes ¿Ahora Que?</p>
+              <p className="text-white w-full md:w-[290px] font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">Ya Estas en +10k/Mes ¿Ahora Que?</p>
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
