@@ -105,7 +105,7 @@ export default function ThankYouPage() {
         {/* Título + countdown */}
         <h1 className="text-[26px] font-bold leading-[115%] mb-2">
           Genial! ya casi estamos. Solo falta confirmar.
-        </h1>
+        </h1> 
 
         {/* Checklist */}
         <div className="rounded-xl border p-4 bg-white mb-4">
