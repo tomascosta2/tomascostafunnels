@@ -21,6 +21,42 @@ interface FormData {
   quienGestionaMarketing: string
 }
 
+function getCookie(name: string): string | null {
+  try {
+    const match = document.cookie.match(new RegExp("(^|;\\s*)" + name + "=([^;]*)"))
+    return match ? decodeURIComponent(match[2]) : null
+  } catch {
+    return null
+  }
+}
+
+// Si la URL trae ?fbclid=..., construimos un fbc válido: fb.1.<ts>.<fbclid>
+function buildFbcFromUrl(): string | null {
+  try {
+    const url = new URL(window.location.href)
+    const fbclid = url.searchParams.get("fbclid")
+    if (!fbclid) return null
+    const ts = Date.now()
+    return `fb.1.${ts}.${fbclid}`
+  } catch {
+    return null
+  }
+}
+
+// Intenta obtener _fbp/_fbc (con variantes) y fallback para fbc con fbclid
+function getFbpFbcFromBrowser(): { fbp: string | null; fbc: string | null } {
+  // Facebook a veces usa _fbp / __fbp (igual con _fbc / __fbc)
+  const fbp = getCookie("_fbp") || getCookie("__fbp") || null
+  let fbc = getCookie("_fbc") || getCookie("__fbc") || null
+
+  if (!fbc) {
+    // si no hay cookie fbc, lo construimos con fbclid si existe
+    fbc = buildFbcFromUrl()
+  }
+
+  return { fbp, fbc }
+}
+
 export default function MultiStepForm() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -36,6 +72,8 @@ export default function MultiStepForm() {
     quienGestionaMarketing: "",
   })
   const [test, setTest] = useState("");
+  const [fbp, setFbp] = useState<string | null>(null)
+  const [fbc, setFbc] = useState<string | null>(null)
 
   const totalSteps = 7
   const progress = (currentStep / totalSteps) * 100
@@ -45,6 +83,11 @@ export default function MultiStepForm() {
       const saved = localStorage.getItem("test") ?? ""
       setTest(saved)
     } catch { }
+
+    // captar fbp/fbc apenas monta (ya estás en componente client)
+    const { fbp, fbc } = getFbpFbcFromBrowser()
+    setFbp(fbp)
+    setFbc(fbc)
   }, [])
 
   console.log('TEST', test)
@@ -79,6 +122,8 @@ export default function MultiStepForm() {
 
     const payload = {
       ...formData,
+      fbp: fbp ?? null,
+      fbc: fbc ?? null,
       test
     }
 
