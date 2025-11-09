@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from "react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
 import { Progress } from "./ui/progress"
 import { ArrowLeft, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -12,7 +11,6 @@ interface FormData {
   nombre: string
   telefono: string
   correo: string
-  instagram: string
   // NUEVO: rol (Coach / Infoproductor / Otro)
   rol: string
   facturacion: string
@@ -30,7 +28,6 @@ function getCookie(name: string): string | null {
   }
 }
 
-// Si la URL trae ?fbclid=..., construimos un fbc válido: fb.1.<ts>.<fbclid>
 function buildFbcFromUrl(): string | null {
   try {
     const url = new URL(window.location.href)
@@ -43,17 +40,10 @@ function buildFbcFromUrl(): string | null {
   }
 }
 
-// Intenta obtener _fbp/_fbc (con variantes) y fallback para fbc con fbclid
 function getFbpFbcFromBrowser(): { fbp: string | null; fbc: string | null } {
-  // Facebook a veces usa _fbp / __fbp (igual con _fbc / __fbc)
   const fbp = getCookie("_fbp") || getCookie("__fbp") || null
   let fbc = getCookie("_fbc") || getCookie("__fbc") || null
-
-  if (!fbc) {
-    // si no hay cookie fbc, lo construimos con fbclid si existe
-    fbc = buildFbcFromUrl()
-  }
-
+  if (!fbc) fbc = buildFbcFromUrl()
   return { fbp, fbc }
 }
 
@@ -64,33 +54,29 @@ export default function MultiStepForm() {
     nombre: "",
     telefono: "",
     correo: "",
-    instagram: "",
     rol: "",
     facturacion: "",
     tiempoNegocio: "",
     quienHizoPagina: "",
     quienGestionaMarketing: "",
   })
-  const [test, setTest] = useState("");
+  const [test, setTest] = useState("")
   const [fbp, setFbp] = useState<string | null>(null)
   const [fbc, setFbc] = useState<string | null>(null)
 
-  const totalSteps = 7
+  const totalSteps = 6
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem("test") ?? ""
       setTest(saved)
-    } catch { }
-
-    // captar fbp/fbc apenas monta (ya estás en componente client)
+    } catch {}
     const { fbp, fbc } = getFbpFbcFromBrowser()
     setFbp(fbp)
     setFbc(fbc)
   }, [])
 
-  console.log('TEST', test)
   const updateFormData = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
@@ -103,10 +89,9 @@ export default function MultiStepForm() {
     if (currentStep > 1) setCurrentStep((p) => p - 1)
   }
 
-  // === Calificación (solo booleano en cache) ===
   const isQualified = useMemo(() => {
     const isCoachOrInfopro =
-      formData.rol === "Coach" || formData.rol === "Infoproductor"
+      formData.rol === "Coach Fitness"
 
     const ingresosOk = [
       "1200 - 5000 usd / mes",
@@ -119,16 +104,9 @@ export default function MultiStepForm() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
-
-    const payload = {
-      ...formData,
-      fbp: fbp ?? null,
-      fbc: fbc ?? null,
-      test
-    }
+    const payload = { ...formData, fbp, fbc, test }
 
     try {
-      // 1) Enviar a Make (tu webhook actual)
       const webhookUrl = "https://hook.us2.make.com/6x87i3dqt339j40cdxttqmmdx2gqnfu7"
       const makeRes = await fetch(webhookUrl, {
         method: "POST",
@@ -137,52 +115,26 @@ export default function MultiStepForm() {
       })
 
       if (isQualified) {
-        fetch('/api/track/lead', {
+        fetch("/api/track/lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
         })
       }
 
-      if (!makeRes.ok) {
-        console.log("Error al enviar el formulario. Por favor intenta de nuevo.")
-        return
-      }
+      if (!makeRes.ok) return console.log("Error al enviar el formulario")
 
-      // 2) Guardar SOLO el booleano de calificación en cache (sin PII)
-      try {
-        localStorage.setItem("cf_isQualified", isQualified ? "true" : "false")
-        localStorage.setItem("name", formData.nombre)
-        localStorage.setItem("email", formData.correo)
-        localStorage.setItem("phone", formData.telefono)
-        // (opcional) timestamp para depurar/expirar:
-        // localStorage.setItem("cf_isQualified_ts", String(Date.now()))
+      localStorage.setItem("cf_isQualified", isQualified ? "true" : "false")
+      localStorage.setItem("name", formData.nombre)
+      localStorage.setItem("email", formData.correo)
+      localStorage.setItem("phone", formData.telefono)
 
-        window.location.href = `/pages/calendly?email=${encodeURIComponent(formData.correo)}&phone=${encodeURIComponent(formData.telefono)}`
-
-      } catch (e) {
-        console.warn("No se pudo escribir cf_isQualified en localStorage:", e)
-      }
-
-      console.log("¡Formulario enviado exitosamente!")
-      // Reset
-      setFormData({
-        nombre: "",
-        telefono: "",
-        correo: "",
-        instagram: "",
-        rol: "",
-        facturacion: "",
-        tiempoNegocio: "",
-        quienHizoPagina: "",
-        quienGestionaMarketing: "",
-      })
-      setCurrentStep(1)
-
-
+      window.location.href = `/pages/calendly?email=${encodeURIComponent(
+        formData.correo
+      )}&phone=${encodeURIComponent(formData.telefono)}`
     } catch (error) {
-      console.error("Error:", error)
-      alert("Error al enviar el formulario. Por favor intenta de nuevo.")
+      console.error(error)
+      alert("Error al enviar el formulario.")
     } finally {
       setIsSubmitting(false)
     }
@@ -191,32 +143,26 @@ export default function MultiStepForm() {
   const canProceed = () => {
     switch (currentStep) {
       case 1: {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^\+?\d{7,15}$/;
-
-        const emailValido = emailRegex.test(formData.correo.trim());
-        const telefonoValido = phoneRegex.test(formData.telefono.trim());
-
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const phoneRegex = /^\+?\d{7,15}$/
         return (
-          formData.nombre.trim() !== "" &&
-          emailValido &&
-          telefonoValido
-        );
+          formData.nombre.trim() &&
+          emailRegex.test(formData.correo.trim()) &&
+          phoneRegex.test(formData.telefono.trim())
+        )
       }
       case 2:
-        return formData.instagram.trim() !== "";
+        return formData.rol !== ""
       case 3:
-        return formData.rol !== "";
+        return formData.facturacion !== ""
       case 4:
-        return formData.facturacion !== "";
+        return formData.tiempoNegocio !== ""
       case 5:
-        return formData.tiempoNegocio !== "";
+        return formData.quienHizoPagina !== ""
       case 6:
-        return formData.quienHizoPagina !== "";
-      case 7:
-        return formData.quienGestionaMarketing !== "";
+        return formData.quienGestionaMarketing !== ""
       default:
-        return false;
+        return false
     }
   }
 
@@ -224,7 +170,7 @@ export default function MultiStepForm() {
     <div className="w-full max-w-[500px] mx-auto border-white/20 relative overflow-clip border p-[6px] rounded-[24px]">
       <div className="bg-[#0B1D42] rounded-[16px] overflow-clip relative">
         <div className="mb-8">
-          <Progress value={progress} className="h-2 bg-[#]" />
+          <Progress value={progress} className="h-2" />
         </div>
 
         <div className="p-8">
@@ -232,13 +178,10 @@ export default function MultiStepForm() {
             <button
               onClick={handleBack}
               className="absolute top-6 left-6 text-white/60 hover:text-white transition-colors"
-              aria-label="Volver"
             >
               <ArrowLeft className="w-6 h-6" />
             </button>
           )}
-
-          {/* <img className="mx-auto mb-8" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" /> */}
 
           <div className="min-h-[300px]">
             {/* Paso 1 */}
@@ -277,38 +220,17 @@ export default function MultiStepForm() {
                     />
                   </div>
                 </div>
-
-                {!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.correo.trim()) && formData.correo && (
-                  <p className="text-red-400 text-sm mt-2">Correo inválido</p>
-                )}
-                {!/^\+?\d{7,15}$/.test(formData.telefono.trim()) && formData.telefono && (
-                  <p className="text-red-400 text-sm mt-2">Teléfono inválido (usa formato +549261XXXXXXX)</p>
-                )}
               </div>
             )}
 
-            {/* Paso 2 */}
+            {/* Paso 2: Rol */}
             {currentStep === 2 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">2* Tu usuario de instagram</h2>
-                <Input
-                  type="text"
-                  placeholder="@..."
-                  value={formData.instagram}
-                  onChange={(e) => updateFormData("instagram", e.target.value)}
-                  className="bg-white text-black border-0 h-12"
-                />
-              </div>
-            )}
-
-            {/* Paso 3 (NUEVO): Rol */}
-            {currentStep === 3 && (
-              <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">
-                  3* ¿Cuál describe mejor tu rol?
+                  2* ¿Cuál describe mejor tu negocio?
                 </h2>
                 <div className="space-y-3">
-                  {["Coach", "Infoproductor", "Otro"].map((option) => (
+                  {["Coach Fitness", "Infoproductor B2C", "Otro (No agendes)"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
@@ -319,30 +241,20 @@ export default function MultiStepForm() {
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.rol === option
                           ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]",
+                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
                       )}
                     >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={cn(
-                            "w-5 h-5 rounded border-2 flex items-center justify-center",
-                            formData.rol === option ? "bg-white border-white" : "border-white/40",
-                          )}
-                        >
-                          {formData.rol === option && <div className="w-3 h-3 bg-[#2563eb] rounded-sm" />}
-                        </div>
-                        <span>{option}</span>
-                      </div>
+                      <span>{option}</span>
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Paso 4: Facturación */}
-            {currentStep === 4 && (
+            {/* Paso 3: Facturación */}
+            {currentStep === 3 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">4* Facturación mensual de los últimos 6 meses</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">3* Facturación mensual</h2>
                 <div className="space-y-3">
                   {[
                     "0 - 600 usd / mes",
@@ -361,30 +273,20 @@ export default function MultiStepForm() {
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.facturacion === option
                           ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]",
+                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
                       )}
                     >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={cn(
-                            "w-5 h-5 rounded border-2 flex items-center justify-center",
-                            formData.facturacion === option ? "bg-white border-white" : "border-white/40",
-                          )}
-                        >
-                          {formData.facturacion === option && <div className="w-3 h-3 bg-[#2563eb] rounded-sm" />}
-                        </div>
-                        <span>{option}</span>
-                      </div>
+                      <span>{option}</span>
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Paso 5: Tiempo con negocio */}
-            {currentStep === 5 && (
+            {/* Paso 4: Tiempo con negocio */}
+            {currentStep === 4 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">5* ¿Cuánto tiempo llevas con tu negocio?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuánto tiempo llevas con tu negocio?</h2>
                 <div className="space-y-3">
                   {["Menos de 1 año", "1 - 2 años", "2 - 5 años", "Más de 5 años"].map((option) => (
                     <button
@@ -397,30 +299,20 @@ export default function MultiStepForm() {
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.tiempoNegocio === option
                           ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]",
+                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
                       )}
                     >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={cn(
-                            "w-5 h-5 rounded border-2 flex items-center justify-center",
-                            formData.tiempoNegocio === option ? "bg-white border-white" : "border-white/40",
-                          )}
-                        >
-                          {formData.tiempoNegocio === option && <div className="w-3 h-3 bg-[#2563eb] rounded-sm" />}
-                        </div>
-                        <span>{option}</span>
-                      </div>
+                      <span>{option}</span>
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Paso 6: Quién hizo la página */}
-            {currentStep === 6 && (
+            {/* Paso 5: Quién hizo la página */}
+            {currentStep === 5 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">6* ¿Quién hizo tu página web actual?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">5* ¿Quién hizo tu página web actual?</h2>
                 <div className="space-y-3">
                   {["No tengo", "Una agencia / freelancer", "Yo / Un amigo / familiar", "Alguien de mi equipo"].map(
                     (option) => (
@@ -434,61 +326,40 @@ export default function MultiStepForm() {
                           "w-full p-4 rounded-lg border-2 text-left transition-all",
                           formData.quienHizoPagina === option
                             ? "bg-[#2563eb] border-[#2563eb] text-white"
-                            : "bg-transparent border-white/20 text-white hover:border-[#2563eb]",
+                            : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
                         )}
                       >
-                        <div className="flex items-center gap-3">
-                          <div
-                            className={cn(
-                              "w-5 h-5 rounded border-2 flex items-center justify-center",
-                              formData.quienHizoPagina === option ? "bg-white border-white" : "border-white/40",
-                            )}
-                          >
-                            {formData.quienHizoPagina === option && <div className="w-3 h-3 bg-[#2563eb] rounded-sm" />}
-                          </div>
-                          <span>{option}</span>
-                        </div>
+                        <span>{option}</span>
                       </button>
-                    ),
+                    )
                   )}
                 </div>
               </div>
             )}
 
-            {/* Paso 7: Gestión de Marketing */}
-            {currentStep === 7 && (
+            {/* Paso 6: Gestión de Marketing */}
+            {currentStep === 6 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">7* ¿Quién gestiona tu e-mail marketing / anuncios?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">
+                  6* ¿Quién gestiona tu e-mail marketing / anuncios?
+                </h2>
                 <div className="space-y-3">
-                  {["Yo mismo", "Una agencia / freelancer", "Alguien de mi equipo", "No hago ninguna de esas"].map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => {
-                        updateFormData("quienGestionaMarketing", option)
-                        setTimeout(handleNext, 300)
-                      }}
-                      className={cn(
-                        "w-full p-4 rounded-lg border-2 text-left transition-all",
-                        formData.quienGestionaMarketing === option
-                          ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]",
-                      )}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={cn(
-                            "w-5 h-5 rounded border-2 flex items-center justify-center",
-                            formData.quienGestionaMarketing === option ? "bg-white border-white" : "border-white/40",
-                          )}
-                        >
-                          {formData.quienGestionaMarketing === option && (
-                            <div className="w-3 h-3 bg-[#2563eb] rounded-sm" />
-                          )}
-                        </div>
+                  {["Yo mismo", "Una agencia / freelancer", "Alguien de mi equipo", "No hago ninguna de esas"].map(
+                    (option) => (
+                      <button
+                        key={option}
+                        onClick={() => updateFormData("quienGestionaMarketing", option)}
+                        className={cn(
+                          "w-full p-4 rounded-lg border-2 text-left transition-all",
+                          formData.quienGestionaMarketing === option
+                            ? "bg-[#2563eb] border-[#2563eb] text-white"
+                            : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
+                        )}
+                      >
                         <span>{option}</span>
-                      </div>
-                    </button>
-                  ))}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             )}
