@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
   // Enviamos todos los Leads
   const response = await fetch(
-    `https://graph.facebook.com/v18.0/2747318035468263/events?access_token=${process.env.API_ACCESS_TOKEN}`,
+    `https://graph.facebook.com/v18.0/1143124444651311/events?access_token=${process.env.API_ACCESS_TOKEN}`,
     {
       method: 'POST',
       headers: {
