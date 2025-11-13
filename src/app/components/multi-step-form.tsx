@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useMemo, useEffect } from "react"
 import { Button } from "./ui/button"
@@ -11,11 +11,11 @@ interface FormData {
   nombre: string
   telefono: string
   correo: string
-  // NUEVO: rol (Coach / Infoproductor / Otro)
+  // NUEVO: reemplaza tiempoNegocio por casosExito
   rol: string
   facturacion: string
-  tiempoNegocio: string
-  quienHizoPagina: string
+  casosExito: string
+  // Eliminado: quienHizoPagina
   quienGestionaMarketing: string
 }
 
@@ -56,15 +56,15 @@ export default function MultiStepForm() {
     correo: "",
     rol: "",
     facturacion: "",
-    tiempoNegocio: "",
-    quienHizoPagina: "",
+    casosExito: "",
     quienGestionaMarketing: "",
   })
   const [test, setTest] = useState("")
   const [fbp, setFbp] = useState<string | null>(null)
   const [fbc, setFbc] = useState<string | null>(null)
 
-  const totalSteps = 6
+  // Se reduce a 5 pasos tras eliminar "quienHizoPagina" y reemplazar "tiempoNegocio" por "casosExito"
+  const totalSteps = 5
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
@@ -90,16 +90,21 @@ export default function MultiStepForm() {
   }
 
   const isQualified = useMemo(() => {
-    const isCoachOrInfopro =
-      formData.rol === "Coach Fitness"
+    const isCoachFitness = formData.rol === "Coach Fitness"
 
     const ingresosOk = [
+      "600 - 1200 usd / mes",
       "1200 - 5000 usd / mes",
       "5000 - 10k usd / mes",
       "+10k usd / mes",
     ].includes(formData.facturacion)
 
-    return isCoachOrInfopro && ingresosOk
+    const casosExitoOk = [
+      "4 - 20 casos", 
+      "+20 casos"
+    ].includes(formData.casosExito)
+
+    return isCoachFitness && ingresosOk && casosExitoOk
   }, [formData.rol, formData.facturacion])
 
   const handleSubmit = async () => {
@@ -156,10 +161,8 @@ export default function MultiStepForm() {
       case 3:
         return formData.facturacion !== ""
       case 4:
-        return formData.tiempoNegocio !== ""
+        return formData.casosExito !== ""
       case 5:
-        return formData.quienHizoPagina !== ""
-      case 6:
         return formData.quienGestionaMarketing !== ""
       default:
         return false
@@ -283,21 +286,21 @@ export default function MultiStepForm() {
               </div>
             )}
 
-            {/* Paso 4: Tiempo con negocio */}
+            {/* Paso 4: Casos de Éxito (nuevo) */}
             {currentStep === 4 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuánto tiempo llevas con tu negocio?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuántos casos de éxito tenés?</h2>
                 <div className="space-y-3">
-                  {["Menos de 1 año", "1 - 2 años", "2 - 5 años", "Más de 5 años"].map((option) => (
+                  {["0 casos", "1 - 3 casos", "4 - 20 casos", "+20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
-                        updateFormData("tiempoNegocio", option)
+                        updateFormData("casosExito", option)
                         setTimeout(handleNext, 300)
                       }}
                       className={cn(
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
-                        formData.tiempoNegocio === option
+                        formData.casosExito === option
                           ? "bg-[#2563eb] border-[#2563eb] text-white"
                           : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
                       )}
@@ -309,39 +312,11 @@ export default function MultiStepForm() {
               </div>
             )}
 
-            {/* Paso 5: Quién hizo la página */}
+            {/* Paso 5: Gestión de Marketing (antes era 6) */}
             {currentStep === 5 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">5* ¿Quién hizo tu página web actual?</h2>
-                <div className="space-y-3">
-                  {["No tengo", "Una agencia / freelancer", "Yo / Un amigo / familiar", "Alguien de mi equipo"].map(
-                    (option) => (
-                      <button
-                        key={option}
-                        onClick={() => {
-                          updateFormData("quienHizoPagina", option)
-                          setTimeout(handleNext, 300)
-                        }}
-                        className={cn(
-                          "w-full p-4 rounded-lg border-2 text-left transition-all",
-                          formData.quienHizoPagina === option
-                            ? "bg-[#2563eb] border-[#2563eb] text-white"
-                            : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
-                        )}
-                      >
-                        <span>{option}</span>
-                      </button>
-                    )
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* Paso 6: Gestión de Marketing */}
-            {currentStep === 6 && (
-              <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">
-                  6* ¿Quién gestiona tu e-mail marketing / anuncios?
+                  5* ¿Quién gestiona tu e-mail marketing / anuncios?
                 </h2>
                 <div className="space-y-3">
                   {["Yo mismo", "Una agencia / freelancer", "Alguien de mi equipo", "No hago ninguna de esas"].map(
