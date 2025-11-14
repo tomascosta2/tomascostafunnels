@@ -72,7 +72,7 @@ export default function Home() {
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente y pongas tu negocio rumbo a las 6 cifras
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
@@ -81,7 +81,7 @@ export default function Home() {
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[12px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente y pongas tu negocio rumbo a las 6 cifras
+              Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
             </p>
             <Button text="¡Quiero Mi Embudo!" />
           </div>
