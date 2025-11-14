@@ -77,8 +77,7 @@ export default function Home() {
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Clic para ver como funciona</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
-                {/* <iframe className="w-full aspect-video" id="panda-5e8fc316-158f-4d2b-9bbb-7f6f32bb906d" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=5e8fc316-158f-4d2b-9bbb-7f6f32bb906d" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe> */}
-                <iframe className="w-full aspect-video" id="panda-0c0a506d-c625-4efd-b717-0ad25b480fe4" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=0c0a506d-c625-4efd-b717-0ad25b480fe4" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>              
+                <iframe className="w-full aspect-video"  id="panda-0f4607b7-d005-46aa-bcc8-b2254b9fcd9a" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=0f4607b7-d005-46aa-bcc8-b2254b9fcd9a" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
               </div>
             </div>
             <p className="block md:hidden text-white md:text-[16px] text-[12px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
