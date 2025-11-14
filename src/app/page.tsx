@@ -28,9 +28,6 @@ export default function Home() {
       captura: "call-funnels-cliente-3.jpg",
     },
     {
-      captura: "call-funnels-cliente-5.jpg",
-    },
-    {
       captura: "call-funnels-cliente-6.jpg",
     },
     {
@@ -38,6 +35,12 @@ export default function Home() {
     },
     {
       captura: "call-funnels-cliente-8.jpg",
+    },
+    {
+      captura: "cliente-nano.jpg",
+    },
+    {
+      captura: "cliente-eli.jpg",
     },
   ];
 

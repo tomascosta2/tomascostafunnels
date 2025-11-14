@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { is } from "react-day-picker/locale";
 
 /* =========================
    Helpers cookies / params
@@ -100,6 +101,8 @@ export default function Calendly() {
         localStorage.getItem('cf_isQualified') === 'true' ||
         localStorage.getItem('isQualified') === 'true';
 
+      console.log(isQualified)
+
       // 2c) Cookies pixel
       const fbp = getCookieValue('_fbp') || getCookieValue('__fbp') || undefined;
       const fbc = buildFbcIfMissing();
@@ -142,7 +145,9 @@ export default function Calendly() {
       }
 
       // 2f) Redirección a gracias
-      window.location.href = '/pages/thankyou';
+      setTimeout(() => {
+        window.location.href = '/pages/thankyou';
+      })
     };
 
     window.addEventListener('message', handleCalendlyEvent);

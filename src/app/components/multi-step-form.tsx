@@ -105,7 +105,7 @@ export default function MultiStepForm() {
     ].includes(formData.casosExito)
 
     return isCoachFitness && ingresosOk && casosExitoOk
-  }, [formData.rol, formData.facturacion])
+  }, [formData.rol, formData.facturacion, formData.casosExito])
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
