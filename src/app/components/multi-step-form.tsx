@@ -100,7 +100,7 @@ export default function MultiStepForm() {
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
-      "4 - 20 casos", 
+      "3 - 20 casos", 
       "+20 casos"
     ].includes(formData.casosExito)
 
@@ -291,7 +291,7 @@ export default function MultiStepForm() {
               <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuántos casos de éxito tenés?</h2>
                 <div className="space-y-3">
-                  {["0 casos", "1 - 3 casos", "4 - 20 casos", "+20 casos"].map((option) => (
+                  {["0 casos", "1 - 2 casos", "3 - 20 casos", "+20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
