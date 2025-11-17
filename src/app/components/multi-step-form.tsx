@@ -93,7 +93,7 @@ export default function MultiStepForm() {
     const isCoachFitness = formData.rol === "Coach Fitness"
 
     const ingresosOk = [
-      "600 - 1200 usd / mes",
+      "500 - 1200 usd / mes",
       "1200 - 5000 usd / mes",
       "5000 - 10k usd / mes",
       "+10k usd / mes",
@@ -260,8 +260,8 @@ export default function MultiStepForm() {
                 <h2 className="text-white text-2xl font-bold mb-6">3* Facturación mensual</h2>
                 <div className="space-y-3">
                   {[
-                    "0 - 600 usd / mes",
-                    "600 - 1200 usd / mes",
+                    "0 - 500 usd / mes",
+                    "500 - 1200 usd / mes",
                     "1200 - 5000 usd / mes",
                     "5000 - 10k usd / mes",
                     "+10k usd / mes",
