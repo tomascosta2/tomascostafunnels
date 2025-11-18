@@ -71,7 +71,7 @@ export default function MultiStepForm() {
     try {
       const saved = localStorage.getItem("test") ?? ""
       setTest(saved)
-    } catch {}
+    } catch { }
     const { fbp, fbc } = getFbpFbcFromBrowser()
     setFbp(fbp)
     setFbc(fbc)
@@ -93,14 +93,14 @@ export default function MultiStepForm() {
     const isCoachFitness = formData.rol === "Coach Fitness"
 
     const ingresosOk = [
-      "500 - 1200 usd / mes",
-      "1200 - 5000 usd / mes",
-      "5000 - 10k usd / mes",
-      "+10k usd / mes",
+      "250 - 500 usd",
+      "500 - 800 usd",
+      "800 - 1.000 usd",
+      "Más de 1.000 usd",
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
-      "3 - 20 casos", 
+      "3 - 20 casos",
       "+20 casos"
     ].includes(formData.casosExito)
 
@@ -257,14 +257,14 @@ export default function MultiStepForm() {
             {/* Paso 3: Facturación */}
             {currentStep === 3 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">3* Facturación mensual</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">3* Valor de tu asesoria 1 a 1</h2>
                 <div className="space-y-3">
                   {[
-                    "0 - 500 usd / mes",
-                    "500 - 1200 usd / mes",
-                    "1200 - 5000 usd / mes",
-                    "5000 - 10k usd / mes",
-                    "+10k usd / mes",
+                    "Menos de 250 usd",
+                    "250 - 500 usd",
+                    "500 - 800 usd",
+                    "800 - 1.000 usd",
+                    "Más de 1.000 usd",
                   ].map((option) => (
                     <button
                       key={option}
@@ -289,7 +289,7 @@ export default function MultiStepForm() {
             {/* Paso 4: Casos de Éxito (nuevo) */}
             {currentStep === 4 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuántos casos de éxito tenés?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuántos casos de éxito tenés en tu asesoria?</h2>
                 <div className="space-y-3">
                   {["0 casos", "1 - 2 casos", "3 - 20 casos", "+20 casos"].map((option) => (
                     <button

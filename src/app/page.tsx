@@ -36,12 +36,12 @@ export default function Home() {
     {
       captura: "call-funnels-cliente-8.jpg",
     },
-    {
-      captura: "cliente-nano.jpg",
-    },
-    {
-      captura: "cliente-eli.jpg",
-    },
+    // {
+    //   captura: "cliente-nano.jpg",
+    // },
+    // {
+    //   captura: "cliente-eli.jpg",
+    // },
   ];
 
   return (
