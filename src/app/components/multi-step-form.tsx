@@ -87,7 +87,7 @@ export default function MultiStepForm() {
   }
 
   const isQualified = useMemo(() => {
-    const isCoachFitness = formData.rol === "Coach Fitness"
+    const isCoachFitness = formData.rol === "Coach Fitness Online"
 
     const ingresosOk = [
       "250 - 500 usd",
@@ -97,7 +97,8 @@ export default function MultiStepForm() {
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
-      "3 - 20 casos",
+      "1 - 3 casos",
+      "4 - 20 casos",
       "+20 casos"
     ].includes(formData.casosExito)
 
@@ -288,7 +289,7 @@ export default function MultiStepForm() {
                   4* ¿Cuántos casos de éxito tenés en tu asesoría?
                 </h2>
                 <div className="space-y-3">
-                  {["0 casos", "1 - 2 casos", "3 - 20 casos", "+20 casos"].map((option) => (
+                  {["0 casos", "1 - 3 casos", "4 - 20 casos", "+20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
