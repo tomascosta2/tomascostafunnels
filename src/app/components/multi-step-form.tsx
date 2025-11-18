@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useState, useMemo, useEffect } from "react"
 import { Button } from "./ui/button"
@@ -15,8 +15,6 @@ interface FormData {
   rol: string
   facturacion: string
   casosExito: string
-  // Eliminado: quienHizoPagina
-  quienGestionaMarketing: string
 }
 
 function getCookie(name: string): string | null {
@@ -57,14 +55,13 @@ export default function MultiStepForm() {
     rol: "",
     facturacion: "",
     casosExito: "",
-    quienGestionaMarketing: "",
   })
   const [test, setTest] = useState("")
   const [fbp, setFbp] = useState<string | null>(null)
   const [fbc, setFbc] = useState<string | null>(null)
 
-  // Se reduce a 5 pasos tras eliminar "quienHizoPagina" y reemplazar "tiempoNegocio" por "casosExito"
-  const totalSteps = 5
+  // Ahora son 4 pasos
+  const totalSteps = 4
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
@@ -162,8 +159,6 @@ export default function MultiStepForm() {
         return formData.facturacion !== ""
       case 4:
         return formData.casosExito !== ""
-      case 5:
-        return formData.quienGestionaMarketing !== ""
       default:
         return false
     }
@@ -233,7 +228,7 @@ export default function MultiStepForm() {
                   2* ¿Cuál describe mejor tu negocio?
                 </h2>
                 <div className="space-y-3">
-                  {["Coach Fitness", "Infoproductor B2C", "Otro (No agendes)"].map((option) => (
+                  {["Coach Fitness Online", "Infoproductor B2C", "Otro (No agendes)"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
@@ -286,17 +281,18 @@ export default function MultiStepForm() {
               </div>
             )}
 
-            {/* Paso 4: Casos de Éxito (nuevo) */}
+            {/* Paso 4: Casos de Éxito */}
             {currentStep === 4 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">4* ¿Cuántos casos de éxito tenés en tu asesoria?</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">
+                  4* ¿Cuántos casos de éxito tenés en tu asesoría?
+                </h2>
                 <div className="space-y-3">
                   {["0 casos", "1 - 2 casos", "3 - 20 casos", "+20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
                         updateFormData("casosExito", option)
-                        setTimeout(handleNext, 300)
                       }}
                       className={cn(
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
@@ -308,33 +304,6 @@ export default function MultiStepForm() {
                       <span>{option}</span>
                     </button>
                   ))}
-                </div>
-              </div>
-            )}
-
-            {/* Paso 5: Gestión de Marketing (antes era 6) */}
-            {currentStep === 5 && (
-              <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">
-                  5* ¿Quién gestiona tu e-mail marketing / anuncios?
-                </h2>
-                <div className="space-y-3">
-                  {["Yo mismo", "Una agencia / freelancer", "Alguien de mi equipo", "No hago ninguna de esas"].map(
-                    (option) => (
-                      <button
-                        key={option}
-                        onClick={() => updateFormData("quienGestionaMarketing", option)}
-                        className={cn(
-                          "w-full p-4 rounded-lg border-2 text-left transition-all",
-                          formData.quienGestionaMarketing === option
-                            ? "bg-[#2563eb] border-[#2563eb] text-white"
-                            : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
-                        )}
-                      >
-                        <span>{option}</span>
-                      </button>
-                    )
-                  )}
                 </div>
               </div>
             )}

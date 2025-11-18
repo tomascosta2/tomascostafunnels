@@ -68,7 +68,7 @@ export default function Home() {
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-                +40 Llamadas Calificadas, Directo a tus Closers O Trabajamos Gratis hasta Conseguirlo
+                +40 Llamadas Calificadas, Directo a tus Closers Con un Embudo de Ventas a Medida
               </h1>
             )}
             <p className="md:block hidden text-white md:text-[16px] text-[14px] text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
@@ -83,7 +83,7 @@ export default function Home() {
             <p className="block md:hidden text-white md:text-[16px] text-[12px] text-center leading-[150%] max-w-[500px] mx-auto mt-4 md:px-0 px-4">
               Sin depender de que tan bien le va a tu contenido, nos encargamos de todo el ecosistema para que atraiga clientes High Ticket constantemente.
             </p>
-            <Button text="¡Quiero Mi Embudo!" />
+            <Button text="Agendar Reunion" />
           </div>
         </section>
       </div>
