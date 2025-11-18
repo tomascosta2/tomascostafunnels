@@ -45,7 +45,11 @@ function getFbpFbcFromBrowser(): { fbp: string | null; fbc: string | null } {
   return { fbp, fbc }
 }
 
-export default function MultiStepForm() {
+interface MultiStepFormProps {
+  variant: 'A' | 'B'
+}
+
+export default function MultiStepForm({ variant }: MultiStepFormProps) {
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
@@ -107,7 +111,7 @@ export default function MultiStepForm() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
-    const payload = { ...formData, fbp, fbc, test }
+    const payload = { ...formData, fbp, fbc, variant }
 
     try {
       const webhookUrl = "https://hook.us2.make.com/6x87i3dqt339j40cdxttqmmdx2gqnfu7"

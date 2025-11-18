@@ -269,7 +269,7 @@ export default function Home() {
           Llena el formulario de aplicación, agenda tu consulta, y déjanos construirte un embudo que te aporte estabilidad, predictibilidad y, por lo tanto, escalabilidad
         </h2>
         <div className="mt-8">
-          <MultiStepForm />
+          <MultiStepForm variant={variant} />
         </div>
       </section>
       <section className="py-8">
