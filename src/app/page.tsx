@@ -138,8 +138,8 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="max-w-[900px] w-full">
-            <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
-              Llena el formulario, agenda tu consulta, y déjanos construirte un embudo que te aporte estabilidad, predictibilidad y, por lo tanto, escalabilidad
+            <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
+              Llena el formulario, agenda tu consulta, y obtene un embudo que te aporte estabilidad, predictibilidad y, escalabilidad
             </h2>
             <div className="mt-8">
               <MultiStepForm variant={variant} />
