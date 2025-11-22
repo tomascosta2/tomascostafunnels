@@ -70,7 +70,7 @@ export default function Home() {
               Sin depender de que tan bien le va a tu contenido organico
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
-              <p className="py-1">Mira el video completo</p>
+              <p className="py-1">Mira el video completo 👇</p>
               <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
