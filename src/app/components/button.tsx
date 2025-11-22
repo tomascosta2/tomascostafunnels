@@ -7,8 +7,10 @@ export default function Button({ text }: { text: string }) {
           <span className="group-hover:-translate-y-12 transition-all duration-[.4s] absolute top-12">{text}</span>
         </p>
       </a>
-      <div className="italic font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Maximo UN Lanzamiento Semanal, No te Quedes Sin el Tuyo
+      <div className="italic text-center font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
+        Maximo UN Lanzamiento Semanal
+        <br />
+        No te Quedes Sin el Tuyo
       </div>
     </div>
   )

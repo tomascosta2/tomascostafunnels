@@ -96,7 +96,7 @@ export default function Home() {
         <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
           Hemos trabajado con +40 Coaches como...
         </h2>
-        <p className="text-center text-white/80 leading-[110%] mb-8">Nos especializamos en Coaches Fitness, y en algunos casos si realmente vemos potencial con Infoproductores B2C</p>
+        <p className="text-center text-white/80 leading-[110%] mb-8">Nos especializamos en Coaches Fitness Online. Y en algunos casos, si realmente vemos potencial, con Infoproductores B2C</p>
         <div
           className="mt-8 max-w-[900px] mx-auto grid md:grid-cols-2 gap-8"
         >
