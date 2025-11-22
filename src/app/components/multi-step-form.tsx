@@ -172,9 +172,12 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
   return (
     <div className="w-full max-w-[500px] mx-auto border-white/20 relative overflow-clip border p-[6px] rounded-[24px]">
       <div className="bg-[#0B1D42] rounded-[16px] overflow-clip relative">
-        <div className="mb-8">
-          <Progress value={progress} className="h-2" />
-        </div>
+        {/* Barra de progreso: solo se muestra a partir del paso 2 */}
+        {currentStep > 1 && (
+          <div className="mb-8">
+            <Progress value={progress} className="h-2" />
+          </div>
+        )}
 
         <div className="p-8">
           {currentStep > 1 && (
@@ -190,7 +193,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
             {/* Paso 1 */}
             {currentStep === 1 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">1* Tu información</h2>
+                {/* Sin título acá para que parezca un solo paso */}
                 <div className="space-y-4">
                   <div>
                     <label className="text-white text-sm mb-2 block">Tu nombre</label>
@@ -230,7 +233,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
             {currentStep === 2 && (
               <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">
-                  2* ¿Cuál describe mejor tu negocio?
+                  ¿Cuál describe mejor tu negocio?
                 </h2>
                 <div className="space-y-3">
                   {["Coach Fitness Online", "Infoproductor B2C", "Otro (No agendes)"].map((option) => (
@@ -257,7 +260,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
             {/* Paso 3: Facturación */}
             {currentStep === 3 && (
               <div className="space-y-6">
-                <h2 className="text-white text-2xl font-bold mb-6">3* Valor de tu asesoria 1 a 1</h2>
+                <h2 className="text-white text-2xl font-bold mb-6">Valor de tu asesoria 1 a 1</h2>
                 <div className="space-y-3">
                   {[
                     "Menos de 250 usd",
@@ -290,7 +293,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
             {currentStep === 4 && (
               <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">
-                  4* ¿Cuántos casos de éxito tenés en tu asesoría?
+                  ¿Cuántos casos de éxito tenés en tu asesoría?
                 </h2>
                 <div className="space-y-3">
                   {["0 casos", "1 - 3 casos", "4 - 20 casos", "+20 casos"].map((option) => (
@@ -320,7 +323,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Siguiente
               </Button>
@@ -341,8 +344,12 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
               </Button>
             )}
           </div>
+            <p className="text-red-500 text-[14px] px-2 leading-[100%] text-center mt-4">PD: La llamada NO es con un closer que te intenta obligar a comprar como sea.
+              <br/><br/>
+              Es conmigo para contestar tus dudas.</p>
         </div>
       </div>
     </div>
   )
 }
+

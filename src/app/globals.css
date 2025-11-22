@@ -257,14 +257,11 @@ body {
 
 /* Custom */
 .tcf-btn {
-  @apply bg-[#FFAB47] py-6 px-16 rounded-full w-fit text-white mx-auto;
-  background-color: #FFAB47;
+  @apply bg-[#FFAB47] py-6 px-16 rounded-full w-full md:w-fit text-white mx-auto;
+  background-color: var(--foreground);
   color: white;
   text-decoration: none;
-  padding: 16px 60px 18px;
   font-weight: 700;
-  border-color: #fbbe73;
-  border-width: 1px;
   border-style: solid;
   letter-spacing: 0;
   text-transform: none;
