@@ -245,7 +245,7 @@ export default function Home() {
       </section> */}
       <section className="px-4">
         <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
-          Orgullosos de trabajar con profesionales y personas de calidad
+          Hemos trabajado con +40 Coaches como...
         </h2>
         <div
           className="mt-8 max-w-[900px] mx-auto grid md:grid-cols-2 gap-8"
