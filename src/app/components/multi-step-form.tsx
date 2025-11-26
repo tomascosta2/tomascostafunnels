@@ -344,7 +344,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
               </Button>
             )}
           </div>
-            <p className="text-red-500 text-[14px] px-2 leading-[100%] text-center mt-4">PD: La llamada NO es con un closer que te intenta obligar a comprar como sea.
+            <p className="text-gray-100/60 text-[14px] px-2 leading-[100%] text-center mt-4">PD: La llamada NO es con un closer que te intenta obligar a comprar como sea.
               <br/><br/>
               Es conmigo para contestar tus dudas.</p>
         </div>
