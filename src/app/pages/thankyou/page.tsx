@@ -16,7 +16,6 @@ export default function ThankYouPage() {
   const whatsappNumber = "+542616841853";
 
   // ====== WhatsApp confirm ======
-
   const waHref = `https://wa.me/${whatsappNumber}?text=`;
 
   // ====== Checklist ======
@@ -24,21 +23,6 @@ export default function ThankYouPage() {
   const [c2, setC2] = useState(false);
   const [c3, setC3] = useState(false);
   const canConfirm = c1 && c2 && c3;
-
-  // ====== vCard (contacto) ======
-  const vcardData = useMemo(() => {
-    const v = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "N:Equipo;Soporte;;;",
-      "FN:Equipo de Soporte",
-      "ORG:Tu Marca",
-      "TITLE:Atención",
-      `TEL;TYPE=CELL:+${whatsappNumber}`,
-      "END:VCARD"
-    ].join("\n");
-    return `data:text/vcard;charset=utf-8,${encodeURIComponent(v)}`;
-  }, [whatsappNumber]);
 
   // ====== FAQs ======
   const FAQS = [

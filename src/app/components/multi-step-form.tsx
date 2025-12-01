@@ -101,7 +101,6 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
-      "1 - 3 casos",
       "4 - 20 casos",
       "+20 casos"
     ].includes(formData.casosExito)
