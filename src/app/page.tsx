@@ -106,7 +106,7 @@ export default function Home() {
               return (
                 <img
                   key={testimonial.captura}
-                  className="w-full min-h-[50px] rounded-lg"
+                  className="w-full min-h-[50px] rounded-xl border border-white/10"
                   src={`/images/${testimonial.captura}`}
                   alt="Captura con cambio || resultados"
                 />
