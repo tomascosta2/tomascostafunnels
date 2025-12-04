@@ -48,26 +48,27 @@ export default function Home() {
 
   return (
     <div className="relative overflow-clip">
+      <div className="absolute -z-40 h-[500px] w-full"><div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div></div>
       <div className="relative overflow-clip">
         <section className="pt-[32px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10">
+            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10 backdrop-blur">
               <p className="text-white w-full md:w-[290px] font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
                 SOLO PARA COACHES FITNESS ONLINE
               </p>
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[28px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Funnel Personalizado
+                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Funnel A Medida
               </h1>
             )}
             {variant === 'B' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[28px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Funnel Personalizado
+                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Embudo VSL
               </h1>
             )}
             <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido organico
+              Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
             </p>
             <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Mira el video completo 👇</p>
@@ -80,8 +81,8 @@ export default function Home() {
                 ></iframe>
               </div>
             </div>
-            <p className="md:hidden block px-8 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Sin depender de que tan bien le va a tu contenido organico
+            <p className="md:hidden block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
+              Descubre como <strong className="text-orange-400">disminuimos un 70%+</strong> los curiosos sin dinero, y <strong className="text-orange-400">más de un 50%</strong> tu costo por venta.
             </p>
 
             {/* CTA que abre el formulario */}
