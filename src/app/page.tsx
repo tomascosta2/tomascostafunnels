@@ -6,12 +6,22 @@ import MultiStepForm from "./components/multi-step-form"
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 
+type Variant = "A" | "B";
+const VARIANT_KEY = "ff_variant";
+
 export default function Home() {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const variantRef = useRef<'A' | 'B'>(Math.random() < 0.5 ? 'A' : 'B');
-  const variant = variantRef.current;
+  const [variant] = useState<Variant>(() => {
+    if (typeof window === "undefined") return "A"; // fallback (no debería pegar porque es client)
+    const saved = window.localStorage.getItem(VARIANT_KEY) as Variant | null;
+    if (saved === "A" || saved === "B") return saved;
+
+    const v: Variant = Math.random() < 0.5 ? "A" : "B";
+    window.localStorage.setItem(VARIANT_KEY, v); // sync: no espera a useEffect
+    return v;
+  });
 
   useEffect(() => {
     localStorage.setItem("test", variant)
