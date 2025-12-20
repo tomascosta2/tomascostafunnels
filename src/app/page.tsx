@@ -92,7 +92,7 @@ export default function Home() {
               <Button text="¡Quiero Llamadas de Venta Todos los Días!" />
             </div>
           </div>
-          <div className="bg-[#E34716] -z-50 size-[300px] blur-[150px] md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
+          <div className="bg-[#E34716] -z-50 size-[300px] blur-[160px] opacity-80 md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
         </section>
       </div>
 
