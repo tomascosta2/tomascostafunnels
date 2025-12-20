@@ -83,7 +83,7 @@ export default function Home() {
                 ></iframe>
               </div>
             </div>
-            <p className="md:hidden block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
+            <p className="md:hidden text-[14px] block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
               Descubre como <strong className="text-[#E34716]">disminuimos un 70%+</strong> los curiosos sin dinero, y <strong className="text-[#E34716]">más de un 50%</strong> tu costo por venta.
             </p>
 
