@@ -241,8 +241,8 @@
 }
 
 :root {
-  --background: #030413;
-  --foreground: #0066ff;
+  --background: #000000;
+  --foreground: #E34716;
 }
 
 * {
@@ -257,7 +257,7 @@ body {
 
 /* Custom */
 .tcf-btn {
-  @apply bg-[#FFAB47] py-6 px-16 rounded-full w-full md:w-fit text-white mx-auto;
+  @apply bg-[#E34716] py-6 px-8 rounded-full w-full md:w-fit text-white mx-auto;
   background-color: var(--foreground);
   color: white;
   text-decoration: none;

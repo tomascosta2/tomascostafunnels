@@ -47,12 +47,14 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative overflow-clip">
-      <div className="absolute -z-40 h-[500px] w-full"><div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div></div>
-      <div className="relative overflow-clip">
+    <div className="relative overflow-clip">      
+      {/* <img className="absolute w-[1000px] max-w-none opacity-[20%] -left-[100px] md:-left-[150px] md:w-[3500px] top-[300px] md:-top-[100px]" src="/images/elemento-lineas.png" alt="Lineas" /> */}
+      <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" />
+      <div className="relative overflow-x-clip">
         <section className="pt-[32px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#0066ff]/30 bg-[#0066ff]/10 backdrop-blur">
+            <img className="w-[250px] mx-auto mb-8" src="/images/fit-funnels-logo.png" alt="" />
+            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[290px] font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
                 SOLO PARA COACHES FITNESS ONLINE
               </p>
@@ -70,34 +72,35 @@ export default function Home() {
             <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
               Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
             </p>
-            <div className="bg-[#0066ff] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
+            <div className="bg-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
               <p className="py-1">Mira el video completo 👇</p>
-              <div className="border-4 border-[#0066ff] rounded-[20px] overflow-clip mx-auto">
+              <div className="border-4 border-[#E34716] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
-                  id="panda-75206d15-88f9-4725-8952-68deee609f57"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=75206d15-88f9-4725-8952-68deee609f57"
+                  id="panda-0f4607b7-d005-46aa-bcc8-b2254b9fcd9a"
+                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=0f4607b7-d005-46aa-bcc8-b2254b9fcd9a"
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
             </div>
             <p className="md:hidden block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Descubre como <strong className="text-orange-400">disminuimos un 70%+</strong> los curiosos sin dinero, y <strong className="text-orange-400">más de un 50%</strong> tu costo por venta.
+              Descubre como <strong className="text-[#E34716]">disminuimos un 70%+</strong> los curiosos sin dinero, y <strong className="text-[#E34716]">más de un 50%</strong> tu costo por venta.
             </p>
 
             {/* CTA que abre el formulario */}
             <div onClick={() => setIsFormOpen(true)}>
-              <Button text="¡Quiero mi Embudo VSL!" />
+              <Button text="¡Quiero Llamadas de Venta Todos los Días!" />
             </div>
           </div>
+          <div className="bg-[#E34716] -z-50 size-[300px] blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
         </section>
       </div>
 
-      <section className="px-4">
-        <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
+      <section className="px-4 relative z-50">
+        <h2 className="text-white max-w-[500px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
           Hemos trabajado con +40 Coaches como...
         </h2>
-        <p className="text-center text-white/80 leading-[110%] mb-8">Nos enfocamos en Coaches Fitness Online. Y en algunos casos, si realmente vemos potencial, con Infoproductores B2C</p>
+        <p className="text-center max-w-[450px] mx-auto text-white/80 leading-[110%] mb-8">Nos enfocamos en Coaches Fitness Online. Y en algunos casos, si realmente vemos potencial, con Infoproductores B2C</p>
         <div
           className="mt-8 max-w-[900px] mx-auto grid md:grid-cols-2 gap-8"
         >
@@ -115,7 +118,7 @@ export default function Home() {
           }
         </div>
         <div className="mt-8" onClick={() => setIsFormOpen(true)}>
-          <Button text="¡Quiero Mi Funnel!" />
+          <Button text="¡Quiero Llamadas de Venta Todos los Días!" />
         </div>
 
       </section>
@@ -156,9 +159,9 @@ export default function Home() {
       </div>
 
       <section className="pt-16 pb-8">
-        <img className="mx-auto mb-2" src="/images/tomascosta-logo.svg" alt="Tomás Costa Funnels" />
+        <img className="mx-auto w-[250px] mb-2" src="/images/fit-funnels-logo.png" alt="Fit Funnels" />
         <p className="text-white/60 text-center mt-4 text-[14px]">
-          © Tomás Costa 2025. Todos derechos reservados.
+          © Fit Funnels 2025. Todos derechos reservados.
         </p>
       </section>
     </div>

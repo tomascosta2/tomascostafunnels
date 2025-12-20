@@ -170,7 +170,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
 
   return (
     <div className="w-full max-w-[500px] mx-auto border-white/20 relative overflow-clip border p-[6px] rounded-[24px]">
-      <div className="bg-[#0B1D42] rounded-[16px] overflow-clip relative">
+      <div className="bg-[#000] rounded-[16px] overflow-clip relative">
         {/* Barra de progreso: solo se muestra a partir del paso 2 */}
         {currentStep > 1 && (
           <div className="mb-8">
@@ -245,8 +245,8 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                       className={cn(
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.rol === option
-                          ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
+                          ? "bg-[#E34716] border-[#E34716] text-white"
+                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
                       )}
                     >
                       <span>{option}</span>
@@ -277,8 +277,8 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                       className={cn(
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.facturacion === option
-                          ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
+                          ? "bg-[#E34716] border-[#E34716] text-white"
+                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
                       )}
                     >
                       <span>{option}</span>
@@ -304,8 +304,8 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                       className={cn(
                         "w-full p-4 rounded-lg border-2 text-left transition-all",
                         formData.casosExito === option
-                          ? "bg-[#2563eb] border-[#2563eb] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#2563eb]"
+                          ? "bg-[#E34716] border-[#E34716] text-white"
+                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
                       )}
                     >
                       <span>{option}</span>
@@ -322,7 +322,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#E34716] hover:bg-[#1d4ed8] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Siguiente
               </Button>
@@ -330,7 +330,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
               <Button
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#E34716] hover:bg-[#1d4ed8] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
