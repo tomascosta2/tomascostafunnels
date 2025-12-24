@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             {variant === 'A' && (
               <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Funnel A Medida
+                Aumentamos las Ventas de tu Coaching Fitness en 12 semanas con un Embudo VSL Optimizado que No Depende de tu Tiempo ni Energía.
               </h1>
             )}
             {variant === 'B' && (
