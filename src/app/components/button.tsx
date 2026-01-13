@@ -8,9 +8,7 @@ export default function Button({ text }: { text: string }) {
         </p>
       </a>
       <div className="italic text-center font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Maximo UN Nuevo Funnel Semanal
-        <br />
-        No te Quedes Sin el Tuyo
+        Miles de llamadas generadas para nuestros clientes
       </div>
     </div>
   )

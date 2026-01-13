@@ -59,13 +59,12 @@ export default function Home() {
   return (
     <div className="relative overflow-clip">
       {/* <img className="absolute w-[1000px] max-w-none opacity-[20%] -left-[100px] md:-left-[150px] md:w-[3500px] top-[300px] md:-top-[100px]" src="/images/elemento-lineas.png" alt="Lineas" /> */}
-      <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" />
+      {/* <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" /> */}
       <div className="relative overflow-x-clip">
         <section className="pt-[32px] pb-[100px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
-            <img className="w-[250px] mx-auto mb-8" src="/images/fit-funnels-logo.png" alt="" />
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
-              <p className="text-white w-full md:w-[290px] font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
+              <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
                 SOLO PARA COACHES FITNESS ONLINE CON PROGRAMAS DE +$800 USD
               </p>
             </div>
@@ -76,7 +75,7 @@ export default function Home() {
               Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
             </p>
             <div className="bg-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
-              <p className="py-1">Mira el video completo 👇</p>
+              <p className="py-1 tracking-widest">MIRA ESTE VIDEO DE 3 MINUTOS</p>
               <div className="border-4 border-[#E34716] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
