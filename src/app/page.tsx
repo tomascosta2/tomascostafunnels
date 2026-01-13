@@ -57,7 +57,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative overflow-clip">      
+    <div className="relative overflow-clip">
       {/* <img className="absolute w-[1000px] max-w-none opacity-[20%] -left-[100px] md:-left-[150px] md:w-[3500px] top-[300px] md:-top-[100px]" src="/images/elemento-lineas.png" alt="Lineas" /> */}
       <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" />
       <div className="relative overflow-x-clip">
@@ -66,19 +66,12 @@ export default function Home() {
             <img className="w-[250px] mx-auto mb-8" src="/images/fit-funnels-logo.png" alt="" />
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[290px] font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
-                SOLO PARA COACHES FITNESS ONLINE
+                SOLO PARA COACHES FITNESS ONLINE CON PROGRAMAS DE +$800 USD
               </p>
             </div>
-            {variant === 'A' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
-                Aumentamos las Ventas de tu Coaching Fitness en 12 semanas con un Embudo VSL Optimizado que No Depende de tu Tiempo ni Energía.
-              </h1>
-            )}
-            {variant === 'B' && (
-              <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
-                Generá entre 20 y 40 Llamadas de Venta Calificadas en Automatico Todos los Meses con un Embudo VSL
-              </h1>
-            )}
+            <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
+              Aumentamos y Estabilizamos las Ventas de tu Coaching Fitness en 12 semanas con un Embudo VSL Optimizado.
+            </h1>
             <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
               Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
             </p>
