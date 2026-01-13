@@ -80,7 +80,7 @@ export default function Home() {
                 <iframe
                   className="w-full aspect-video"
                   id="panda-0f4607b7-d005-46aa-bcc8-b2254b9fcd9a"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=0f4607b7-d005-46aa-bcc8-b2254b9fcd9a"
+                  src=""
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
