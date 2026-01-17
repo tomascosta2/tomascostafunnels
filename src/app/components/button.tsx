@@ -7,8 +7,8 @@ export default function Button({ text }: { text: string }) {
           <span className="group-hover:-translate-y-12 transition-all duration-[.4s] absolute top-12">{text}</span>
         </p>
       </a>
-      <div className="italic text-center font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
-        Miles de llamadas generadas para nuestros clientes
+      <div className="text-center font-light flex items-center text-[14px] justify-center mt-2 gap-2 text-white/80">
+        Optimizado con decenas de miles de datos
       </div>
     </div>
   )

@@ -257,7 +257,7 @@ body {
 
 /* Custom */
 .tcf-btn {
-  @apply bg-[#E34716] py-6 px-20 md:px-[12px] rounded-full text-center w-full md:w-fit text-white mx-auto;
+  @apply bg-[#E34716] py-6 px-20 rounded-full text-center w-full md:w-fit text-white mx-auto;
   background-color: var(--foreground);
   color: white;
   text-decoration: none;

@@ -79,8 +79,8 @@ export default function Home() {
               <div className="border-4 border-[#E34716] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
-                  id="panda-0f4607b7-d005-46aa-bcc8-b2254b9fcd9a"
-                  src=""
+                  id="panda-be15d776-a163-4255-b0a5-223ac13a601d"
+                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=be15d776-a163-4255-b0a5-223ac13a601d"
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
@@ -91,7 +91,7 @@ export default function Home() {
 
             {/* CTA que abre el formulario */}
             <div onClick={() => setIsFormOpen(true)}>
-              <Button text="¡Quiero Llamadas de Venta Todos los Días!" />
+              <Button text="¡Quiero Mi Embudo VSL!" />
             </div>
           </div>
           <div className="bg-[#E34716] -z-50 size-[300px] blur-[160px] opacity-80 md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
@@ -120,7 +120,7 @@ export default function Home() {
           }
         </div>
         <div className="mt-8" onClick={() => setIsFormOpen(true)}>
-          <Button text="¡Quiero Llamadas de Venta Todos los Días!" />
+          <Button text="¡Quiero Mi Embudo VSL!" />
         </div>
 
       </section>

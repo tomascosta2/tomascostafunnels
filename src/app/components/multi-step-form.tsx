@@ -198,6 +198,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                     <label className="text-white text-sm mb-2 block">Tu nombre</label>
                     <Input
                       type="text"
+                      autoComplete="name"
                       placeholder="Nombre"
                       value={formData.nombre}
                       onChange={(e) => updateFormData("nombre", e.target.value)}
@@ -208,6 +209,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                     <label className="text-white text-sm mb-2 block">Cod. de área + Tu teléfono</label>
                     <Input
                       type="tel"
+                      autoComplete="phone"
                       placeholder="Ej: +549261XXXXXXX"
                       value={formData.telefono}
                       onChange={(e) => updateFormData("telefono", e.target.value)}
@@ -218,6 +220,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                     <label className="text-white text-sm mb-2 block">Tu mejor correo</label>
                     <Input
                       type="email"
+                      autoComplete="email"
                       placeholder="Correo electrónico"
                       value={formData.correo}
                       onChange={(e) => updateFormData("correo", e.target.value)}
