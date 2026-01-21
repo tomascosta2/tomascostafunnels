@@ -69,7 +69,7 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
-                SOLO PARA COACHES FITNESS ONLINE CON PROGRAMAS DE +$800 USD
+                SOLO PARA COACHES FITNESS ONLINE CON PROGRAMAS HIGH TICKET
               </p>
             </div>
             <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
