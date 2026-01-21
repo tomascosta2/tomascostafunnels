@@ -55,6 +55,10 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
+  const heroTitle =
+    variant === "A"
+      ? <>Aumentamos y Estabilizamos las Ventas de tu Coaching Fitness en 12 semanas con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>
+      : <>Te generamos de 20 y 50 llamadas de venta calificadas por mes para tu Coaching Fitness con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>;
 
   return (
     <div className="relative overflow-clip">
@@ -69,7 +73,7 @@ export default function Home() {
               </p>
             </div>
             <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
-              Aumentamos y Estabilizamos las Ventas de tu Coaching Fitness en 12 semanas con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span>
+              {heroTitle}
             </h1>
             <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
               Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
