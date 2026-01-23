@@ -85,14 +85,8 @@ export default function ThankYouPage() {
 
   return (
     <main className="min-h-screen bg-[#07070A] text-white">
-      {/* Fondo tipo landing: glow + grid/blur */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_0%,rgba(255,59,0,0.25),rgba(0,0,0,0))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(40%_30%_at_20%_20%,rgba(255,176,0,0.18),rgba(0,0,0,0))]" />
-        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[size:54px_54px]" />
-      </div>
-
       <section className="mx-auto max-w-[860px] px-4 py-10 md:py-14">
+        <div className='bg-[#E34716] left-[calc(50%-150px)] -top-[150px] absolute blur-[200px] size-[300px] rounded-full'></div>
         {/* Header */}
         <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
           <p className="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-amber-300/20 bg-amber-400/10 px-3 py-2 text-[14px] text-amber-200">
@@ -112,8 +106,13 @@ export default function ThankYouPage() {
             Genial — ya casi estamos. Solo falta confirmar.
           </h1>
           <p className="mt-2 text-[15px] text-white/70">
-            Marcá el checklist para habilitar el botón (tarda 2 minutos).
+            Mira el video y marcá el checklist para habilitar el botón (tarda 2 minutos).
           </p>
+
+          <div className='mt-4 rounded-lg overflow-clip'>
+            <iframe className='w-full aspect-video' id="panda-a3bd0e5f-f199-4623-bfcf-0f0d83d7f6e2" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=a3bd0e5f-f199-4623-bfcf-0f0d83d7f6e2" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
+          </div>
+
         </div>
 
         {/* Checklist card */}
@@ -164,7 +163,7 @@ export default function ThankYouPage() {
           <div className="mt-5">
             <a
               className={[
-                'block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit',
+                'block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit mx-auto',
                 canConfirm
                   ? 'bg-[#FF3B00] text-white hover:opacity-90 shadow-[0_14px_60px_rgba(255,59,0,0.25)]'
                   : 'bg-white/10 text-white/40 cursor-not-allowed',
@@ -217,7 +216,7 @@ export default function ThankYouPage() {
 
           <a
             className={[
-              'mt-4 block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit',
+              'mt-4 block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit mx-auto',
               canConfirm
                 ? 'bg-[#FF3B00] text-white hover:opacity-90 shadow-[0_14px_60px_rgba(255,59,0,0.25)]'
                 : 'bg-white/10 text-white/40 cursor-not-allowed',
