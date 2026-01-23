@@ -15,7 +15,7 @@ function getCookieValue(cookieName: string) {
       const c = ca[i].trim();
       if (c.indexOf(name) === 0) return c.substring(name.length);
     }
-  } catch {}
+  } catch { }
   return '';
 }
 
@@ -69,7 +69,7 @@ export default function Calendly() {
       setName(localStorage.getItem('name') || '');
       setEmail(localStorage.getItem('email') || '');
       setPhone(localStorage.getItem('phone') || '');
-    } catch {}
+    } catch { }
   }, []);
 
   // 2) Listener de Calendly (sin widget.js)
@@ -78,7 +78,7 @@ export default function Calendly() {
       if (e.origin !== 'https://calendly.com') return;
       if (!e?.data || typeof e.data !== 'object') return;
 
-      interface CalendlyMessage { event?: string; [k: string]: unknown }
+      interface CalendlyMessage { event?: string;[k: string]: unknown }
       const data = e.data as CalendlyMessage;
       const evt = typeof data?.event === 'string' ? data.event : '';
 
@@ -88,13 +88,13 @@ export default function Calendly() {
       if (processedRef.current) return; // evita duplicados
       processedRef.current = true;
 
-      // 2a) Ping a Make (tu hook)
       try {
-        navigator.sendBeacon?.(
-          'https://hook.us2.make.com/jxwzmi4n62c3nfmie24ti5aoe4o8ukuk',
-          new Blob([JSON.stringify({ email })], { type: 'application/json' })
-        );
-      } catch {}
+        const n8nRes = await fetch('https://n8n.srv953925.hstgr.cloud/webhook-test/2db9bfb5-0323-4d9e-aa37-dfded650a180', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        })
+      } catch { }
 
       // 2b) Lee flag calificado (clave actual y fallback)
       const isQualified =
@@ -134,7 +134,7 @@ export default function Calendly() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(capiPayload),
                 keepalive: true,
-              }).catch(() => {});
+              }).catch(() => { });
             }
           } catch (err) {
             console.error('CAPI Schedule error:', err);

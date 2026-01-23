@@ -46,10 +46,11 @@ function getFbpFbcFromBrowser(): { fbp: string | null; fbc: string | null } {
 }
 
 interface MultiStepFormProps {
-  variant: 'A' | 'B'
+  variant: 'A' | 'B',
+  ad: string,
 }
 
-export default function MultiStepForm({ variant }: MultiStepFormProps) {
+export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
@@ -102,7 +103,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
 
     const casosExitoOk = [
       "4 - 20 casos",
-      "+20 casos"
+      "Más de 20 casos"
     ].includes(formData.casosExito)
 
     return isCoachFitness && ingresosOk && casosExitoOk
@@ -110,11 +111,17 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
-    const payload = { ...formData, fbp, fbc, variant }
+    const payload = { ...formData, fbp, fbc, variant, ad, isQualified, test }
 
     try {
-      const webhookUrl = "https://hook.us2.make.com/6x87i3dqt339j40cdxttqmmdx2gqnfu7"
-      const makeRes = await fetch(webhookUrl, {
+
+      const hostname = window.location.hostname
+
+      const webhookUrl = hostname.includes(".com") ? 
+        "https://n8n.srv953925.hstgr.cloud/webhook/6f46fb81-91f5-4ffe-8b1c-783d8f3ea581" : 
+        "https://n8n.srv953925.hstgr.cloud/webhook-test/6f46fb81-91f5-4ffe-8b1c-783d8f3ea581"
+
+      const n8nRes = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -128,7 +135,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
         })
       }
 
-      if (!makeRes.ok) return console.log("Error al enviar el formulario")
+      if (!n8nRes.ok) return console.log("Error al enviar el formulario")
 
       localStorage.setItem("cf_isQualified", isQualified ? "true" : "false")
       localStorage.setItem("name", formData.nombre)
@@ -298,7 +305,7 @@ export default function MultiStepForm({ variant }: MultiStepFormProps) {
                   ¿Cuántos casos de éxito tenés en tu asesoría?
                 </h2>
                 <div className="space-y-3">
-                  {["0 casos", "1 - 3 casos", "4 - 20 casos", "+20 casos"].map((option) => (
+                  {["0 casos", "1 - 3 casos", "4 - 20 casos", "Más de 20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {

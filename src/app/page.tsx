@@ -29,6 +29,8 @@ export default function Home() {
 
   console.log(variant)
 
+  const ad = new URLSearchParams(window.location.search).get("ad") || "default";
+
   const SCREENSHOT_TESTIMONIALS_REG = [
     {
       captura: "call-funnels-cliente-1.jpg",
@@ -152,7 +154,7 @@ export default function Home() {
               Llena el formulario, agenda tu consulta, y obtene un embudo que te aporte estabilidad, predictibilidad y, escalabilidad
             </h2>
             <div className="mt-8">
-              <MultiStepForm variant={variant} />
+              <MultiStepForm variant={variant} ad={ad} />
             </div>
             <button
               className="mt-6 mx-auto block text-white/70 text-sm underline"
