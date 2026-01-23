@@ -86,7 +86,7 @@ export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-[#07070A] text-white">
       <section className="mx-auto max-w-[860px] px-4 py-10 md:py-14">
-        <div className='bg-[#E34716] left-[calc(50%-150px)] -top-[150px] absolute blur-[200px] size-[300px] rounded-full'></div>
+        <div className='bg-[#E34716] left-[calc(50%-150px)] -top-[150px] absolute blur-[300px] size-[300px] rounded-full'></div>
         {/* Header */}
         <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
           <p className="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-amber-300/20 bg-amber-400/10 px-3 py-2 text-[14px] text-amber-200">
