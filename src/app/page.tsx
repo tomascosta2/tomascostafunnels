@@ -5,6 +5,7 @@ import Faqs from "./components/faqs";
 import MultiStepForm from "./components/multi-step-form"
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
+import { set } from "react-hook-form";
 
 type Variant = "A" | "B";
 const VARIANT_KEY = "ff_variant";
@@ -12,6 +13,7 @@ const VARIANT_KEY = "ff_variant";
 export default function Home() {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [ad, setAd] = useState("default");
 
   const [variant] = useState<Variant>(() => {
     if (typeof window === "undefined") return "A"; // fallback (no debería pegar porque es client)
@@ -24,12 +26,15 @@ export default function Home() {
   });
 
   useEffect(() => {
+    
     localStorage.setItem("test", variant)
+
+    const ad = new URLSearchParams(window.location.search).get("ad") || "default";
+    setAd(ad);
+
   }, [variant])
 
   console.log(variant)
-
-  const ad = new URLSearchParams(window.location.search).get("ad") || "default";
 
   const SCREENSHOT_TESTIMONIALS_REG = [
     {
@@ -86,7 +91,7 @@ export default function Home() {
                 <iframe
                   className="w-full aspect-video"
                   id="panda-7ec8be5e-3943-4c8b-8db7-19ab91e90821"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=7ec8be5e-3943-4c8b-8db7-19ab91e90821" 
+                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=7ec8be5e-3943-4c8b-8db7-19ab91e90821"
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
