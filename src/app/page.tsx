@@ -26,7 +26,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    
+
     localStorage.setItem("test", variant)
 
     const ad = new URLSearchParams(window.location.search).get("ad") || "default";
@@ -65,7 +65,7 @@ export default function Home() {
   const heroTitle =
     variant === "A"
       ? <>Aumentamos y Estabilizamos las Ventas de tu Coaching Fitness en 12 semanas con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>
-      : <>Te generamos de 20 a 50 llamadas de venta calificadas extra por mes para tu Coaching Fitness con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>;
+      : <>Genera de 20 a 50 llamadas de venta calificadas extra por mes para tu Coaching Fitness con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>;
 
   return (
     <div className="relative overflow-clip">
