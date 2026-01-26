@@ -118,8 +118,8 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
       const hostname = window.location.hostname
 
       const webhookUrl = hostname.includes(".com") ? 
-        "https://n8n.srv953925.hstgr.cloud/webhook/6f46fb81-91f5-4ffe-8b1c-783d8f3ea581" : 
-        "https://n8n.srv953925.hstgr.cloud/webhook-test/6f46fb81-91f5-4ffe-8b1c-783d8f3ea581"
+        "https://n8n.srv953925.hstgr.cloud/webhook/1c8b3e88-b35f-4952-8c02-b9f2a0aefc78" : 
+        "https://n8n.srv953925.hstgr.cloud/webhook-test/1c8b3e88-b35f-4952-8c02-b9f2a0aefc78"
 
       const n8nRes = await fetch(webhookUrl, {
         method: "POST",
