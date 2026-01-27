@@ -95,7 +95,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     const isCoachFitness = formData.rol === "Coach Fitness Online"
 
     const ingresosOk = [
-      "250 - 500 usd",
+      "200 - 500 usd",
       "500 - 800 usd",
       "800 - 1.000 usd",
       "Más de 1.000 usd",
@@ -273,7 +273,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                 <div className="space-y-3">
                   {[
                     "Menos de 250 usd",
-                    "250 - 500 usd",
+                    "200 - 500 usd",
                     "500 - 800 usd",
                     "800 - 1.000 usd",
                     "Más de 1.000 usd",
