@@ -102,6 +102,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
+      "1 - 3 casos",
       "4 - 20 casos",
       "Más de 20 casos"
     ].includes(formData.casosExito)
@@ -272,7 +273,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                 <h2 className="text-white text-2xl font-bold mb-6">Valor de tu asesoria 1 a 1</h2>
                 <div className="space-y-3">
                   {[
-                    "Menos de 250 usd",
+                    "Menos de 200 usd",
                     "200 - 500 usd",
                     "500 - 800 usd",
                     "800 - 1.000 usd",

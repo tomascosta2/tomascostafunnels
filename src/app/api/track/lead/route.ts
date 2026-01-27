@@ -2,7 +2,17 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-  const data = await req.json();
+  const rawBody = await req.text();
+  if (!rawBody) {
+    return NextResponse.json({ success: false, error: "Body vacío" }, { status: 400 });
+  }
+
+  let data: any;
+  try {
+    data = JSON.parse(rawBody);
+  } catch {
+    return NextResponse.json({ success: false, error: "JSON inválido" }, { status: 400 });
+  }
 
   console.log("Data", data);
 
@@ -38,7 +48,7 @@ export async function POST(req: Request) {
             },
           },
         ],
-        //test_event_code: 'TEST41704'
+        // test_event_code: 'TEST65521'
       }),
     }
   );
