@@ -175,6 +175,7 @@ export default function Calendly() {
     <main>
       <section className="pt-8 pb-[80px] text-white">
         <div className="max-w-[1200px] mx-auto px-4">
+          <p className="text-orange-400 text-center mb-4 text-[14px]">(El Calendario puede demorar, si no carga reinicia la página)</p>
           <h1 className="text-[24px] md:text-[32px] font-bold leading-[120%] max-w-[800px] mb-8 mx-auto text-center">
             Agenda una llamada de 30 minutos para hablar sobre tu embudo de ventas
           </h1>
