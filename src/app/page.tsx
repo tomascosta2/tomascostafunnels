@@ -90,8 +90,8 @@ export default function Home() {
               <div className="border-4 border-[#E34716] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
-                  id="panda-7ec8be5e-3943-4c8b-8db7-19ab91e90821"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=7ec8be5e-3943-4c8b-8db7-19ab91e90821"
+                  id="panda-75206d15-88f9-4725-8952-68deee609f57"
+                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=75206d15-88f9-4725-8952-68deee609f57"
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
