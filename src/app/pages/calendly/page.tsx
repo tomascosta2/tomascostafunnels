@@ -56,10 +56,36 @@ function normalizePhoneE164(raw: string) {
   return digits ? `+${digits}` : '';
 }
 
+function getOrCreateExternalId(): string {
+  const key = "ff_external_id";
+  const existing = localStorage.getItem(key);
+  if (existing) return existing;
+
+  const id = `ff-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+  localStorage.setItem(key, id);
+  return id;
+}
+
+const META_TEST_EVENT_CODE = "TEST35778";
+
+function trackPixelSchedule(eventId: string) {
+  const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq;
+  if (typeof fbq !== "function") {
+    console.warn("[Pixel] fbq no está disponible para Schedule");
+    return;
+  }
+
+  const eventData: Record<string, unknown> = {};
+  if (META_TEST_EVENT_CODE) eventData.test_event_code = META_TEST_EVENT_CODE;
+
+  fbq("trackCustom", "Schedule", eventData, { eventID: eventId });
+}
+
 export default function Calendly() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [externalId, setExternalId] = useState('');
   const [frameLoaded, setFrameLoaded] = useState(false);
   const processedRef = useRef(false); // evita doble envío por múltiples postMessage
 
@@ -69,6 +95,7 @@ export default function Calendly() {
       setName(localStorage.getItem('name') || '');
       setEmail(localStorage.getItem('email') || '');
       setPhone(localStorage.getItem('phone') || '');
+      setExternalId(getOrCreateExternalId());
     } catch { }
   }, []);
 
@@ -114,9 +141,13 @@ export default function Calendly() {
       if (isQualified) {
         const phoneE164 = normalizePhoneE164(phone);
         if (email && phoneE164) {
+          trackPixelSchedule(eventId);
+
           const capiPayload = {
             email,
             phone: phoneE164,
+            name,
+            external_id: externalId,
             fbp,
             fbc,
             eventId,
@@ -152,7 +183,7 @@ export default function Calendly() {
 
     window.addEventListener('message', handleCalendlyEvent);
     return () => window.removeEventListener('message', handleCalendlyEvent);
-  }, [email, phone]);
+  }, [email, phone, name, externalId]);
 
   // 3) URL del iframe (prefill por querystring)
   const calendlyUrl = useMemo(() => {

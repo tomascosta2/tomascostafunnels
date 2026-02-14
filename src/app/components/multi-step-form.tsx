@@ -45,6 +45,31 @@ function getFbpFbcFromBrowser(): { fbp: string | null; fbc: string | null } {
   return { fbp, fbc }
 }
 
+function getOrCreateExternalId(): string {
+  const key = "ff_external_id"
+  const existing = localStorage.getItem(key)
+  if (existing) return existing
+
+  const id = `ff-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+  localStorage.setItem(key, id)
+  return id
+}
+
+const META_TEST_EVENT_CODE = "TEST35778"
+
+function trackPixelLead(eventId: string) {
+  const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq
+  if (typeof fbq !== "function") {
+    console.warn("[Pixel] fbq no está disponible para Lead")
+    return
+  }
+
+  const eventData: Record<string, unknown> = {}
+  if (META_TEST_EVENT_CODE) eventData.test_event_code = META_TEST_EVENT_CODE
+
+  fbq("track", "Lead", eventData, { eventID: eventId })
+}
+
 interface MultiStepFormProps {
   variant: 'A' | 'B',
   ad: string,
@@ -64,6 +89,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   const [test, setTest] = useState("")
   const [fbp, setFbp] = useState<string | null>(null)
   const [fbc, setFbc] = useState<string | null>(null)
+  const [externalId, setExternalId] = useState<string | null>(null)
 
   // Ahora son 4 pasos
   const totalSteps = 4
@@ -77,6 +103,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     const { fbp, fbc } = getFbpFbcFromBrowser()
     setFbp(fbp)
     setFbc(fbc)
+    setExternalId(getOrCreateExternalId())
   }, [])
 
   const updateFormData = (field: keyof FormData, value: string) => {
@@ -112,7 +139,8 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
-    const payload = { ...formData, fbp, fbc, variant, ad, isQualified, test }
+    const eventId = `lead-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
+    const payload = { ...formData, fbp, fbc, external_id: externalId, eventId, variant, ad, isQualified, test }
 
     try {
 
@@ -129,7 +157,8 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
       })
 
       if (isQualified) {
-        fetch("/api/track/lead", {
+        trackPixelLead(eventId)
+        void fetch("/api/track/lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -362,4 +391,3 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     </div>
   )
 }
-
