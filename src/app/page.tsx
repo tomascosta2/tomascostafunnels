@@ -6,6 +6,7 @@ import MultiStepForm from "./components/multi-step-form"
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { set } from "react-hook-form";
+import { Check } from "lucide-react";
 
 type Variant = "A" | "B";
 const VARIANT_KEY = "ff_variant";
@@ -64,30 +65,30 @@ export default function Home() {
   ];
   const heroTitle =
     variant === "A"
-      ? <>Aumentamos y Estabilizamos las Ventas de tu Coaching Fitness en 12 semanas con un <span className="text-[#E34716]">Embudo VSL Optimizado.</span></>
-      : <>Lanzamos tu embudo VSL en menos de 14 días para que cierres 5-15+ clientes por mes para tu Coaching Fitness</>;
+      ? <>En 3 semanas diseñamos, desarrollamos y lanzamos tu embudo VSL para que tengas +40 llamadas de venta calificadas todos los meses.</>
+      : <>En 3 semanas diseñamos, desarrollamos y lanzamos tu embudo VSL para que tengas +40 llamadas de venta calificadas todos los meses.</>;
 
   return (
     <div className="relative overflow-clip">
       {/* <img className="absolute w-[1000px] max-w-none opacity-[20%] -left-[100px] md:-left-[150px] md:w-[3500px] top-[300px] md:-top-[100px]" src="/images/elemento-lineas.png" alt="Lineas" /> */}
       {/* <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" /> */}
       <div className="relative overflow-x-clip">
-        <section className="pt-[32px] pb-[100px] z-50 relative px-4">
+        <section className="pt-[32px] pb-[60px] z-50 relative px-4">
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
-              <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] capitalize leading-[120%] text-center">
-                SOLO PARA COACHES FITNESS ONLINE CON PROGRAMAS HIGH TICKET
+              <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] leading-[120%] text-center">
+                Solo para Marcas Personales con Ticket de us$500 o más
               </p>
             </div>
-            <h1 className="text-white max-w-[640px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
+            <h1 className="text-white max-w-[750px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
               {heroTitle}
             </h1>
-            <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Descubre como disminuimos un 70%+ los curiosos sin dinero, y un 50%+ el costo por venta.
+            <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[700px] mx-auto mt-2 md:px-0 px-4">
+              Además pasamos 2 meses enteros optimizando el embudo
             </p>
-            <div className="bg-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[14px] text-center">
-              <p className="py-1 tracking-widest">MIRA ESTE VIDEO DE 3 MINUTOS</p>
-              <div className="border-4 border-[#E34716] rounded-[20px] overflow-clip mx-auto">
+            <div className="bg-[#121212] border border-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[12px] text-center">
+              <p className="py-1 px-12 tracking-widest">MIRA ESTE VIDEO DE 3 MINUTOS Y DESPUES AGENDA TU LLAMADA</p>
+              <div className="border-4 border-[#121212] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
                   id="panda-75206d15-88f9-4725-8952-68deee609f57"
@@ -97,19 +98,66 @@ export default function Home() {
               </div>
             </div>
             <p className="md:hidden text-[14px] block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              Descubre como <strong className="text-[#E34716]">disminuimos un 70%+</strong> los curiosos sin dinero, y <strong className="text-[#E34716]">más de un 50%</strong> tu costo por venta.
+              Además pasamos 2 meses enteros optimizando el embudo
             </p>
 
             {/* CTA que abre el formulario */}
             <div onClick={() => setIsFormOpen(true)}>
-              <Button text="¡Quiero Mi Embudo VSL!" />
+              <Button text="Quiero Mi Embudo VSL  →" />
             </div>
           </div>
           <div className="bg-[#E34716] -z-50 size-[300px] blur-[160px] opacity-80 md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
+
+          <div className="flex items-center justify-center md:flex-row flex-col mt-8">
+            <img className="h-[80px]" src="/images/marcas-personales.png" alt="Marcas Personales" />
+            <p className="text-white/80 max-w-[250px] md:text-start text-center">+45 Marcas Personales ya venden de forma más estable</p>
+          </div>
         </section>
       </div>
 
-      <section className="px-4 relative z-50">
+      <section className="px-4 pb-[80px]">
+        <div className="bg-white/10 py-16 px-4 rounded-2xl max-w-[900px] mx-auto relative z-50">
+          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#E34716]">marcas personales establecidas con una oferta validada de al menos us$500 y multiples ventas</span></h3>
+        </div>
+      </section>
+
+      <section className="pt-[80px] pb-[60px] bg-white">
+        <div className="max-w-[900px] mx-auto px-8">
+          <div>
+            <h3 className="text-[#111] text-center leading-[110%] text-[24px] md:text-[28px]">Cómo funciona:</h3>
+
+            <div className="mt-10 text-[#111]">
+              <div className="mb-8">
+                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 1:</span> Guionamos tus anuncios y redactamos los textos de tu landing (Semana 1)</h5>
+                <ul className="space-y-2 mt-4 text-[18px]">
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Guiones de anuncios hechos por nosotros con la misma estructura que ha generado miles de dólares y llamadas calificadas a nuestros clientes.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Redactamos cada sección del embudo con textos pensados psicológicamente para vender más.</li>
+                </ul>
+              </div>
+
+              <div className="mb-8">
+                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 2:</span> Diseñamos y desarrollamos tu embudo (Semanas 2 a 3)</h5>
+                <ul className="space-y-2 mt-4 text-[18px]">
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Diseñamos landing, página de agradecimiento y formulario.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Desarrollamos todo con las mejores prácticas.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Conectamos todo con el Pixel y la API de conversiones para que Meta trabaje para vos y no al revés.</li>
+                </ul>
+              </div>
+
+              <div className="">
+                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 3:</span> Revisamos, analizamos y mejoramos (Semanas 4 a 12)</h5>
+                <ul className="space-y-2 mt-4 text-[18px]">
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Analizamos el rendimiento y detectamos puntos de mejora.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Creamos testeos A/B de cada elemento importante de la landing para mejorar el rendimiento general del embudo.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Detectamos el ángulo ganador y creamos nuevos anuncios según eso.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="px-4 relative z-50">
         <h2 className="text-white max-w-[500px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
           Hemos trabajado con +40 Coaches como...
         </h2>
@@ -131,10 +179,10 @@ export default function Home() {
           }
         </div>
         <div className="mt-8" onClick={() => setIsFormOpen(true)}>
-          <Button text="¡Quiero Mi Embudo VSL!" />
+          <Button text="Quiero Mi Embudo VSL  →" />
         </div>
 
-      </section>
+      </section> */}
 
       {/* Overlay del formulario: oculto por defecto y visible cuando isFormOpen = true */}
       <div

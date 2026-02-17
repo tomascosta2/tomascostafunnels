@@ -119,7 +119,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   }
 
   const isQualified = useMemo(() => {
-    const isCoachFitness = formData.rol === "Coach Fitness Online"
+    const isCoachFitness = formData.rol === "Coach Fitness" || formData.rol === "Infoproductor" || formData.rol === "Servicio High Ticket"
 
     const ingresosOk = [
       "200 - 500 usd",
@@ -275,7 +275,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                   ¿Cuál describe mejor tu negocio?
                 </h2>
                 <div className="space-y-3">
-                  {["Coach Fitness Online", "Infoproductor B2C", "Otro (No agendes)"].map((option) => (
+                  {["Coach Fitness", "Infoproductor", "Servicio High Ticket", "Otro (No agendes)"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
@@ -332,7 +332,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
             {currentStep === 4 && (
               <div className="space-y-6">
                 <h2 className="text-white text-2xl font-bold mb-6">
-                  ¿Cuántos casos de éxito tenés en tu asesoría?
+                  ¿Cuántos casos de éxito/clientes has tenido?
                 </h2>
                 <div className="space-y-3">
                   {["0 casos (No agendes)", "1 - 4 casos (No agendes)", "5 - 20 casos", "Más de 20 casos"].map((option) => (
@@ -362,7 +362,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="bg-[#E34716] hover:bg-[#1d4ed8] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#E34716] hover:bg-[#E34716] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Siguiente
               </Button>
@@ -370,7 +370,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
               <Button
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className="bg-[#E34716] hover:bg-[#1d4ed8] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#E34716] hover:bg-[#E34716] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
