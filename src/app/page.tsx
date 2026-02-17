@@ -122,7 +122,7 @@ export default function Home() {
       </section>
 
       <section className="pt-[80px] pb-[60px] bg-white">
-        <div className="max-w-[900px] mx-auto px-8">
+        <div className="max-w-[700px] mx-auto px-8">
           <div>
             <h3 className="text-[#111] text-center leading-[110%] text-[24px] md:text-[28px]">Cómo funciona:</h3>
 
