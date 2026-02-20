@@ -117,7 +117,7 @@ export default function Home() {
 
       <section className="px-4 pb-[80px]">
         <div className="bg-white/10 py-16 px-4 rounded-2xl max-w-[900px] mx-auto relative z-50">
-          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#E34716]">marcas personales establecidas con una oferta validada de al menos us$500 y multiples ventas</span></h3>
+          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">marcas personales establecidas con una oferta validada de al menos us$500 y multiples testimonios.</span></h3>
         </div>
       </section>
 
@@ -153,6 +153,9 @@ export default function Home() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="mt-8" onClick={() => setIsFormOpen(true)}>
+            <Button text="Quiero Mi Embudo VSL  →" />
           </div>
         </div>
       </section>
