@@ -77,7 +77,7 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] leading-[120%] text-center">
-                Solo para Marcas Personales con Ticket de us$500 o más
+                Solo para Marcas Personales con Ticket de MÍNIMO us$500
               </p>
             </div>
             <h1 className="text-white max-w-[750px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
@@ -91,8 +91,8 @@ export default function Home() {
               <div className="border-4 border-[#121212] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
-                  id="panda-75206d15-88f9-4725-8952-68deee609f57"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=75206d15-88f9-4725-8952-68deee609f57"
+                  id="panda-edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
+                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
                   allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                 ></iframe>
               </div>
