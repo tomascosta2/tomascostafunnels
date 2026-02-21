@@ -84,7 +84,7 @@ export default function Home() {
               {heroTitle}
             </h1>
             <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[700px] mx-auto mt-2 md:px-0 px-4">
-              100% DFY y además pasamos 2 meses enteros optimizando el embudo
+              100% DFY y además pasamos 2 meses enteros optimizando tu embudo.
             </p>
             <div className="bg-[#121212] border border-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[12px] text-center">
               <p className="py-1 px-12 tracking-widest">MIRA ESTE VIDEO Y DESPUES AGENDA TU LLAMADA</p>
@@ -98,7 +98,7 @@ export default function Home() {
               </div>
             </div>
             <p className="md:hidden text-[14px] block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              100% DFY y además pasamos 2 meses enteros optimizando el embudo
+              100% DFY y además pasamos 2 meses enteros optimizando tu embudo.
             </p>
 
             {/* CTA que abre el formulario */}
