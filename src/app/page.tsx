@@ -65,8 +65,8 @@ export default function Home() {
   ];
   const heroTitle =
     variant === "A"
-      ? <>En 3 semanas diseñamos, desarrollamos y lanzamos tu embudo VSL para que tengas +40 llamadas de venta calificadas todos los meses.</>
-      : <>En 3 semanas diseñamos, desarrollamos y lanzamos tu embudo VSL para que tengas +40 llamadas de venta calificadas todos los meses.</>;
+      ? <>En 3 semanas lanzamos tu embudo VSL para que tengas de 20 a 40 llamadas CALIFICADAS extra todos los meses.</>
+      : <>En 3 semanas lanzamos tu embudo VSL para que tengas de 20 a 40 llamadas CALIFICADAS extra todos los meses.</>;
 
   return (
     <div className="relative overflow-clip">
