@@ -77,7 +77,7 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] leading-[120%] text-center">
-                Solo para Marcas Personales con Ticket de MÍNIMO us$500
+                Solo para Marcas Personales con Ticket de MÍNIMO US$500
               </p>
             </div>
             <h1 className="text-white max-w-[750px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
@@ -87,7 +87,7 @@ export default function Home() {
               Además pasamos 2 meses enteros optimizando el embudo
             </p>
             <div className="bg-[#121212] border border-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[12px] text-center">
-              <p className="py-1 px-12 tracking-widest">MIRA ESTE VIDEO DE 3 MINUTOS Y DESPUES AGENDA TU LLAMADA</p>
+              <p className="py-1 px-12 tracking-widest">MIRA ESTE VIDEO Y DESPUES AGENDA TU LLAMADA</p>
               <div className="border-4 border-[#121212] rounded-[20px] overflow-clip mx-auto">
                 <iframe
                   className="w-full aspect-video"
@@ -117,7 +117,7 @@ export default function Home() {
 
       <section className="px-4 pb-[80px]">
         <div className="bg-white/10 py-16 px-4 rounded-2xl max-w-[900px] mx-auto relative z-50">
-          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">marcas personales establecidas con una oferta validada de al menos us$500 y multiples testimonios.</span></h3>
+          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">marcas personales establecidas con una oferta validada de AL MENOS US$500 y multiples testimonios.</span></h3>
         </div>
       </section>
 
@@ -154,9 +154,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-8" onClick={() => setIsFormOpen(true)}>
-            <Button text="Quiero Mi Embudo VSL  →" />
-          </div>
+        </div>
+        <div className="mt-8 px-4" onClick={() => setIsFormOpen(true)}>
+          <Button text="Quiero Mi Embudo VSL  →" />
         </div>
       </section>
 
