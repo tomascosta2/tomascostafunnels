@@ -55,7 +55,7 @@ function getOrCreateExternalId(): string {
   return id
 }
 
-const META_TEST_EVENT_CODE = "TEST98281"
+const META_TEST_EVENT_CODE = "" // TEST98281 para pruebas en Meta, dejar vacío para producción;
 
 function trackPixelLead(eventId: string) {
   const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq
