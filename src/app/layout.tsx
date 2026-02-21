@@ -45,6 +45,7 @@ export default function RootLayout({
             
             fbq('init', '1143124444651311');
             fbq('track', 'PageView');
+            window.__metaPixelInitialized = true;
           `}
         </Script>
         {/* Meta Pixel NoScript */}

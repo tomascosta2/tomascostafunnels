@@ -55,7 +55,7 @@ function getOrCreateExternalId(): string {
   return id
 }
 
-const META_TEST_EVENT_CODE = "TEST35778"
+const META_TEST_EVENT_CODE = "TEST98281"
 
 function trackPixelLead(eventId: string) {
   const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq
@@ -122,15 +122,13 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     const isCoachFitness = formData.rol === "Coach Fitness" || formData.rol === "Infoproductor" || formData.rol === "Servicio High Ticket"
 
     const ingresosOk = [
-      "200 - 500 usd",
       "500 - 800 usd",
       "800 - 1.000 usd",
       "Más de 1.000 usd",
     ].includes(formData.facturacion)
 
     const casosExitoOk = [
-      "1 - 3 casos",
-      "4 - 20 casos",
+      "5 - 20 casos",
       "Más de 20 casos"
     ].includes(formData.casosExito)
 

@@ -71,7 +71,7 @@ export async function POST(req: Request) {
             user_data: userData,
           },
         ],
-        test_event_code: 'TEST35778'
+        test_event_code: 'TEST98281'
       }),
     }
   );

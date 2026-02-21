@@ -66,7 +66,7 @@ function getOrCreateExternalId(): string {
   return id;
 }
 
-const META_TEST_EVENT_CODE = "TEST35778";
+const META_TEST_EVENT_CODE = "TEST98281";
 
 function trackPixelSchedule(eventId: string) {
   const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq;
@@ -128,7 +128,7 @@ export default function Calendly() {
         localStorage.getItem('cf_isQualified') === 'true' ||
         localStorage.getItem('isQualified') === 'true';
 
-      console.log(isQualified)
+      console.log("CALIFICA: ", isQualified)
 
       // 2c) Cookies pixel
       const fbp = getCookieValue('_fbp') || getCookieValue('__fbp') || undefined;

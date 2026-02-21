@@ -49,7 +49,7 @@ export default function ThankYouPage() {
       id: 'q3',
       pregunta: '¿En cuánto tiempo puedo esperar ver llamadas nuevas?',
       respuesta:
-        'Generalmente entre 1 y 3 semanas desde activación de campañas. Primero buscamos señales (CTR, watch time, costo por visita calificada) y luego consolidamos “Schedule” calificados.',
+        'En los primeros dias ya empiezan a entrar llamadas, pero la cantidad depende de la inversión en ads y el nicho.',
     },
     {
       id: 'q5',
