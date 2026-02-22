@@ -119,7 +119,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   }
 
   const isQualified = useMemo(() => {
-    const isCoachFitness = formData.rol === "Coach Fitness" || formData.rol === "Infoproductor" || formData.rol === "Servicio High Ticket"
+    const isCoachFitness = formData.rol === "Coach Fitness"
 
     const ingresosOk = [
       "500 - 800 usd",

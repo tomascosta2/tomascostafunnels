@@ -66,7 +66,7 @@ export default function Home() {
   const heroTitle =
     variant === "A"
       ? <>En 3 semanas lanzamos tu embudo VSL para que tengas de 20 a 40 llamadas CALIFICADAS extra todos los meses</>
-      : <>Para Marcas Personales High Ticket que quieren entre 20 y 40 llamadas CALIFICADAS Extra al Mes</>;
+      : <>Para Coaches Fitness High Ticket que quieren entre 20 y 40 llamadas CALIFICADAS Extra al Mes</>;
 
   return (
     <div className="relative overflow-clip">
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="max-w-[900px] mx-auto">
             <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
               <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] leading-[120%] text-center">
-                Solo para Marcas Personales con Ticket de MÍNIMO US$500
+                Solo para Coaches Fitness con Ticket de MÍNIMO US$500
               </p>
             </div>
             <h1 className="text-white max-w-[750px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
@@ -108,16 +108,16 @@ export default function Home() {
           </div>
           <div className="bg-[#E34716] -z-50 size-[300px] blur-[160px] opacity-80 md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
 
-          <div className="flex items-center justify-center md:flex-row flex-col mt-8">
-            <img className="h-[80px]" src="/images/marcas-personales.png" alt="Marcas Personales" />
-            <p className="text-white/80 max-w-[250px] md:text-start text-center">+45 Marcas Personales ya venden de forma más estable</p>
+          <div className="flex items-center justify-center mt-8">
+            <img className="h-[75px]" src="/images/marcas-personales.png" alt="Coaches Fitness" />
+            <p className="text-white/80 max-w-[250px] text-[14px]">+25 Coaches Fitness ya venden con nuestros embudos</p>
           </div>
         </section>
       </div>
 
       <section className="px-4 pb-[80px]">
         <div className="bg-white/10 py-16 px-4 rounded-2xl max-w-[900px] mx-auto relative z-50">
-          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">marcas personales establecidas con una oferta validada de AL MENOS US$500 y multiples testimonios.</span></h3>
+          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">Coaches Fitness establecidos con una oferta validada de AL MENOS US$500 y multiples casos de exito.</span></h3>
         </div>
       </section>
 
@@ -138,8 +138,8 @@ export default function Home() {
               <div className="mb-8">
                 <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 2:</span> Diseñamos y desarrollamos tu embudo (Semanas 2 a 3)</h5>
                 <ul className="space-y-2 mt-4 text-[18px]">
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Diseñamos landing, página de agradecimiento y formulario.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Desarrollamos todo con las mejores prácticas.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Diseñamos landing, página de agradecimiento y formulario con bases probadas enfocadas en convertir.</li>
+                  <li><Check className="inline-block mr-2 text-[#E34716]" />Desarrollamos todo con las mejores prácticas para no perder ventas.</li>
                   <li><Check className="inline-block mr-2 text-[#E34716]" />Conectamos todo con el Pixel y la API de conversiones para que Meta trabaje para vos y no al revés.</li>
                 </ul>
               </div>
