@@ -6,8 +6,8 @@ import '@fontsource-variable/inter';
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Tomás Costa Funnels - Embudos de venta para coaches fitness, nutricionistas y psicologos online",
-  description: "Embudos de venta para coaches fitness, nutricionistas y psicologos online",
+  title: "Tomás Costa Funnels - Embudos de venta para coaches fitness. Aumenta tus conversiones y escala tu negocio con nuestros embudos de venta personalizados.",
+  description: "Embudos de venta para coaches fitness high ticket. Aumenta tus conversiones y escala tu negocio con nuestros embudos de venta personalizados.",
 };
 
 export default function RootLayout({
