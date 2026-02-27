@@ -334,7 +334,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                   ¿Cuántos casos de éxito/clientes has tenido?
                 </h2>
                 <div className="space-y-3">
-                  {["0 casos (No agendes)", "1 - 4 casos (No agendes)", "5 - 20 casos", "Más de 20 casos"].map((option) => (
+                  {["0 casos (No agendes)", "1 - 4 casos", "5 - 20 casos", "Más de 20 casos"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
