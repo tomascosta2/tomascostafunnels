@@ -64,9 +64,9 @@ export default function Home() {
     },
   ];
   const heroTitle =
-    variant === "A"
-      ? <>En 3 semanas lanzamos tu embudo VSL para que tengas de 20 a 40 llamadas CALIFICADAS extra todos los meses</>
-      : <>Para Coaches Fitness High Ticket que quieren entre 20 y 40 llamadas CALIFICADAS Extra al Mes</>;
+    variant === "B"
+      ? <>En 3 Semanas Lanzamos Tu Embudo VSL Para Que Tengas Minimo 40 Llamadas CALIFICADAS Extra Todos Los Meses <br /> <span className="text-[#E34716]">O No Pagas</span></>
+      : <>Creamos Embudos Para Coaches Fitness High Ticket Que Quieren Minimo 40 Llamadas CALIFICADAS Extra Al Mes <br /> <span className="text-[#E34716]">O No Pagas</span></>;
 
   return (
     <div className="relative overflow-clip">
