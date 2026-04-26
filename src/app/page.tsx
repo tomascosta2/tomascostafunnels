@@ -63,100 +63,92 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle =
-    variant === "B"
-      ? <>En 3 Semanas Lanzamos Tu Embudo VSL Para Que Tengas Entre 20 Y 40 Llamadas CALIFICADAS Extra Todos Los Meses</>
-      : <>Creamos Embudos Para Coaches Fitness High Ticket Que Quieren De 20 A 40 Llamadas CALIFICADAS Extra Al Mes</>;
+  const heroTitle = <>Aumentamos las Llamadas Calificadas de tu Coaching Fitness High Ticket con un Embudo VSL probado</>;
 
   return (
     <div className="relative overflow-clip">
       {/* <img className="absolute w-[1000px] max-w-none opacity-[20%] -left-[100px] md:-left-[150px] md:w-[3500px] top-[300px] md:-top-[100px]" src="/images/elemento-lineas.png" alt="Lineas" /> */}
       {/* <img className="absolute w-[600px] max-w-none mx-auto left-[calc(50%-300px)] top-[-54px]" src="/images/elemento-luz-2.png" alt="Luz" /> */}
       <div className="relative overflow-x-clip">
-        <section className="pt-[32px] pb-[60px] z-50 relative px-4">
+        <section className="pt-[60px] md:pt-[100px] pb-[80px] md:pb-[120px] z-50 relative px-4">
+          {/* Background decorativo */}
+          <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+            <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1100px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(227,71,22,0.22),transparent_65%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,black_30%,transparent_90%)]"></div>
+          </div>
+
           <div className="max-w-[900px] mx-auto">
-            <div className="rounded-full py-2 px-4 w-fit mx-auto mb-4 border border-[#E34716]/30 bg-[#E34716]/10 backdrop-blur">
-              <p className="text-white w-full md:w-[600px] tracking-widest font-medium text-[14px] max-w-[300px] leading-[120%] text-center">
-                Solo para Coaches Fitness con Ticket de MÍNIMO US$500
-              </p>
-            </div>
-            <h1 className="text-white max-w-[750px] mx-auto text-shadow-[0px_2px_30px_#FFFFFF50] text-center leading-[115%] md:leading-[120%] text-[26px] md:text-[32px] tracking-[-1%] font-bold">
-              {heroTitle}
-            </h1>
-            <p className="md:block hidden px-8 text-white text-center leading-[150%] max-w-[700px] mx-auto mt-2 md:px-0 px-4">
-              100% DFY y además pasamos 2 meses enteros optimizando tu embudo.
-            </p>
-            <div className="bg-[#121212] border border-[#E34716] text-white max-w-[600px] mx-auto mt-4 rounded-[20px] text-[12px] text-center">
-              <p className="py-1 px-12 tracking-widest">MIRA ESTE VIDEO Y DESPUES AGENDA TU LLAMADA</p>
-              <div className="border-4 border-[#121212] rounded-[20px] overflow-clip mx-auto">
-                <iframe
-                  className="w-full aspect-video"
-                  id="panda-edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
-                  src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-                ></iframe>
+            {/* Eyebrow refinado */}
+            <div className="flex justify-center mb-7 md:mb-9 fade-in-down">
+              <div className="inline-flex items-center justify-center rounded-full px-4 py-1.5 bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
+                <p className="text-white/80 text-[11px] md:text-[12px] tracking-[0.14em] uppercase font-medium text-center">
+                  Nuestros clientes tienen entre x4 y x10 de ROAS
+                </p>
               </div>
             </div>
-            <p className="md:hidden text-[14px] block px-4 text-white text-center leading-[150%] text-[16px] max-w-[500px] mx-auto mt-2 md:px-0 px-4">
-              100% DFY y además pasamos 2 meses enteros optimizando tu embudo.
+
+            {/* H1 */}
+            <h1 className="text-white max-w-[820px] mx-auto text-center leading-[1.08] md:leading-[1.05] text-[28px] md:text-[48px] tracking-[-0.025em] font-bold text-balance fade-in-up delay-100">
+              {heroTitle}
+            </h1>
+
+            {/* Subtítulo */}
+            <p className="text-white/55 text-center leading-[1.55] max-w-[560px] mx-auto mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200">
+              Sin depender del orgánico ni promesas mágicas o garantías imposibles
             </p>
 
-            {/* CTA que abre el formulario */}
-            <div onClick={() => setIsFormOpen(true)}>
+            {/* Video card refinado */}
+            <div className="mt-8 md:mt-16 max-w-[680px] mx-auto relative fade-in-up delay-300">
+              <div className="absolute -inset-6 bg-gradient-to-br from-[#E34716]/30 via-[#E34716]/5 to-transparent rounded-[32px] blur-3xl pointer-events-none"></div>
+              <div className="relative bg-[#0a0a0a] rounded-[20px] overflow-hidden border border-[#E34716] shadow-[0_24px_80px_-12px_rgba(227,71,22,0.35)]">
+                <p className="py-1.5 text-white text-[12px] tracking-widest text-center">Mira este video completo *</p>
+                <div className="border-4 border-[#0a0a0a] rounded-[20px] overflow-hidden">
+                  <iframe
+                    className="w-full aspect-video block"
+                    id="panda-edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
+                    src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="fade-in-up delay-400" onClick={() => setIsFormOpen(true)}>
               <Button text="Quiero Mi Embudo VSL  →" />
             </div>
+            <p className="text-white/45 text-center text-[13px] mt-4 tracking-[-0.005em] fade-in-up delay-400">
+              Aceptamos solo <span className="text-white/70 font-semibold">3 clientes por mes</span>
+            </p>
           </div>
-          <div className="bg-[#E34716] -z-50 size-[300px] blur-[160px] opacity-80 md:blur-[200px] absolute bottom-[-100px] -left-[50%]"></div>
 
-          <div className="flex items-center justify-center mt-8">
-            <img className="h-[75px]" src="/images/marcas-personales.png" alt="Coaches Fitness" />
-            <p className="text-white/80 max-w-[250px] text-[14px]">+25 Coaches Fitness ya venden con nuestros embudos</p>
+          {/* Sección de marcas */}
+          <div className="mt-20 md:mt-28 max-w-[800px] mx-auto">
+            <p className="text-white/35 text-[10px] md:text-[11px] tracking-[0.22em] uppercase text-center mb-7 font-medium">
+              Coaches con los que trabajamos
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <img
+                className="h-[60px] md:h-[70px]"
+                src="/images/marcas-personales.png"
+                alt="Coaches Fitness"
+              />
+              <p className="text-white/55 max-w-[200px] text-[13px] md:text-[14px] leading-[1.5] tracking-[-0.005em]">
+                +25 Coaches Fitness ya venden con nuestros embudos
+              </p>
+            </div>
           </div>
         </section>
       </div>
 
-      <section className="px-4 pb-[80px]">
-        <div className="bg-white/10 py-16 px-4 rounded-2xl max-w-[900px] mx-auto relative z-50">
-          <h3 className="text-white text-center leading-[110%] text-[24px] md:text-[28px]">Esta oferta es solo para <span className="text-[#e6b6a7]">Coaches Fitness establecidos con una oferta validada de AL MENOS US$500 y multiples casos de exito.</span></h3>
-        </div>
-      </section>
-
-      <section className="pt-[80px] pb-[60px] bg-white">
-        <div className="max-w-[700px] mx-auto px-8">
-          <div>
-            <h3 className="text-[#111] text-center leading-[110%] text-[24px] md:text-[28px]">Cómo funciona:</h3>
-
-            <div className="mt-10 text-[#111]">
-              <div className="mb-8">
-                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 1:</span> Guionamos tus anuncios y redactamos los textos de tu landing (Semana 1)</h5>
-                <ul className="space-y-2 mt-4 text-[18px]">
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Guiones de anuncios hechos por nosotros con la misma estructura que ha generado miles de dólares y llamadas calificadas a nuestros clientes.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Redactamos cada sección del embudo con textos pensados psicológicamente para vender más.</li>
-                </ul>
-              </div>
-
-              <div className="mb-8">
-                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 2:</span> Diseñamos y desarrollamos tu embudo (Semanas 2 a 3)</h5>
-                <ul className="space-y-2 mt-4 text-[18px]">
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Diseñamos landing, página de agradecimiento y formulario con bases probadas enfocadas en convertir.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Desarrollamos todo con las mejores prácticas para no perder ventas.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Conectamos todo con el Pixel y la API de conversiones para que Meta trabaje para vos y no al revés.</li>
-                </ul>
-              </div>
-
-              <div className="">
-                <h5 className="text-[22px] font-semibold"><span className="text-[#E34716]">Fase 3:</span> Revisamos, analizamos y mejoramos (Semanas 4 a 12)</h5>
-                <ul className="space-y-2 mt-4 text-[18px]">
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Analizamos el rendimiento y detectamos puntos de mejora.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Creamos testeos A/B de cada elemento importante de la landing para mejorar el rendimiento general del embudo.</li>
-                  <li><Check className="inline-block mr-2 text-[#E34716]" />Detectamos el ángulo ganador y creamos nuevos anuncios según eso.</li>
-                </ul>
-              </div>
-            </div>
+      <section className="px-4 pb-[100px]">
+        <div className="relative max-w-[900px] mx-auto z-50">
+          <div className="absolute -inset-px bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent rounded-3xl pointer-events-none"></div>
+          <div className="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] backdrop-blur-sm py-12 md:py-16 px-6 md:px-12 rounded-3xl">
+            <h3 className="text-white text-center leading-[1.35] md:leading-[1.3] text-[20px] md:text-[26px] tracking-[-0.015em] font-medium max-w-[760px] mx-auto">
+              Este servicio es solo para <span className="text-[#E34716] font-semibold">Coaches Fitness establecidos con una oferta validada de al menos US$500 y múltiples casos de éxito.</span>
+            </h3>
           </div>
-        </div>
-        <div className="mt-8 px-4" onClick={() => setIsFormOpen(true)}>
-          <Button text="Quiero Mi Embudo VSL  →" />
         </div>
       </section>
 
