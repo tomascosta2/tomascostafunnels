@@ -98,7 +98,7 @@ export default function Home() {
             </p>
 
             {/* Video card refinado */}
-            <div className="mt-8 md:mt-16 max-w-[680px] mx-auto relative fade-in-up delay-300">
+            <div className="mt-8 md:mt-10 max-w-[680px] mx-auto relative fade-in-up delay-300">
               <div className="absolute -inset-6 bg-gradient-to-br from-[#E34716]/30 via-[#E34716]/5 to-transparent rounded-[32px] blur-3xl pointer-events-none"></div>
               <div className="relative bg-[#0a0a0a] rounded-[20px] overflow-hidden border border-[#E34716] shadow-[0_24px_80px_-12px_rgba(227,71,22,0.35)]">
                 <p className="py-1.5 text-white text-[12px] tracking-widest text-center">Mira este video completo *</p>
