@@ -104,7 +104,7 @@ export default function Home() {
                 <p className="py-1.5 text-white text-[12px] tracking-widest text-center">Mira este video completo *</p>
                 <div className="border-4 border-[#0a0a0a] rounded-[20px] overflow-hidden">
                   <iframe
-                    className="w-full aspect-[2/1] block"
+                    className="w-full aspect-video block"
                     id="panda-90743a54-1155-4570-a9f4-23bcaa558b82"
                     src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=90743a54-1155-4570-a9f4-23bcaa558b82"
                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
