@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Progress } from "./ui/progress"
 import { ArrowLeft, Loader2 } from "lucide-react"
@@ -205,8 +204,9 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   }
 
   return (
-    <div className="w-full max-w-[500px] mx-auto border-white/20 relative overflow-clip border p-[6px] rounded-[24px]">
-      <div className="bg-[#000] rounded-[16px] overflow-clip relative">
+    <div className="w-full max-w-[520px] mx-auto relative">
+      <div className="absolute -inset-px bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent rounded-3xl pointer-events-none"></div>
+      <div className="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] backdrop-blur-sm rounded-3xl overflow-hidden">
         {/* Barra de progreso: solo se muestra a partir del paso 2 */}
         {currentStep > 1 && (
           <div className="mb-8">
@@ -224,7 +224,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
             </button>
           )}
 
-          <div className="min-h-[300px]">
+          <div>
             {/* Paso 1 */}
             {currentStep === 1 && (
               <div className="space-y-6">
@@ -238,7 +238,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                       placeholder="Nombre"
                       value={formData.nombre}
                       onChange={(e) => updateFormData("nombre", e.target.value)}
-                      className="bg-white text-black border-0 h-12"
+                      className="bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 h-12 rounded-lg focus:border-[#E34716]/50 focus:ring-2 focus:ring-[#E34716]/20"
                     />
                   </div>
                   <div>
@@ -249,7 +249,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                       placeholder="Ej: +549261XXXXXXX"
                       value={formData.telefono}
                       onChange={(e) => updateFormData("telefono", e.target.value)}
-                      className="bg-white text-black border-0 h-12"
+                      className="bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 h-12 rounded-lg focus:border-[#E34716]/50 focus:ring-2 focus:ring-[#E34716]/20"
                     />
                   </div>
                   <div>
@@ -260,7 +260,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                       placeholder="Correo electrónico"
                       value={formData.correo}
                       onChange={(e) => updateFormData("correo", e.target.value)}
-                      className="bg-white text-black border-0 h-12"
+                      className="bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 h-12 rounded-lg focus:border-[#E34716]/50 focus:ring-2 focus:ring-[#E34716]/20"
                     />
                   </div>
                 </div>
@@ -282,10 +282,10 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                         setTimeout(handleNext, 300)
                       }}
                       className={cn(
-                        "w-full p-4 rounded-lg border-2 text-left transition-all",
+                        "w-full p-4 rounded-lg border text-left transition-all duration-200",
                         formData.rol === option
-                          ? "bg-[#E34716] border-[#E34716] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
+                          ? "bg-[#E34716] border-[#E34716] text-white shadow-[0_4px_16px_-4px_rgba(227,71,22,0.5)]"
+                          : "bg-white/[0.03] border-white/[0.08] text-white hover:bg-white/[0.06] hover:border-white/15"
                       )}
                     >
                       <span>{option}</span>
@@ -314,10 +314,10 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                         setTimeout(handleNext, 300)
                       }}
                       className={cn(
-                        "w-full p-4 rounded-lg border-2 text-left transition-all",
+                        "w-full p-4 rounded-lg border text-left transition-all duration-200",
                         formData.facturacion === option
-                          ? "bg-[#E34716] border-[#E34716] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
+                          ? "bg-[#E34716] border-[#E34716] text-white shadow-[0_4px_16px_-4px_rgba(227,71,22,0.5)]"
+                          : "bg-white/[0.03] border-white/[0.08] text-white hover:bg-white/[0.06] hover:border-white/15"
                       )}
                     >
                       <span>{option}</span>
@@ -341,10 +341,10 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                         updateFormData("casosExito", option)
                       }}
                       className={cn(
-                        "w-full p-4 rounded-lg border-2 text-left transition-all",
+                        "w-full p-4 rounded-lg border text-left transition-all duration-200",
                         formData.casosExito === option
-                          ? "bg-[#E34716] border-[#E34716] text-white"
-                          : "bg-transparent border-white/20 text-white hover:border-[#E34716]"
+                          ? "bg-[#E34716] border-[#E34716] text-white shadow-[0_4px_16px_-4px_rgba(227,71,22,0.5)]"
+                          : "bg-white/[0.03] border-white/[0.08] text-white hover:bg-white/[0.06] hover:border-white/15"
                       )}
                     >
                       <span>{option}</span>
@@ -356,35 +356,37 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
           </div>
 
           {/* Botón */}
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-6">
             {currentStep < totalSteps ? (
-              <Button
+              <button
+                type="button"
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="bg-[#E34716] hover:bg-[#E34716] text-white px-12 w-full py-8 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="tcf-btn"
               >
                 Siguiente
-              </Button>
+              </button>
             ) : (
-              <Button
+              <button
+                type="button"
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className="bg-[#E34716] hover:bg-[#E34716] text-white px-12 py-6 text-lg rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="tcf-btn"
               >
                 {isSubmitting ? (
-                  <>
+                  <span className="inline-flex items-center">
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                     Enviando...
-                  </>
+                  </span>
                 ) : (
                   "Enviar"
                 )}
-              </Button>
+              </button>
             )}
           </div>
             <p className="text-gray-100/60 text-[14px] px-2 leading-[100%] text-center mt-4">PD: La llamada NO es con un closer que te intenta obligar a comprar como sea.
               <br/><br/>
-              Es conmigo para contestar tus dudas.</p>
+              Es conmigo para revisar detalles y detectar problemas a solucionar.</p>
         </div>
       </div>
     </div>

@@ -77,9 +77,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,black_30%,transparent_90%)]"></div>
           </div>
 
-          <div className="max-w-[900px] mx-auto">
-            {/* Eyebrow refinado */}
-            <div className="flex justify-center mb-7 md:mb-9 fade-in-down">
+          <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] md:gap-x-12 md:items-center">
+            {/* Eyebrow */}
+            <div className="flex justify-center md:justify-start md:col-start-1 md:row-start-1 mb-7 md:mb-7 fade-in-down">
               <div className="inline-flex items-center justify-center rounded-full px-4 py-1.5 bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                 <p className="text-white/80 text-[11px] md:text-[12px] tracking-[0.14em] uppercase font-medium text-center">
                   Nuestros clientes tienen entre x4 y x10 de ROAS
@@ -88,17 +88,17 @@ export default function Home() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-white max-w-[820px] mx-auto text-center leading-[1.08] md:leading-[1.05] text-[28px] md:text-[48px] tracking-[-0.025em] font-bold text-balance fade-in-up delay-100">
+            <h1 className="text-white text-center md:text-left leading-[1.08] md:leading-[1.05] text-[28px] md:text-[40px] tracking-[-0.025em] font-bold text-balance fade-in-up delay-100 md:col-start-1 md:row-start-2">
               {heroTitle}
             </h1>
 
             {/* Subtítulo */}
-            <p className="text-white/55 text-center leading-[1.55] max-w-[560px] mx-auto mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200">
+            <p className="text-white/55 text-center md:text-left leading-[1.55] max-w-[560px] mx-auto md:mx-0 mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200 md:col-start-1 md:row-start-3">
               Sin depender del orgánico ni promesas mágicas o garantías imposibles
             </p>
 
-            {/* Video card refinado */}
-            <div className="mt-8 md:mt-10 max-w-[680px] mx-auto relative fade-in-up delay-300">
+            {/* Video card — columna derecha en desktop */}
+            <div className="mt-8 md:mt-0 max-w-[680px] mx-auto md:mx-0 w-full relative fade-in-up delay-300 md:col-start-2 md:row-start-1 md:row-span-5">
               <div className="absolute -inset-6 bg-gradient-to-br from-[#E34716]/30 via-[#E34716]/5 to-transparent rounded-[32px] blur-3xl pointer-events-none"></div>
               <div className="relative bg-[#0a0a0a] rounded-[20px] overflow-hidden border border-[#E34716] shadow-[0_24px_80px_-12px_rgba(227,71,22,0.35)]">
                 <p className="py-1.5 text-white text-[12px] tracking-widest text-center">Mira este video completo *</p>
@@ -114,10 +114,10 @@ export default function Home() {
             </div>
 
             {/* CTA */}
-            <div className="fade-in-up delay-400" onClick={() => setIsFormOpen(true)}>
+            <div className="fade-in-up delay-400 md:col-start-1 md:row-start-4 md:mt-2 md:flex md:justify-start" onClick={() => setIsFormOpen(true)}>
               <Button text="Quiero Mi Embudo VSL  →" />
             </div>
-            <p className="text-white/45 text-center text-[13px] mt-4 tracking-[-0.005em] fade-in-up delay-400">
+            <p className="text-white/45 text-center md:text-left text-[13px] mt-4 tracking-[-0.005em] fade-in-up delay-400 md:col-start-1 md:row-start-5">
               Aceptamos solo <span className="text-white/70 font-semibold">3 clientes por mes</span>
             </p>
           </div>
@@ -198,8 +198,8 @@ export default function Home() {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="max-w-[900px] w-full">
-            <h2 className="text-white max-w-[800px] mx-auto mb-4 capitalize text-center leading-[120%] text-[22px] md:text-[32px] tracking-[-1%] font-bold">
-              Llena el formulario, agenda tu consulta, y obtene un embudo que te aporte estabilidad, predictibilidad y, escalabilidad
+            <h2 className="text-white max-w-[760px] mx-auto mb-8 text-center leading-[1.15] md:leading-[1.1] text-[24px] md:text-[36px] tracking-[-0.025em] font-bold text-balance">
+              Llená el formulario, agendá tu consulta, y obtené un embudo que te aporte estabilidad, predictibilidad y escalabilidad
             </h2>
             <div className="mt-8">
               <MultiStepForm variant={variant} ad={ad} />
