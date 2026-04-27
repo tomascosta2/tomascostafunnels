@@ -105,8 +105,8 @@ export default function Home() {
                 <div className="border-4 border-[#0a0a0a] rounded-[20px] overflow-hidden">
                   <iframe
                     className="w-full aspect-video block"
-                    id="panda-90743a54-1155-4570-a9f4-23bcaa558b82"
-                    src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=90743a54-1155-4570-a9f4-23bcaa558b82"
+                    id="panda-edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
+                    src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=edd19f7b-e123-4ec2-a1d2-a4939b1e0617"
                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
                   ></iframe>
                 </div>
