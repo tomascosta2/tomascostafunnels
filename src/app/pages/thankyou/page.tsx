@@ -49,7 +49,7 @@ export default function ThankYouPage() {
 
       <section className="mx-auto max-w-[640px] px-4 py-16 md:py-24 relative">
         <h1 className="text-center text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-0.025em] text-balance">
-          Tu llamada está <span className="text-[#E34716]">agendada</span>
+          Tu llamada está <span className="text-[#E34716]">agendada</span>, confirmá por WhatsApp
         </h1>
 
         {countdown && (
