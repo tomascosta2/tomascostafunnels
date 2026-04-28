@@ -115,6 +115,25 @@ export default function Calendly() {
       if (processedRef.current) return; // evita duplicados
       processedRef.current = true;
 
+      // 2a) Pedimos el startTime a la API de Calendly y lo guardamos
+      // para que el countdown del thankyou pueda usarlo.
+      const eventUri = (data as { payload?: { event?: { uri?: string } } })?.payload?.event?.uri;
+      if (eventUri) {
+        fetch('/api/calendly/closer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ eventUri }),
+          keepalive: true,
+        })
+          .then((r) => r.json())
+          .then((info) => {
+            if (info?.startTime) {
+              try { localStorage.setItem('meeting_startAt', info.startTime); } catch {}
+            }
+          })
+          .catch((err) => console.error('[Calendly] /closer error:', err));
+      }
+
       try {
         const n8nRes = await fetch('https://n8n.srv953925.hstgr.cloud/webhook/687876d3-0b32-431e-86d2-c3d37f5ae524', {
           method: "POST",

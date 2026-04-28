@@ -1,237 +1,101 @@
 // src/app/pages/thankyou/page.tsx
 'use client';
 
-import { useMemo, useState } from 'react';
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from '@/components/ui/accordion';
+import { useEffect, useMemo, useState } from 'react';
 
 export default function ThankYouPage() {
-  // WhatsApp (SOLO dígitos para wa.me)
   const whatsappNumber = '542616841853';
+
+  const [startAt, setStartAt] = useState<string>('');
+  const [countdown, setCountdown] = useState<{ d: number; h: number; m: number; s: number } | null>(null);
+
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const s = q.get('startAt') || localStorage.getItem('meeting_startAt') || '';
+      setStartAt(s);
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    if (!startAt) return;
+    const update = () => {
+      const diff = new Date(startAt).getTime() - Date.now();
+      if (diff <= 0) { setCountdown(null); return; }
+      setCountdown({
+        d: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        h: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        m: Math.floor((diff / (1000 * 60)) % 60),
+        s: Math.floor((diff / 1000) % 60),
+      });
+    };
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, [startAt]);
 
   const waText = useMemo(() => {
     const msg =
       '¡Hola! Confirmo mi asistencia a la llamada ✅\n\n' +
-      'Ya completé el checklist y voy a estar a tiempo.\n' +
       '¿Me confirmás si quedó todo OK?';
     return encodeURIComponent(msg);
   }, []);
 
-  const waHref = useMemo(
-    () => `https://wa.me/${whatsappNumber}?text=${waText}`,
-    [whatsappNumber, waText]
-  );
-
-  // Checklist
-  const [c1, setC1] = useState(false);
-  const [c2, setC2] = useState(false);
-  const [c3, setC3] = useState(false);
-  const canConfirm = c1 && c2 && c3;
-
-  const FAQS = [
-    {
-      id: 'q1',
-      pregunta: '¿Cuánto tiempo me va a demandar implementar todo esto?',
-      respuesta:
-        'Muy poco: mi equipo y yo nos encargamos del grueso del trabajo. Vos solo aprobás guiones, grabás la VSL (con guía) y nos compartís accesos. La coordinación típica es 1–2 horas por semana.',
-    },
-    {
-      id: 'q2',
-      pregunta: 'Probé un funnel con VSL y no funcionó, ¿por qué ahora sería distinto?',
-      respuesta:
-        'La diferencia es la optimización continua, el triage de tráfico frío y el sistema de medición. No es solo “tener una VSL”, sino iterar hooks, ofertas, secuencias y segmentación hasta lograr fit y escalar.',
-    },
-    {
-      id: 'q3',
-      pregunta: '¿En cuánto tiempo puedo esperar ver llamadas nuevas?',
-      respuesta:
-        'En los primeros dias ya empiezan a entrar llamadas, pero la cantidad depende de la inversión en ads y el nicho.',
-    },
-    {
-      id: 'q5',
-      pregunta: 'No tengo tiempo todos los días, ¿igual puedo?',
-      respuesta:
-        'Sí. El sistema trabaja 24/7. Tu tiempo se concentra en llamadas calificadas y entregables; nosotros manejamos anuncios, CRO, datos y ajustes.',
-    },
-    {
-      id: 'q6',
-      pregunta: '¿Qué necesito preparar de mi lado?',
-      respuesta:
-        'Accesos (ads/analytics/calendly/whatsapp), breve cuestionario, disponibilidad para grabar la VSL con nuestro guion y un testimonio o caso si tenés. Nosotros hacemos el resto.',
-    },
-    {
-      id: 'q7',
-      pregunta: '¿Hay contrato de permanencia o puedo pausar?',
-      respuesta:
-        'Trabajamos por ciclos mensuales con objetivos claros. Si no te suma, podés pausar; retenemos por resultados, no por cláusulas.',
-    },
-    {
-      id: 'q8',
-      pregunta: '¿Qué pasa si entran leads curiosos o poco calificados?',
-      respuesta:
-        'Calificamos en página (pre-preguntas) y optimizamos creatividades/segmentación para elevar la calidad de agenda.',
-    },
-    {
-      id: 'q12',
-      pregunta: '¿Cuánto cuesta y qué incluye?',
-      respuesta:
-        'Incluye estrategia, guion VSL, setup de funnel, campañas, seguimiento de datos y optimización semanal. Ajustamos en la llamada según tu caso y volumen objetivo.',
-    },
-  ] as const;
+  const waHref = `https://wa.me/${whatsappNumber}?text=${waText}`;
 
   return (
-    <main className="min-h-screen bg-[#07070A] text-white">
-      <section className="mx-auto max-w-[860px] px-4 py-10 md:py-14">
-        <div className='bg-[#E34716] left-[calc(50%-150px)] -top-[150px] absolute blur-[300px] size-[300px] rounded-full'></div>
-        {/* Header */}
-        <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-          <p className="mb-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-amber-300/20 bg-amber-400/10 px-3 py-2 text-[14px] text-amber-200">
-            <svg
-              className="h-5 w-5 fill-amber-300"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 640"
-            >
-              <path d="M320 64C334.7 64 348.2 72.1 355.2 85L571.2 485C577.9 497.4 577.6 512.4 570.4 524.5C563.2 536.6 550.1 544 536 544L104 544C89.9 544 76.9 536.6 69.6 524.5C62.3 512.4 62.1 497.4 68.8 485L284.8 85C291.8 72.1 305.3 64 320 64zM320 232C306.7 232 296 242.7 296 256L296 368C296 381.3 306.7 392 320 392C333.3 392 344 381.3 344 368L344 256C344 242.7 333.3 232 320 232zM346.7 448C347.3 438.1 342.4 428.7 333.9 423.5C325.4 418.4 314.7 418.4 306.2 423.5C297.7 428.7 292.8 438.1 293.4 448C292.8 457.9 297.7 467.3 306.2 472.5C314.7 477.6 325.4 477.6 333.9 472.5C342.4 467.3 347.3 457.9 346.7 448z" />
-            </svg>
-            <span>
-              <strong>¡Último paso!</strong> Confirmá por WhatsApp para no perder tu cupo.
-            </span>
-          </p>
+    <main className="min-h-screen bg-[#07070A] text-white relative overflow-hidden">
+      <div className="bg-[#E34716] left-[calc(50%-150px)] -top-[150px] absolute blur-[300px] size-[300px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-[26px] font-extrabold leading-[115%] md:text-[32px]">
-            Genial — ya casi estamos. Solo falta confirmar.
-          </h1>
-          <p className="mt-2 text-[15px] text-white/70">
-            Mira el video y marcá el checklist para habilitar el botón (tarda 2 minutos).
-          </p>
+      <section className="mx-auto max-w-[640px] px-4 py-16 md:py-24 relative">
+        <h1 className="text-center text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-0.025em] text-balance">
+          Tu llamada está <span className="text-[#E34716]">agendada</span>
+        </h1>
 
-          <div className='mt-4 rounded-lg overflow-clip'>
-            <iframe className='w-full aspect-video' id="panda-a3bd0e5f-f199-4623-bfcf-0f0d83d7f6e2" src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=a3bd0e5f-f199-4623-bfcf-0f0d83d7f6e2" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"></iframe>
+        {countdown && (
+          <div className="mt-10 relative">
+            <div className="absolute -inset-px bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent rounded-3xl pointer-events-none"></div>
+            <div className="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] backdrop-blur-sm p-8 rounded-3xl">
+              <p className="text-[12px] text-white/40 uppercase tracking-[0.18em] font-medium text-center mb-5">
+                Tu llamada empieza en
+              </p>
+              <div className="flex justify-center gap-3 md:gap-4">
+                {[
+                  { val: countdown.d, label: 'días' },
+                  { val: countdown.h, label: 'horas' },
+                  { val: countdown.m, label: 'min' },
+                  { val: countdown.s, label: 'seg' },
+                ].map((item) => (
+                  <div key={item.label} className="flex flex-col items-center">
+                    <div className="w-[64px] md:w-[72px] h-[64px] md:h-[72px] bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/[0.08] rounded-xl flex items-center justify-center">
+                      <span className="text-white text-[26px] md:text-[30px] font-bold tabular-nums tracking-tight">
+                        {String(item.val).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-white/40 mt-2 uppercase tracking-[0.1em]">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              {startAt && (
+                <p className="text-center text-[14px] text-white/55 mt-6">
+                  {new Date(startAt).toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' })} a las {new Date(startAt).toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}
+                </p>
+              )}
+            </div>
           </div>
+        )}
 
-        </div>
-
-        {/* Checklist card */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-          <p className="mb-3 text-[16px] font-semibold">
-            Checklist — habilita la confirmación:
-          </p>
-
-          <div className="space-y-3">
-            <label className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/20 p-3">
-              <input
-                type="checkbox"
-                className="mt-1 h-4 w-4 accent-[#FF3B00]"
-                checked={c1}
-                onChange={(e) => setC1(e.target.checked)}
-              />
-              <span className="text-[15px] text-white/85">
-                Voy a estar en un lugar tranquilo, sin interrupciones.
-              </span>
-            </label>
-
-            <label className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/20 p-3">
-              <input
-                type="checkbox"
-                className="mt-1 h-4 w-4 accent-[#FF3B00]"
-                checked={c2}
-                onChange={(e) => setC2(e.target.checked)}
-              />
-              <span className="text-[15px] text-white/85">
-                Me comprometo a llegar a tiempo (respeto el cupo y la agenda).
-              </span>
-            </label>
-
-            <label className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/20 p-3">
-              <input
-                type="checkbox"
-                className="mt-1 h-4 w-4 accent-[#FF3B00]"
-                checked={c3}
-                onChange={(e) => setC3(e.target.checked)}
-              />
-              <span className="text-[15px] text-white/85">
-                Si no puedo asistir, reprogramo con anticipación para liberar el lugar.
-              </span>
-            </label>
-          </div>
-
-          {/* CTA */}
-          <div className="mt-5">
-            <a
-              className={[
-                'block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit mx-auto',
-                canConfirm
-                  ? 'bg-[#FF3B00] text-white hover:opacity-90 shadow-[0_14px_60px_rgba(255,59,0,0.25)]'
-                  : 'bg-white/10 text-white/40 cursor-not-allowed',
-              ].join(' ')}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={canConfirm ? waHref : undefined}
-              aria-disabled={!canConfirm}
-            >
-              Confirmar mi asistencia por WhatsApp
-            </a>
-
-            <p className="mt-2 text-center text-[13px] text-red-300/90">
-              Si no confirmás, tu llamada puede cancelarse y el sistema libera tu cupo.
-            </p>
-          </div>
-        </div>
-
-        {/* FAQ */}
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-          <h3 className="text-center text-[22px] font-extrabold leading-[115%] md:text-[26px]">
-            Preguntas frecuentes
-          </h3>
-
-          <div className="mt-6">
-            <Accordion type="single" collapsible className="w-full">
-              {FAQS.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  value={item.id}
-                  className="border-white/10"
-                >
-                  <AccordionTrigger className="text-left text-[16px] font-bold text-white/90">
-                    {item.pregunta}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[15px] text-white/75">
-                    {item.respuesta}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-
-        {/* CTA final */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-          <p className="text-[15px] text-white/75">
-            Si ya marcaste el checklist arriba, confirmá acá:
-          </p>
-
+        <div className="mt-10 flex justify-center">
           <a
-            className={[
-              'mt-4 block w-full rounded-xl px-5 py-3 text-center text-[15px] font-bold transition md:w-fit mx-auto',
-              canConfirm
-                ? 'bg-[#FF3B00] text-white hover:opacity-90 shadow-[0_14px_60px_rgba(255,59,0,0.25)]'
-                : 'bg-white/10 text-white/40 cursor-not-allowed',
-            ].join(' ')}
+            className="tcf-btn group"
             target="_blank"
             rel="noopener noreferrer"
-            href={canConfirm ? waHref : undefined}
-            aria-disabled={!canConfirm}
+            href={waHref}
           >
-            Confirmar mi asistencia por WhatsApp
+            <span className="relative">Confirmar por WhatsApp</span>
           </a>
-
-          <p className="mt-2 text-center text-[13px] text-white/55">
-            Cupos limitados: si no confirmás, el sistema libera tu lugar automáticamente.
-          </p>
         </div>
       </section>
     </main>
