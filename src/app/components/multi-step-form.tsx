@@ -154,6 +154,13 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
         body: JSON.stringify(payload),
       })
 
+      void fetch("/api/analytics/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch((err) => console.error("[FFA] error:", err))
+
       if (isQualified) {
         trackPixelLead(eventId)
         void fetch("/api/track/lead", {
