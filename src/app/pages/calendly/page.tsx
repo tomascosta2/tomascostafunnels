@@ -117,21 +117,22 @@ export default function Calendly() {
 
       // 2a) Pedimos el startTime a la API de Calendly y lo guardamos
       // para que el countdown del thankyou pueda usarlo.
+      // Se hace await porque después redirigimos a /pages/thankyou.
       const eventUri = (data as { payload?: { event?: { uri?: string } } })?.payload?.event?.uri;
       if (eventUri) {
-        fetch('/api/calendly/closer', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ eventUri }),
-          keepalive: true,
-        })
-          .then((r) => r.json())
-          .then((info) => {
-            if (info?.startTime) {
-              try { localStorage.setItem('meeting_startAt', info.startTime); } catch {}
-            }
-          })
-          .catch((err) => console.error('[Calendly] /closer error:', err));
+        try {
+          const closerRes = await fetch('/api/calendly/closer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ eventUri }),
+          });
+          const info = await closerRes.json();
+          if (info?.startTime) {
+            try { localStorage.setItem('meeting_startAt', info.startTime); } catch {}
+          }
+        } catch (err) {
+          console.error('[Calendly] /closer error:', err);
+        }
       }
 
       try {
