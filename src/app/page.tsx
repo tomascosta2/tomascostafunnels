@@ -63,7 +63,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Aumentamos las Llamadas Calificadas de tu Coaching Fitness High Ticket con un Embudo VSL probado</>;
+  const heroTitle = <>Aumentamos las Llamadas Calificadas de tu Coaching Fitness con un Embudo VSL probado en 90 Días</>;
 
   return (
     <div className="relative overflow-clip">
