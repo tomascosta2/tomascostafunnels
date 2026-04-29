@@ -129,7 +129,7 @@ export default function Home() {
             </p>
             <div className="flex items-center justify-center gap-2">
               <img
-                className="h-[60px] md:h-[70px]"
+                className="h-[78px]"
                 src="/images/marcas-personales.png"
                 alt="Coaches Fitness"
               />
