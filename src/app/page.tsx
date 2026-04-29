@@ -82,7 +82,7 @@ export default function Home() {
             <div className="flex justify-center md:justify-start md:col-start-1 md:row-start-1 mb-7 md:mb-7 fade-in-down">
               <div className="inline-flex items-center justify-center rounded-full px-4 py-1.5 bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                 <p className="text-white/80 text-[11px] md:text-[12px] tracking-[0.14em] uppercase font-medium text-center">
-                  Nuestros clientes tienen entre x4 y x10 de ROAS
+                  Exclusivo para coaches fitness online
                 </p>
               </div>
             </div>
