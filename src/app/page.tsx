@@ -94,7 +94,7 @@ export default function Home() {
 
             {/* Subtítulo */}
             <p className="text-white/55 text-center md:text-left leading-[1.55] max-w-[560px] mx-auto md:mx-0 mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200 md:col-start-1 md:row-start-3">
-              Sin depender del orgánico ni promesas mágicas o garantías imposibles
+              Sin depender solo del orgánico ni campañas inestables que se te rompen cada dos semanas. Tenemos frameworks probados en el nicho para cada etapa del funnel.
             </p>
 
             {/* Video card — columna derecha en desktop */}
@@ -141,16 +141,6 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="px-4 pb-[100px]">
-        <div className="relative max-w-[900px] mx-auto z-50">
-          <div className="absolute -inset-px bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent rounded-3xl pointer-events-none"></div>
-          <div className="relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.08] backdrop-blur-sm py-12 md:py-16 px-6 md:px-12 rounded-3xl">
-            <h3 className="text-white text-center leading-[1.35] md:leading-[1.3] text-[20px] md:text-[26px] tracking-[-0.015em] font-medium max-w-[760px] mx-auto">
-              Este servicio es solo para <span className="text-[#E34716] font-semibold">Coaches Fitness establecidos con una oferta validada de al menos US$500 y múltiples casos de éxito.</span>
-            </h3>
-          </div>
-        </div>
-      </section>
 
       {/* <section className="px-4 relative z-50">
         <h2 className="text-white max-w-[500px] mx-auto mb-4 capitalize text-center leading-[120%] text-[24px] md:text-[32px] tracking-[-1%] font-bold">
