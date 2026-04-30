@@ -30,8 +30,31 @@ export default function Home() {
 
     localStorage.setItem("test", variant)
 
-    const ad = new URLSearchParams(window.location.search).get("ad") || "default";
-    setAd(ad);
+    const adParam = new URLSearchParams(window.location.search).get("ad") || "default";
+    setAd(adParam);
+
+    // PageView a FFA — 1 por sesión, no se duplica con refresh.
+    // sessionId persiste en localStorage; el endpoint del FFA hace UPSERT
+    // por (client_id, session_id), así que un refresh no infla el contador.
+    try {
+      let sessionId = window.localStorage.getItem("ff_session_id");
+      if (!sessionId) {
+        sessionId = (typeof crypto !== "undefined" && "randomUUID" in crypto)
+          ? crypto.randomUUID()
+          : `s-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+        window.localStorage.setItem("ff_session_id", sessionId);
+      }
+      const fbc = window.localStorage.getItem("_fbc") || null;
+      const fbp = window.localStorage.getItem("_fbp") || null;
+      fetch("/api/analytics/pageview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, variant, ad: adParam, fbc, fbp }),
+        keepalive: true,
+      }).catch((err) => console.error("[FFA pageview] error:", err));
+    } catch (err) {
+      console.error("[FFA pageview] init error:", err);
+    }
 
   }, [variant])
 
