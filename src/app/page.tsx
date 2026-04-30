@@ -115,7 +115,7 @@ export default function Home() {
 
             {/* CTA */}
             <div className="fade-in-up delay-400 md:col-start-1 md:row-start-4 md:mt-2 md:flex md:justify-start" onClick={() => setIsFormOpen(true)}>
-              <Button text="Quiero Mi Embudo VSL  →" />
+              <Button text="Ver si califico  →" />
             </div>
             <p className="text-white/45 text-center md:text-left text-[13px] mt-4 tracking-[-0.005em] fade-in-up delay-400 md:col-start-1 md:row-start-5">
               Aceptamos solo <span className="text-white/70 font-semibold">3 clientes por mes</span>
