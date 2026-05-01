@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Agregamos entre 4k y 20k de facturación extra a tu coaching fitness en 90 días</>;
+  const heroTitle = <>Agregamos entre 4k y 20k de facturación extra a tu coaching fitness en 90 días con un VSL probado</>;
 
   return (
     <div className="relative overflow-clip">
@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Subtítulo */}
             <p className="text-white/55 text-center md:text-left leading-[1.55] max-w-[560px] mx-auto md:mx-0 mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200 md:col-start-1 md:row-start-3">
-              Sin depender de regalar recursos a curiosos ni campañas inestables que se te rompen cada dos semanas. Tenemos frameworks probados en el nicho para cada etapa del funnel.
+              Sin depender de regalar recursos a curiosos ni campañas inestables que se te rompen cada dos semanas.
             </p>
 
             {/* Video card — columna derecha en desktop */}
