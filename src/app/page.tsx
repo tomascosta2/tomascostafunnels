@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Agregamos entre 4k y 20k de facturación extra a tu coaching fitness en 90 días con un VSL probado</>;
+  const heroTitle = <>Agregamos entre 10 y 40 Llamadas de Venta Calificadas a tu Coaching Fitness Sin depender de Chats con Curiosos</>;
 
   return (
     <div className="relative overflow-clip">
