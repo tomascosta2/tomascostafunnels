@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Agregamos entre 10 y 40 Llamadas de Venta Calificadas a tu Coaching Fitness Sin depender de Chats con Curiosos</>;
+  const heroTitle = <>Agregamos entre 20 y 40 Llamadas Calificadas a tu Coaching Fitness con una mezcla de campañas de Follow y VSL que Combina lo Mejor de Ambos Mundos</>;
 
   return (
     <div className="relative overflow-clip">
@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Subtítulo */}
             <p className="text-white/55 text-center md:text-left leading-[1.55] max-w-[560px] mx-auto md:mx-0 mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200 md:col-start-1 md:row-start-3">
-              Sin depender de regalar recursos a curiosos ni campañas inestables que se te rompen cada dos semanas.
+              El volumen del Follow + la efectividad del VSL se potencian para que tus ventas no dependan de un solo canal.
             </p>
 
             {/* Video card — columna derecha en desktop */}
