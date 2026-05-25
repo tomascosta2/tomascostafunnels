@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Agregamos entre 20 y 40 Llamadas Calificadas a tu Coaching Fitness con una mezcla de campañas de Follow y VSL que Combina lo Mejor de Ambos Mundos</>;
+  const heroTitle = <>Agregamos entre 20 y 40 Llamadas Calificadas a tu Coaching Fitness con un Embudo Mixto</>;
 
   return (
     <div className="relative overflow-clip">
