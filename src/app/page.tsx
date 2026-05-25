@@ -128,9 +128,9 @@ export default function Home() {
                 <div className="border-4 border-[#0a0a0a] rounded-[20px] overflow-hidden">
                   <iframe
                     className="w-full aspect-video block"
-                    id="panda-90743a54-1155-4570-a9f4-23bcaa558b82"
-                    src="https://player-vz-5c2adb98-6a4.tv.pandavideo.com/embed/?v=90743a54-1155-4570-a9f4-23bcaa558b82"
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                    src="https://www.loom.com/embed/987b60b7818a47a8a4a48dc280f01136"
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
