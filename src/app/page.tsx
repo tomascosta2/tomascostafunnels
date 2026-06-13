@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Conseguimos un x4 a x8 estable para tu Coaching Fitness con un Embudo Mixto</>;
+  const heroTitle = <>Te ayudamos a conseguir entre 30 y 60 Llamadas de Venta Extra por mes con un Embudo Mixto</>;
 
   return (
     <div className="relative overflow-clip">
