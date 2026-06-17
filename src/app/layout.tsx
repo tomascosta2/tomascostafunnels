@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="facebook-domain-verification" content="w4rln4aixrb0651nk3dpqxy10ycm9z" />
         <link rel="preload" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/css/styles.css" as="style" />
         <link rel="prerender" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/?v=90743a54-1155-4570-a9f4-23bcaa558b82" />
         <link rel="preload" href="https://player-vz-5c2adb98-6a4.tv.pandavideo.com.br/embed/js/hls.js" as="script" />
