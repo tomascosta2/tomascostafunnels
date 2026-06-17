@@ -232,6 +232,9 @@ export default function Home() {
         <p className="text-white/60 text-center mt-4 text-[14px]">
           © Fit Funnels 2025. Todos derechos reservados.
         </p>
+        <p className="text-white/40 text-center mt-1 text-[13px]">
+          Costa Peralta Tomás Gabriel
+        </p>
       </section>
     </div>
   );
