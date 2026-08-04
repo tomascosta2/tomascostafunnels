@@ -14,6 +14,7 @@ interface FormData {
   rol: string
   facturacion: string
   casosExito: string
+  facturacion3Meses: string
 }
 
 function getCookie(name: string): string | null {
@@ -84,14 +85,15 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
     rol: "",
     facturacion: "",
     casosExito: "",
+    facturacion3Meses: "",
   })
   const [test, setTest] = useState("")
   const [fbp, setFbp] = useState<string | null>(null)
   const [fbc, setFbc] = useState<string | null>(null)
   const [externalId, setExternalId] = useState<string | null>(null)
 
-  // Ahora son 4 pasos
-  const totalSteps = 4
+  // Ahora son 5 pasos
+  const totalSteps = 5
   const progress = (currentStep / totalSteps) * 100
 
   useEffect(() => {
@@ -118,7 +120,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
   }
 
   const isQualified = useMemo(() => {
-    const isCoachFitness = formData.rol === "Coach Fitness"
+    const isCoachFitness = formData.rol === "Coach Fitness High Ticket entre 1 y 4k por mes"
 
     const ingresosOk = [
       "200 - 500 usd",
@@ -132,8 +134,14 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
       "Más de 20 casos"
     ].includes(formData.casosExito)
 
-    return isCoachFitness && ingresosOk && casosExitoOk
-  }, [formData.rol, formData.facturacion, formData.casosExito])
+    const facturacion3MesesOk = [
+      "Entre 3.000 y 5.000",
+      "Entre 5.000 y 10.000",
+      "Más de 10.000",
+    ].includes(formData.facturacion3Meses)
+
+    return isCoachFitness && ingresosOk && casosExitoOk && facturacion3MesesOk
+  }, [formData.rol, formData.facturacion, formData.casosExito, formData.facturacion3Meses])
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
@@ -205,6 +213,8 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
         return formData.facturacion !== ""
       case 4:
         return formData.casosExito !== ""
+      case 5:
+        return formData.facturacion3Meses !== ""
       default:
         return false
     }
@@ -281,7 +291,7 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                   ¿Cuál describe mejor tu negocio?
                 </h2>
                 <div className="space-y-3">
-                  {["Coach Fitness", "Infoproductor", "Servicio High Ticket", "Otro (No agendes)"].map((option) => (
+                  {["Coach Fitness High Ticket entre 1 y 4k por mes", "Otro (no agendes)"].map((option) => (
                     <button
                       key={option}
                       onClick={() => {
@@ -346,10 +356,43 @@ export default function MultiStepForm({ variant, ad }: MultiStepFormProps) {
                       key={option}
                       onClick={() => {
                         updateFormData("casosExito", option)
+                        setTimeout(handleNext, 300)
                       }}
                       className={cn(
                         "w-full p-4 rounded-lg border text-left transition-all duration-200",
                         formData.casosExito === option
+                          ? "bg-[#E34716] border-[#E34716] text-white shadow-[0_4px_16px_-4px_rgba(227,71,22,0.5)]"
+                          : "bg-white/[0.03] border-white/[0.08] text-white hover:bg-white/[0.06] hover:border-white/15"
+                      )}
+                    >
+                      <span>{option}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Paso 5: Facturación últimos 3 meses */}
+            {currentStep === 5 && (
+              <div className="space-y-6">
+                <h2 className="text-white text-2xl font-bold mb-6">
+                  ¿Cuánto facturaste en los últimos 3 meses?
+                </h2>
+                <div className="space-y-3">
+                  {[
+                    "Menos de 3.000 dólares",
+                    "Entre 3.000 y 5.000",
+                    "Entre 5.000 y 10.000",
+                    "Más de 10.000",
+                  ].map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => {
+                        updateFormData("facturacion3Meses", option)
+                      }}
+                      className={cn(
+                        "w-full p-4 rounded-lg border text-left transition-all duration-200",
+                        formData.facturacion3Meses === option
                           ? "bg-[#E34716] border-[#E34716] text-white shadow-[0_4px_16px_-4px_rgba(227,71,22,0.5)]"
                           : "bg-white/[0.03] border-white/[0.08] text-white hover:bg-white/[0.06] hover:border-white/15"
                       )}

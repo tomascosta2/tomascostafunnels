@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Te ayudamos a conseguir entre 30 y 60 Llamadas de Venta Extra por mes con un Embudo Mixto</>;
+  const heroTitle = <>Te ayudamos a Escalar tu Coaching Fitness Estancado en 1-4k a <span className="text-[#E34716]">10k Estables por mes</span></>;
 
   return (
     <div className="relative overflow-clip">
@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Subtítulo */}
             <p className="text-white/55 text-center md:text-left leading-[1.55] max-w-[560px] mx-auto md:mx-0 mt-5 md:mt-6 text-[15px] md:text-[17px] tracking-[-0.005em] fade-in-up delay-200 md:col-start-1 md:row-start-3">
-              El volumen del Follow + la efectividad del VSL se potencian para que tus ventas no dependan de un solo canal.
+              A diferencia de la mayoría de consultorías genéricas, nos especializamos en un tipo de negocio particular, lo que nos permite darte procesos, recomendaciones e ideas ya validadas por otros en tu mismo nicho.
             </p>
 
             {/* Video card — columna derecha en desktop */}
@@ -157,12 +157,80 @@ export default function Home() {
                 alt="Coaches Fitness"
               />
               <p className="text-white/55 max-w-[200px] text-[13px] md:text-[14px] leading-[1.5] tracking-[-0.005em]">
-                +25 Coaches Fitness ya venden con nuestros embudos
+                +3 años Trabajando con Entrenadores Online
               </p>
             </div>
           </div>
         </section>
       </div>
+
+      {/* Calificación — Es / No es para vos */}
+      <section className="px-4 relative z-50 pb-[80px] md:pb-[120px]">
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-white text-center leading-[1.06] text-[38px] md:text-[58px] tracking-[-0.03em] font-bold text-balance mb-3">
+            Esto NO es para cualquiera
+          </h2>
+          <p className="text-white/50 text-center text-[15px] md:text-[16px] max-w-[400px] mx-auto mb-10 md:mb-12 tracking-[-0.005em]">
+            Preferimos que lo sepas ahora y no después de agendar la llamada.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            {/* Es para vos */}
+            <div className="rounded-[20px] border border-[#E34716]/35 bg-[#E34716]/[0.06] p-6 md:p-8">
+              <h3 className="text-white font-bold text-[18px] md:text-[20px] mb-6 tracking-[-0.015em]">
+                Es para vos si<span className="text-[#E34716]">...</span>
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "Tenés un Coaching Fitness High Ticket",
+                  "Estás teniendo ventas pero no facturás lo que te gustaría",
+                  "Invertís en base a información y no solo promesas",
+                  "No querés otra mentoría genérica",
+                  "Sabés que lo que te falta para escalar son mejores anuncios, mejores procesos y un contenido más efectivo",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-white/85 text-[15px] md:text-[16px] leading-[1.5] tracking-[-0.005em]">
+                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#E34716]/15 border border-[#E34716]/40 flex items-center justify-center">
+                      <svg className="w-2.5 h-2.5 text-[#E34716]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* No es para vos */}
+            <div className="rounded-[20px] border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
+              <h3 className="text-white/70 font-bold text-[18px] md:text-[20px] mb-6 tracking-[-0.015em]">
+                No es para vos si...
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "Tenés un Coaching de otro tipo",
+                  'Pensás que alguien va a "salvarte"',
+                  "No has validado tu oferta",
+                  'Te basás en la "garantía" para invertir',
+                  "Pensás que no escalás porque hay un secreto mágico que no tenés",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-white/50 text-[15px] md:text-[16px] leading-[1.5] tracking-[-0.005em]">
+                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-white/[0.04] border border-white/15 flex items-center justify-center">
+                      <svg className="w-2.5 h-2.5 text-white/45" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10" onClick={() => setIsFormOpen(true)}>
+            <Button text="Ver si califico  →" />
+          </div>
+        </div>
+      </section>
 
 
       {/* <section className="px-4 relative z-50">
