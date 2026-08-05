@@ -127,8 +127,8 @@ export default function Home() {
                 <p className="py-1.5 text-white text-[12px] tracking-widest text-center">Mira este video completo *</p>
                 <div className="border-4 border-[#0a0a0a] rounded-[20px] overflow-hidden">
                   <iframe
-                    className="w-full aspect-video block"
-                    src="https://www.loom.com/embed/987b60b7818a47a8a4a48dc280f01136"
+                    className="w-full aspect-[1512/950] block"
+                    src="https://www.loom.com/embed/76a32d6c14da459f833493e8bd7af9eb"
                     allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
                     allowFullScreen
                   ></iframe>
