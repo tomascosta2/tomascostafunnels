@@ -20,6 +20,7 @@ export async function POST(request: NextRequest) {
         ...(body.rol !== undefined && { ocupacion: body.rol }),
         ...(body.facturacion !== undefined && { presupuesto: body.facturacion }),
         ...(body.casosExito !== undefined && { casosExito: body.casosExito }),
+        ...(body.instagram !== undefined && { instagram: body.instagram }),
         ...(body.isQualified !== undefined && { calificado: body.isQualified ? "Si" : "No" }),
         ...(body.fbc != null && { fbc: body.fbc }),
         ...(body.fbp != null && { fbp: body.fbp }),
