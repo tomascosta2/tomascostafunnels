@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Te ayudamos a Escalar tu Coaching Fitness Estancado en 1-4k a <span className="text-[#E34716]">10k Estables por mes</span></>;
+  const heroTitle = <>Te ayudamos a Escalar tu Coaching Fitness Estancado en 1-4k a <span className="text-[#E34716]">+10k Estables por mes</span></>;
 
   return (
     <div className="relative overflow-clip">
