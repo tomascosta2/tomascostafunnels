@@ -86,7 +86,7 @@ export default function Home() {
       captura: "call-funnels-cliente-8.jpg",
     },
   ];
-  const heroTitle = <>Ordenamos, medimos y mejoramos tu coaching fitness para que llegues a <span className="text-[#E34716]">10k por mes</span></>;
+  const heroTitle = <>Ordenamos, medimos y escalamos tu coaching fitness para que llegues a <span className="text-[#E34716]">10k por mes</span></>;
 
   return (
     <div className="relative overflow-clip">
